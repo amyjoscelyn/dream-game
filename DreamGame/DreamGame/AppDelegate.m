@@ -26,6 +26,27 @@
     [amy takeItem:food];
     [amy eatFood:food];
     
+    AMYInteractiveItems *fish = [[AMYInteractiveItems alloc] initWithName:@"normal fish" edible:YES wearable:NO inherentValue:1];
+    AMYInteractiveItems *treasure = [[AMYInteractiveItems alloc] initWithName:@"gold" edible:NO wearable:NO inherentValue:100];
+    AMYInteractiveItems *hat = [[AMYInteractiveItems alloc] initWithName:@"striped hat" edible:NO wearable:YES inherentValue:25];
+    AMYInteractiveItems *cloak = [[AMYInteractiveItems alloc] initWithName:@"ragged cloak" edible:NO wearable:YES inherentValue:5];
+    
+    [amy takeItem:fish];
+    [amy takeItem:treasure];
+    [amy takeItem:hat];
+    [amy takeItem:cloak];
+    
+    NSUInteger inventoryCount = amy.inventory.count;
+    NSLog(@"I have %lu items in my inventory. They are: %@", inventoryCount, amy.inventory);
+    
+    [amy useItem:fish];
+    [amy useItem:treasure];
+    [amy useItem:hat];
+    [amy useItem:cloak];
+    
+    inventoryCount = amy.inventory.count;
+    NSLog(@"I have %lu items in my inventory. They are: %@", inventoryCount, amy.inventory);
+    
     
     return YES;
 }

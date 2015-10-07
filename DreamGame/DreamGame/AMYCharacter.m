@@ -32,6 +32,21 @@
     return self;
 }
 
+- (void)useItem:(AMYInteractiveItems *)item
+{
+    if (item.wearable)
+    {
+        [self putOnClothing:item];
+    }
+    if (item.edible)
+    {
+        [self eatFood:item];
+    }
+    if (!item.edible && !item.wearable) {
+        NSLog(@"I can't use this %@ yet.", item);
+    }
+}
+
 - (void)eatFood:(AMYInteractiveItems *)food
 {//hungry being a mood you can put into and out of the moods array
 //    if (self.moods containsObject:hungry) {
@@ -44,6 +59,12 @@
 - (void)takeItem:(AMYInteractiveItems *)item
 {
     [self.inventory addObject:item];
+}
+
+- (void)putOnClothing:(AMYInteractiveItems *)clothing
+{
+    //this method should assign the clothing items to a separate wearingInventory, worn?
+    NSLog(@"Ahh, that's much better. This should help keep the dust off!");
 }
 
 - (void)learnSkill

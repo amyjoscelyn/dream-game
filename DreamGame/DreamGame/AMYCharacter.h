@@ -20,9 +20,13 @@
 
 - (instancetype)initWithName:(NSString *)name;
 
+- (void)useItem:(AMYInteractiveItems *)item;
+
 - (void)eatFood:(AMYInteractiveItems *)food;
 
 - (void)takeItem:(AMYInteractiveItems *)item;
+
+- (void)putOnClothing:(AMYInteractiveItems *)clothing;
 
 - (void)learnSkill;
 
