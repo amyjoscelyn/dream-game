@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AMYCharacter.h"
+#import "AMYInteractiveItems.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    AMYCharacter *amy = [[AMYCharacter alloc] initWithName:@"Amy"];
+    NSLog(@"Hey. My name is %@.", amy.name);
+    
+    AMYInteractiveItems *food = [[AMYInteractiveItems alloc] initWithName:@"yummy food" edible:YES wearable:NO inherentValue:1];
+    [amy takeItem:food];
+    [amy eatFood:food];
+    
+    
     return YES;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AMYInteractiveItems.h"
 
 @interface AMYCharacter : NSObject
 
@@ -18,5 +19,15 @@
 @property (nonatomic, strong) NSMutableArray *knowledge;
 
 - (instancetype)initWithName:(NSString *)name;
+
+- (void)eatFood:(AMYInteractiveItems *)food;
+
+- (void)takeItem:(AMYInteractiveItems *)item;
+
+- (void)learnSkill;
+
+- (void)feel;
+
+- (void)sleep;
 
 @end

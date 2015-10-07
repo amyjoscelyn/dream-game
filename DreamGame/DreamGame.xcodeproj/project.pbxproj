@@ -15,6 +15,7 @@
 		3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */; };
 		3D4044EE1BC5B75E00A49C70 /* DreamGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044ED1BC5B75E00A49C70 /* DreamGameTests.m */; };
 		3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */; };
+		3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		3D4044ED1BC5B75E00A49C70 /* DreamGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DreamGameTests.m; sourceTree = "<group>"; };
 		3D4044F71BC5BDE700A49C70 /* AMYCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYCharacter.h; sourceTree = "<group>"; };
 		3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYCharacter.m; sourceTree = "<group>"; };
+		3D4044FA1BC5C12D00A49C70 /* AMYInteractiveItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYInteractiveItems.h; sourceTree = "<group>"; };
+		3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYInteractiveItems.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 			children = (
 				3D4044D51BC5B75E00A49C70 /* AppDelegate.h */,
 				3D4044D61BC5B75E00A49C70 /* AppDelegate.m */,
+				3D4044FA1BC5C12D00A49C70 /* AMYInteractiveItems.h */,
+				3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */,
 				3D4044F71BC5BDE700A49C70 /* AMYCharacter.h */,
 				3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */,
 				3D4044D81BC5B75E00A49C70 /* ViewController.h */,
@@ -228,6 +233,7 @@
 				3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */,
 				3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */,
 				3D4044D41BC5B75E00A49C70 /* main.m in Sources */,
+				3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
