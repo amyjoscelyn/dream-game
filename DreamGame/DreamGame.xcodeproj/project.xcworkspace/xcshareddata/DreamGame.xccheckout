@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DC6EF65E-FCB4-49B6-9306-315C70C7AAA3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>DreamGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D9479FA454FEFDC5525AD033662F7EA6BDD77302</key>
 		<string>github.com:amyjoscelyn/dream-game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DreamGame/DreamGame.xcodeproj/project.xcworkspace</string>
+	<string>DreamGame/DreamGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D9479FA454FEFDC5525AD033662F7EA6BDD77302</key>

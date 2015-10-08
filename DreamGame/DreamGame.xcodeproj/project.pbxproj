@@ -16,6 +16,7 @@
 		3D4044EE1BC5B75E00A49C70 /* DreamGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044ED1BC5B75E00A49C70 /* DreamGameTests.m */; };
 		3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */; };
 		3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */; };
+		3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYCharacter.m; sourceTree = "<group>"; };
 		3D4044FA1BC5C12D00A49C70 /* AMYInteractiveItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYInteractiveItems.h; sourceTree = "<group>"; };
 		3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYInteractiveItems.m; sourceTree = "<group>"; };
+		3D594DD21BC6ACA70081DB45 /* AMYFishingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYFishingGame.h; sourceTree = "<group>"; };
+		3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYFishingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */,
 				3D4044F71BC5BDE700A49C70 /* AMYCharacter.h */,
 				3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */,
+				3D594DD21BC6ACA70081DB45 /* AMYFishingGame.h */,
+				3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */,
 				3D4044D81BC5B75E00A49C70 /* ViewController.h */,
 				3D4044D91BC5B75E00A49C70 /* ViewController.m */,
 				3D4044DB1BC5B75E00A49C70 /* Main.storyboard */,
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */,
 				3D4044DA1BC5B75E00A49C70 /* ViewController.m in Sources */,
 				3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */,
 				3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */,
@@ -430,6 +436,7 @@
 				3D4044F31BC5B75E00A49C70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D4044F41BC5B75E00A49C70 /* Build configuration list for PBXNativeTarget "DreamGameTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +445,7 @@
 				3D4044F61BC5B75E00A49C70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

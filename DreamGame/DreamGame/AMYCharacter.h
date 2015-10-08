@@ -28,7 +28,7 @@
 
 - (void)putOnClothing:(AMYInteractiveItems *)clothing;
 
-- (void)learnSkill;
+- (void)learnSkill:(AMYInteractiveItems *)skill;
 
 - (void)feel;
 

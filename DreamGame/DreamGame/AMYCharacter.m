@@ -67,9 +67,9 @@
     NSLog(@"Ahh, that's much better. This should help keep the dust off!");
 }
 
-- (void)learnSkill
+- (void)learnSkill:(AMYInteractiveItems *)skill
 {
-    
+    [self.skills addObject:skill];
 }
 
 - (void)feel
