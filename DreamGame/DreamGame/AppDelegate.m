@@ -19,18 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    AMYCharacter *amy = [[AMYCharacter alloc] initWithName:@"Amy"];
-    NSLog(@"Hey. My name is %@.", amy.name);
+//    AMYCharacter *amy = [[AMYCharacter alloc] initWithName:@"Amy"];
+//    NSLog(@"Hey. My name is %@.", amy.name);
     
 //    AMYInteractiveItems *fishingSkill = [[AMYInteractiveItems alloc] initWithName:@"fishing skill" edible:NO wearable:NO inherentValue:0];
 //    [amy learnSkill:fishingSkill];
     
     
-    AMYFishingGame *fishingGame = [[AMYFishingGame alloc] init];
-    NSUInteger fishingScore = [fishingGame goFish];
-    NSLog(@"You scored %lu.", fishingScore);
-    
-    [fishingGame collectFishingPrize:fishingScore];
+//    AMYFishingGame *fishingGame = [[AMYFishingGame alloc] init];
+//    NSUInteger fishingScore = [fishingGame goFish];
+//    NSLog(@"You scored %lu.", fishingScore);
+//    
+//    [fishingGame collectFishingPrize:fishingScore];
     
 
     //    AMYInteractiveItems *food = [[AMYInteractiveItems alloc] initWithName:@"yummy food" edible:YES wearable:NO inherentValue:1];

@@ -17,6 +17,8 @@
 		3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */; };
 		3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */; };
 		3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */; };
+		3D82C7D31BF2995F0082A77E /* AMYStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */; };
+		3D82C7D61BF2A0310082A77E /* AMYStoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYInteractiveItems.m; sourceTree = "<group>"; };
 		3D594DD21BC6ACA70081DB45 /* AMYFishingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYFishingGame.h; sourceTree = "<group>"; };
 		3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYFishingGame.m; sourceTree = "<group>"; };
+		3D82C7D11BF2995F0082A77E /* AMYStoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYStoryTableViewController.h; sourceTree = "<group>"; };
+		3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStoryTableViewController.m; sourceTree = "<group>"; };
+		3D82C7D41BF2A0310082A77E /* AMYStoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYStoryTableViewCell.h; sourceTree = "<group>"; };
+		3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStoryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,10 @@
 				3D4044D81BC5B75E00A49C70 /* ViewController.h */,
 				3D4044D91BC5B75E00A49C70 /* ViewController.m */,
 				3D4044DB1BC5B75E00A49C70 /* Main.storyboard */,
+				3D82C7D11BF2995F0082A77E /* AMYStoryTableViewController.h */,
+				3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */,
+				3D82C7D41BF2A0310082A77E /* AMYStoryTableViewCell.h */,
+				3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */,
 				3D4044DE1BC5B75E00A49C70 /* Images.xcassets */,
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
@@ -235,9 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */,
+				3D82C7D31BF2995F0082A77E /* AMYStoryTableViewController.m in Sources */,
 				3D4044DA1BC5B75E00A49C70 /* ViewController.m in Sources */,
 				3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */,
 				3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */,
+				3D82C7D61BF2A0310082A77E /* AMYStoryTableViewCell.m in Sources */,
 				3D4044D41BC5B75E00A49C70 /* main.m in Sources */,
 				3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */,
 			);
