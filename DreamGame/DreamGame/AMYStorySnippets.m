@@ -24,6 +24,7 @@
     {
         _flavorText = flavorText;
         _snippetIndexNumber = indexNumber;
+        _choices = [[NSMutableArray alloc] init];
     }
     return self;
 }

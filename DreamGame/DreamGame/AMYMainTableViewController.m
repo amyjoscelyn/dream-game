@@ -22,46 +22,16 @@
 {
     [super viewDidLoad];
     
-    //    AMYStorySnippets *introduction = [[AMYStorySnippets alloc] init];
-    //    AMYStorySnippets *middle = [[AMYStorySnippets alloc] init];
-    //    AMYStorySnippets *end = [[AMYStorySnippets alloc] init];
-    //
-    //    introduction.flavorText = @"This is the introduction to the story.";
-    //    middle.flavorText = @"This is the middle of the story!";
-    //    end.flavorText = @"And this is the end.";
-    //
-    //    introduction.choice1 = @"Choice 1";
-    //    introduction.choice2 = @"Choice 2";
-    //    introduction.choice3 = @"Choice 3";
-    //    introduction.choice4 = @"Choice 4";
-    //    introduction.choice5 = @"Choice 5";
-    //    introduction.choices = @[ introduction.choice1, introduction.choice2, introduction.choice3, introduction.choice4, introduction.choice5 ];
-    //
-    //    middle.choice1 = @"One";
-    //    middle.choice2 = @"Two";
-    //    middle.choice3 = @"Three";
-    //    middle.choices = @[ middle.choice1, middle.choice2, middle.choice3 ];
-    //
-    //    end.choice1 = @"A";
-    //    end.choice2 = @"B";
-    //    end.choice3 = @"C";
-    //    end.choice4 = @"D";
-    //    end.choice5 = @"E";
-    //    end.choice6 = @"F";
-    //    end.choices = @[ end.choice1, end.choice2, end.choice3, end.choice4, end.choice5, end.choice6 ];
-    
-    //    self.snippets = [@[ introduction, middle, end ] mutableCopy];
-    
     AMYStorySnippets *prologueHeader = [[AMYStorySnippets alloc] initWithFlavorText:@"Prologue: The Dream" indexNumber:0];
+    
+    prologueHeader.choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:@"Begin"];
+    [prologueHeader.choices addObject:prologueHeader.choice1];
+    
     AMYStorySnippets *prologue00 = [[AMYStorySnippets alloc] initWithFlavorText:@"The room spins around you.  The bubbly drink in your hand feels like it’s going straight to your" indexNumber:00 choice1:@"head" choice2:@"smile" choice3:@"hips"];
     
     prologue00.choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:@"eyes"];
     prologue00.choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:@"feet"];
     prologue00.choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:@"tongue"];
-    
-    prologue00.choice4IndexNumber = 4;
-    prologue00.choice4IndexNumber = 5;
-    prologue00.choice4IndexNumber = 6;
     
     [prologue00.choices addObject:prologue00.choice4];
     [prologue00.choices addObject:prologue00.choice5];
@@ -159,5 +129,14 @@
     
     [self.tableView reloadData];
 }
+
+
+/*
+ some things to do:
+    make AMYChoice take in 6 choice options, but if you leave a few blank, they are not counted
+    make custom cell above current one to hold all story text, or find a way to make the section headers larger
+    figure out a way to store the story snippets somewhere other than here
+    when choice is chosen, provide the correct next snippet
+ */
 
 @end
