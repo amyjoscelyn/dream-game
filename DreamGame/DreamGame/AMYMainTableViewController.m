@@ -58,7 +58,7 @@
     
     AMYStorySnippets *prologue06 = [[AMYStorySnippets alloc] initWithFlavorText:@"Nearly everyone in the room is now queued up, the line snaking out of the small room and around the perimeter, those under the balconies falling into the flickering shadow of the candlelights. " indexNumber:05 choice1:@"Join the line." choice2:@"Cut the line." choice3:@"Investigate the room."];
     
-    self.snippets = [@[ /*prologueHeader,*/ prologue00/*, fillerSnippet, prologue01, prologue02, prologue03, prologue04, prologue05, fillerSnippet, prologue06, fillerSnippet */] mutableCopy];
+    self.snippets = [@[ prologueHeader, prologue00, fillerSnippet, prologue01, prologue02, prologue03, prologue04, prologue05, fillerSnippet, prologue06, fillerSnippet ] mutableCopy];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,12 +83,11 @@
                 [snippet.choices addObject:snippet.choice1];
                 
                 numberOfChoices++;
+                
             } //this could be its own method
         }
         numberOfSections = numberOfChoices;
     }
-    //this should have an if-statment which says 'if we're in section 0, only one cell, if 1 do snippet.choices.count'
-    //i can also split the text into sentences/paragraphs and have them be a new tableView cell
     return numberOfSections;
 }
 
@@ -106,6 +105,8 @@
         cell.detailTextLabel.hidden = YES;
         cell.textLabel.numberOfLines = 0;
         cell.userInteractionEnabled = NO;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 45;
     }
     else if (section == 1)
     {
@@ -115,16 +116,10 @@
          cell.textLabel.text = choice.text;
          cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
     }
-    
-    
-    
-    //if I have two sections instead of just one, the first can contain the snippet itself, and the second the choices/continue.  So if we're in section 0, attribute that text to the cell's text.  If we're in section 1, self.snippets[section--] to get the appropriate snippet, and then list all of the choices in the cells.
-    //Hopefully that will work.
-    
     return cell;
 }
 
-/*
+/* //this handles section headers
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
@@ -136,7 +131,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 3;
+    NSUInteger section = indexPath.section;
+    NSUInteger indentation = 0;
+    
+    if (section)
+    {
+        indentation += 3;
+    }
+    
+    return indentation;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
