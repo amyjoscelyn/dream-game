@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     AMYStorySnippets *prologueHeader = [[AMYStorySnippets alloc] initWithFlavorText:@"Prologue: The Dream" indexNumber:0];
     
@@ -160,12 +161,21 @@
 
 /*
  some things to do:
- make AMYChoice take in 6 choice options, but if you leave a few blank, they are not counted
- make custom cell above current one to hold all story text, or find a way to make the section headers larger
+ make AMYChoice take in 6 choice options, but if you leave a few blank, they are not counted //I had trouble with this.
  figure out a way to store the story snippets somewhere other than here
  when choice is chosen, provide the correct next snippet
  embed in a tab bar and start the character page, where the inventory will live, basic information (name, current location, a little about the place as you've learned, a little about yourself that you've learned), relationships (potentially)
  set up story method... something to pass to the tableViewController every time, I guess.  to start i can probably just have one for like the six snippets i've got, do a generic storySetup method like i have colorSetup and gameSetup methods in colorMatch.
+ make a branch of current master, called original-work or something, and then delete the AMYItems and Character and stuff for now.  I can always import them in later.
+ change color and boldness of choices to show they're different from the text, and tappable
+ make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
+ 
+ some generic stories I can provide with the template:
+    going through a grocery store for adding items to inventory ('which aisle would you like to go into?' 'you see some items on the shelf in front of you.  which would you like to take?')
+ */
+
+/*
+ I can use the nav bar's title space to show the location a person is in, the name of the person they're conversing with, and other important information like that (when you're in a shop, or the Exchange, it can tell you how much money you have... or when you're excavating your salvage lot, it can show you how much time has passed or is passing or how much energy you have left, or how much stuff there's detected to be... things like that).
  */
 
 @end
