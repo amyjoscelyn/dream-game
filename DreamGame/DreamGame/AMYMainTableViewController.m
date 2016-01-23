@@ -99,10 +99,18 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
+    NSUInteger purple = 300;
+    NSUInteger red = 359;
+    
+    CGFloat textHue = purple/359.0;
+//    CGFloat textHue = red/359.0;
+    
     if (section == 0)
     {
         AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
         cell.textLabel.text = snippet.flavorText;
+//        cell.textLabel.textColor = [UIColor darkGrayColor];
+        cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.detailTextLabel.hidden = YES;
         cell.textLabel.numberOfLines = 0;
         cell.userInteractionEnabled = NO;
@@ -112,22 +120,22 @@
     else if (section == 1)
     {
         AMYStorySnippets *snippet = [self.snippets firstObject];
-         AMYChoice *choice = snippet.choices[(NSUInteger)row];
-         
-         cell.textLabel.text = choice.text;
-         cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
+        AMYChoice *choice = snippet.choices[(NSUInteger)row];
+        cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
+        cell.textLabel.text = choice.text;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
     }
     return cell;
 }
 
 /* //this handles section headers
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
-    NSString *name = snippet.flavorText;
-    
-    return name;
-}
+ - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+ {
+ AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
+ NSString *name = snippet.flavorText;
+ 
+ return name;
+ }
  */
 
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -171,7 +179,8 @@
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
  
  some generic stories I can provide with the template:
-    going through a grocery store for adding items to inventory ('which aisle would you like to go into?' 'you see some items on the shelf in front of you.  which would you like to take?')
+ going through a grocery store for adding items to inventory ('which aisle would you like to go into?' 'you see some items on the shelf in front of you.  which would you like to take?')
+ if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.
  */
 
 /*
