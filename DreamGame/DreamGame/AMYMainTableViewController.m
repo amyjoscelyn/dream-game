@@ -6,6 +6,7 @@
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 
+#import <CHCSVParser/CHCSVParser.h>
 #import "AMYMainTableViewController.h"
 #import "AMYStorySnippets.h"
 #import "AMYChoice.h"
@@ -23,9 +24,17 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    /*
+//    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
+//    NSString *csvFile = [NSString stringWithContentsOfFile:csvPath encoding:NSUTF8StringEncoding error:nil];
+    
     NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
-    NSString *csvFile = [NSString stringWithContentsOfFile:csvPath encoding:NSUTF8StringEncoding error:nil];
+    NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
+    NSArray *csvRows = [NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields];
+    
+    NSLog(@"%@", csvRows);
+    
+    /*
+    
     
     NSLog(@"csvFile = '%@'", csvFile);
     
