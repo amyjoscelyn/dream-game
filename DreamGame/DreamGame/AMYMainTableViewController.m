@@ -24,10 +24,7 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-//    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
-//    NSString *csvFile = [NSString stringWithContentsOfFile:csvPath encoding:NSUTF8StringEncoding error:nil];
-    
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip1" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip2" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
@@ -39,9 +36,15 @@
     {
         NSArray *rawSnippet = csvRows[i];
         NSInteger indexNumber = [rawSnippet[0] integerValue];
+        NSMutableArray *choices = [[NSMutableArray alloc] init];
         
-        NSArray *choices = @[ rawSnippet[2], rawSnippet[3], rawSnippet[4], rawSnippet[5], rawSnippet[6], rawSnippet[7] ];
-        
+        for (NSUInteger i = 2; i < 8; i++)
+        {
+            NSArray *snippetByComponents = [rawSnippet[i] componentsSeparatedByString:@" | "];
+            NSLog(@"there are %lu components in this snippet", snippetByComponents.count);
+            
+            [choices addObject:snippetByComponents];
+        }
         AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[8] indexNumber:indexNumber choices:choices];
         
         [self.snippets addObject:snippet];
@@ -67,7 +70,7 @@
             if (![snippet.flavorText isEqualToString:@"You've reached the end."])
             {
                 snippet.choices = [[NSMutableArray alloc] init];
-                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue"];
+                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" price:@"" numberOfItem:@""];
                 [snippet.choices addObject:snippet.choice1];
                 
                 numberOfChoices++;

@@ -12,7 +12,9 @@
 
 @property (nonatomic) NSUInteger indexNumber;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic) NSInteger price;
+@property (nonatomic) NSInteger numberOfItem;
 
-- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text;
+- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem;
 
 @end

@@ -16,12 +16,21 @@
     return self;
 }
 
-- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text
+- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem
 {
     self = [super init];
     
     if (self)
     {
+        if (![price isEqualToString:@""])
+        {
+            _price = price.integerValue;
+        }
+        if (![numberOfItem isEqualToString:@""])
+        {
+            _numberOfItem = numberOfItem.integerValue;
+        }
+        
         _indexNumber = indexNumber;
         _text = text;
     }

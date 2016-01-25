@@ -54,35 +54,73 @@
             }
         }
          */
+        NSMutableArray *choice1 = [choices[0] mutableCopy];
+        NSMutableArray *choice2 = [choices[1] mutableCopy];
+        NSMutableArray *choice3 = [choices[2] mutableCopy];
+        NSMutableArray *choice4 = [choices[3] mutableCopy];
+        NSMutableArray *choice5 = [choices[4] mutableCopy];
+        NSMutableArray *choice6 = [choices[5] mutableCopy];
         
-                if (![choices[0] isEqualToString:@""])
+                if (choice1.count)
                 {
-                    _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choices[0]];
+                    if (choice1.count == 1)
+                    {
+                        [choice1 addObject:@""];
+                        [choice1 addObject:@""];
+                    }
+                    NSLog(@"%@ | %@ | %@", choice1[0], choice1[1], choice1[2]);
+                    
+                    _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1[0] price:choice1[1] numberOfItem:choice1[2]];
                     [_choices addObject:_choice1];
                 }
-                if (![choices[1] isEqualToString:@""])
+                if (choice2.count)
                 {
-                    _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choices[1]];
+                    if (choice2.count == 1)
+                    {
+                        [choice2 addObject:@""];
+                        [choice2 addObject:@""];
+                    }
+                    _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2[0] price:choice2[1] numberOfItem:choice2[2]];
                     [_choices addObject:_choice2];
                 }
-                if (![choices[2] isEqualToString:@""])
+                if (choice3.count)
                 {
-                    _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choices[2]];
+                    if (choice3.count == 1)
+                    {
+                        [choice3 addObject:@""];
+                        [choice3 addObject:@""];
+                    }
+                    _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3[0] price:choice3[1] numberOfItem:choice3[2]];
                     [_choices addObject:_choice3];
                 }
-                if (![choices[3] isEqualToString:@""])
+                if (choice4.count)
                 {
-                    _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choices[3]];
+                    if (choice4.count == 1)
+                    {
+                        [choice4 addObject:@""];
+                        [choice4 addObject:@""];
+                    }
+                    _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4[0] price:choice4[1] numberOfItem:choice4[2]];
                     [_choices addObject:_choice4];
                 }
-                if (![choices[4] isEqualToString:@""])
+                if (choice5.count)
                 {
-                    _choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:choices[4]];
+                    if (choice5.count == 1)
+                    {
+                        [choice5 addObject:@""];
+                        [choice5 addObject:@""];
+                    }
+                    _choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:choice5[0] price:choice5[1] numberOfItem:choice5[2]];
                     [_choices addObject:_choice5];
                 }
-                if (![choices[5] isEqualToString:@""])
+                if (choice6.count)
                 {
-                    _choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:choices[5]];
+                    if (choice6.count == 1)
+                    {
+                        [choice6 addObject:@""];
+                        [choice6 addObject:@""];
+                    }
+                    _choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:choice6[0] price:choice6[1] numberOfItem:choice6[2]];
                     [_choices addObject:_choice6];
                 }
     }
