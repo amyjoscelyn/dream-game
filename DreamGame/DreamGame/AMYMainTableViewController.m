@@ -14,6 +14,9 @@
 @interface AMYMainTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *snippets;
+@property (nonatomic) NSUInteger totalCost;
+@property (nonatomic) NSUInteger itemTally;
+@property (nonatomic) BOOL endingTriggered;
 
 @end
 
@@ -28,6 +31,8 @@
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
+    self.totalCost = 0;
+    self.itemTally = 0;
     self.snippets = [[NSMutableArray alloc] init];
     
     [csvRows removeObjectAtIndex:0];
@@ -41,7 +46,6 @@
         for (NSUInteger i = 2; i < 8; i++)
         {
             NSArray *snippetByComponents = [rawSnippet[i] componentsSeparatedByString:@" | "];
-//            NSLog(@"there are %lu components in this snippet", snippetByComponents.count);
             
             [choices addObject:snippetByComponents];
         }
@@ -153,13 +157,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSUInteger row = indexPath.row;
+    
+    AMYStorySnippets *snippet = self.snippets[0];
+    AMYChoice *selectedChoice = snippet.choices[row];
+    self.totalCost += selectedChoice.price;
+    self.itemTally += selectedChoice.numberOfItem;
+    
     [self.snippets removeObjectAtIndex:0];
-    if (!self.snippets.count)
+    if (!self.snippets.count && self.endingTriggered == NO)
     {
+        CGFloat priceInDollars = self.totalCost / 100.0;
+        AMYStorySnippets *statPage = [[AMYStorySnippets alloc] init];
+        statPage.flavorText = [NSString stringWithFormat:@"Today at the grocery store, you bought %lu items, and spent a total of $%.2f.", self.itemTally, priceInDollars];
+        [self.snippets addObject:statPage];
+        
         AMYStorySnippets *conclusion = [[AMYStorySnippets alloc] init];
         conclusion.flavorText = @"You've reached the end.";
         [self.snippets addObject:conclusion];
+        
+        self.endingTriggered = YES;
     }
+    
+    //if we're at the register, take the total price and have the cashier ask for that much.  add this scene into the story.
+    //for now, just add a page at the end that says how much you spent and how many items you bought
     
     //the choice index number can be used to figure out which of the appropriate snippets to show next
     
@@ -171,7 +192,6 @@
 
 /*
  some things to do:
- make AMYStorySnippets take 6 options, or the highest amount of choices I provide
  figure out a way to store the story snippets somewhere other than here--set up in another class
  when choice is chosen, provide the correct next snippet
  embed in a tab bar and start the character page, where the inventory will live, basic information (name, current location, a little about the place as you've learned, a little about yourself that you've learned), relationships (potentially)
@@ -180,10 +200,9 @@
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
  
  some generic stories I can provide with the template:
- going through a grocery store for adding items to inventory ('which aisle would you like to go into?' 'you see some items on the shelf in front of you.  which would you like to take?')
  if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.
  sometimes when you scroll down to see all of the choices and move on to the next page, the table is still scrolled down.  i'm sure there's a way to force it back to the top each time.
- maybe sometime in the future i can alter the initializer methods for the snippets--instead of attributing the choices right in the method, pass in an array and take the array apart later.  in fact, i can make it an array of arrays; each choice can be unwrapped to include a price total and item total.  this can become part of the "choice" property, and after each is chosen they can be added to a running total which can be shown at the end (or, throughout on the nav bar header).
+ each choice can be unwrapped to include a price total and item total.  this can become part of the "choice" property, and after each is chosen they can be added to a running total which can be shown at the end (or, throughout on the nav bar header).
  i should go through and rename my objects, because some are confusing.  rawSnippet should become unwrappedStoryFragment or something, or i should come up with another term than 'snippet' that makes more sense and is clearer from the get go.
  */
 
