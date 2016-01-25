@@ -85,14 +85,14 @@
     NSInteger row = indexPath.row;
     
 //    NSUInteger lightGreen = 75;
-//    NSUInteger green = 135;
-    NSUInteger blue = 250;
+    NSUInteger green = 135;
+//    NSUInteger blue = 250;
 //    NSUInteger purple = 300;
 //    NSUInteger red = 359;
     
 //    CGFloat textHue = lightGreen/359.0;
-//    CGFloat textHue = green/359.0;
-    CGFloat textHue = blue/359.0;
+    CGFloat textHue = green/359.0;
+//    CGFloat textHue = blue/359.0;
 //    CGFloat textHue = purple/359.0;
 //    CGFloat textHue = red/359.0;
     
@@ -100,7 +100,6 @@
     {
         AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
         cell.textLabel.text = snippet.flavorText;
-//        cell.textLabel.textColor = [UIColor darkGrayColor];
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.detailTextLabel.hidden = YES;
         cell.textLabel.numberOfLines = 0;
@@ -115,6 +114,7 @@
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
         cell.textLabel.text = choice.text;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
+        cell.textLabel.numberOfLines = 0;
     }
     return cell;
 }
