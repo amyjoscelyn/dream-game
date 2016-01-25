@@ -27,7 +27,7 @@
 //    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
 //    NSString *csvFile = [NSString stringWithContentsOfFile:csvPath encoding:NSUTF8StringEncoding error:nil];
     
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip1" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
@@ -40,7 +40,9 @@
         NSArray *rawSnippet = csvRows[i];
         NSInteger indexNumber = [rawSnippet[0] integerValue];
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[6] indexNumber:indexNumber choice1:rawSnippet[2] choice2:rawSnippet[3] choice3:rawSnippet[4] choice4:rawSnippet[5] choice5:@"" choice6:@""];
+        NSArray *choices = @[ rawSnippet[2], rawSnippet[3], rawSnippet[4], rawSnippet[5], rawSnippet[6], rawSnippet[7] ];
+        
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[8] indexNumber:indexNumber choices:choices];
         
         [self.snippets addObject:snippet];
     }
@@ -157,6 +159,8 @@
     //the choice index number can be used to figure out which of the appropriate snippets to show next
     
     [self.tableView reloadData];
+//    [self.tableView setContentOffset:CGPointZero animated:YES];
+    //This ignores the nav bar and goes right to the very top of the screen
 }
 
 
@@ -173,6 +177,9 @@
  some generic stories I can provide with the template:
  going through a grocery store for adding items to inventory ('which aisle would you like to go into?' 'you see some items on the shelf in front of you.  which would you like to take?')
  if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.
+ sometimes when you scroll down to see all of the choices and move on to the next page, the table is still scrolled down.  i'm sure there's a way to force it back to the top each time.
+ maybe sometime in the future i can alter the initializer methods for the snippets--instead of attributing the choices right in the method, pass in an array and take the array apart later.  in fact, i can make it an array of arrays; each choice can be unwrapped to include a price total and item total.  this can become part of the "choice" property, and after each is chosen they can be added to a running total which can be shown at the end (or, throughout on the nav bar header).
+ i should go through and rename my objects, because some are confusing.  rawSnippet should become unwrappedStoryFragment or something, or i should come up with another term than 'snippet' that makes more sense and is clearer from the get go.
  */
 
 /*

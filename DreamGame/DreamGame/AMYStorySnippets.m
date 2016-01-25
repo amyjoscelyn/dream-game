@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choice1:(NSString *)choice1 choice2:(NSString *)choice2 choice3:(NSString *)choice3 choice4:(NSString *)choice4 choice5:(NSString *)choice5 choice6:(NSString *)choice6
+- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choices:(NSArray *)choices
 {
     self = [super init];
     
@@ -39,38 +39,52 @@
         _snippetIndexNumber = indexNumber;
         _choices = [[NSMutableArray alloc] init];
         
-        //maybe here i can set up an 'if choice is blank, don't set as a property/if choice is not blank, set as property'
+        /*      I can't do this more graceful approach yet, until I figure out how to make _choice# not nil when I insert it into this first array (because I don't initialize it until after it's in the array--and too late), or I can find a way to iterate through all of the choices without having to resort to putting the properties in an array in the first place.
+        NSArray *choiceProperties = @[ _choice1, _choice2, _choice3, _choice4, _choice5, _choice6 ];
         
-        if (![choice1 isEqualToString:@""])
+        for (NSUInteger i = 0; i < choices.count; i++)
         {
-            _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1];
-            [_choices addObject:_choice1];
+            NSString *choiceText = choices[i];
+            AMYChoice *choiceProperty = choiceProperties[i];
+            
+            if (![choiceText isEqualToString:@""])
+            {
+                choiceProperty = [[AMYChoice alloc] initWithIndexNumber:(i + 1) text:choiceText];
+                [_choices addObject:choiceProperty];
+            }
         }
-        if (![choice2 isEqualToString:@""])
-        {
-            _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2];
-            [_choices addObject:_choice2];
-        }
-        if (![choice3 isEqualToString:@""])
-        {
-            _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3];
-            [_choices addObject:_choice3];
-        }
-        if (![choice4 isEqualToString:@""])
-        {
-            _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4];
-            [_choices addObject:_choice4];
-        }
-        if (![choice5 isEqualToString:@""])
-        {
-            _choice4 = [[AMYChoice alloc] initWithIndexNumber:5 text:choice5];
-            [_choices addObject:_choice5];
-        }
-        if (![choice6 isEqualToString:@""])
-        {
-            _choice4 = [[AMYChoice alloc] initWithIndexNumber:6 text:choice6];
-            [_choices addObject:_choice6];
-        }
+         */
+        
+                if (![choices[0] isEqualToString:@""])
+                {
+                    _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choices[0]];
+                    [_choices addObject:_choice1];
+                }
+                if (![choices[1] isEqualToString:@""])
+                {
+                    _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choices[1]];
+                    [_choices addObject:_choice2];
+                }
+                if (![choices[2] isEqualToString:@""])
+                {
+                    _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choices[2]];
+                    [_choices addObject:_choice3];
+                }
+                if (![choices[3] isEqualToString:@""])
+                {
+                    _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choices[3]];
+                    [_choices addObject:_choice4];
+                }
+                if (![choices[4] isEqualToString:@""])
+                {
+                    _choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:choices[4]];
+                    [_choices addObject:_choice5];
+                }
+                if (![choices[5] isEqualToString:@""])
+                {
+                    _choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:choices[5]];
+                    [_choices addObject:_choice6];
+                }
     }
     return self;
 }
