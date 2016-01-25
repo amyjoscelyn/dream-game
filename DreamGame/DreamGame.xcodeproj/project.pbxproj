@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1C17DC1C55B68700B07EB3 /* a-grocery-trip.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D1C17DB1C55B68700B07EB3 /* a-grocery-trip.csv */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1C17DB1C55B68700B07EB3 /* a-grocery-trip.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a-grocery-trip.csv"; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
 				3D7F673A1C559195000AEB96 /* example.csv */,
 				3D7F673C1C55927B000AEB96 /* choicesInDream.csv */,
+				3D1C17DB1C55B68700B07EB3 /* a-grocery-trip.csv */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
 			);
 			path = DreamGame;
@@ -280,6 +283,7 @@
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
 				3D7F673B1C559195000AEB96 /* example.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
+				3D1C17DC1C55B68700B07EB3 /* a-grocery-trip.csv in Resources */,
 				3D7F673D1C55927B000AEB96 /* choicesInDream.csv in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
 			);

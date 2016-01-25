@@ -27,7 +27,7 @@
 //    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
 //    NSString *csvFile = [NSString stringWithContentsOfFile:csvPath encoding:NSUTF8StringEncoding error:nil];
     
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
