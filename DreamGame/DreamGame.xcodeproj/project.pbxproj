@@ -14,9 +14,6 @@
 		3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DE1BC5B75E00A49C70 /* Images.xcassets */; };
 		3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */; };
 		3D4044EE1BC5B75E00A49C70 /* DreamGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044ED1BC5B75E00A49C70 /* DreamGameTests.m */; };
-		3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */; };
-		3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */; };
-		3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */; };
 		3D6D5EEB1C4EB79E004FFA5F /* AMYMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */; };
 		3D6D5EEE1C4ED367004FFA5F /* AMYStorySnippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EED1C4ED367004FFA5F /* AMYStorySnippets.m */; };
 		3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF01C4ED653004FFA5F /* AMYStoryDataStore.m */; };
@@ -24,8 +21,6 @@
 		3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */; };
 		3D7F673B1C559195000AEB96 /* example.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F673A1C559195000AEB96 /* example.csv */; };
 		3D7F673D1C55927B000AEB96 /* choicesInDream.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F673C1C55927B000AEB96 /* choicesInDream.csv */; };
-		3D82C7D31BF2995F0082A77E /* AMYStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */; };
-		3D82C7D61BF2A0310082A77E /* AMYStoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */; };
 		691742A96CE385055450F671 /* libPods-DreamGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */; };
 /* End PBXBuildFile section */
 
@@ -52,12 +47,6 @@
 		3D4044E71BC5B75E00A49C70 /* DreamGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044EC1BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044ED1BC5B75E00A49C70 /* DreamGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DreamGameTests.m; sourceTree = "<group>"; };
-		3D4044F71BC5BDE700A49C70 /* AMYCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYCharacter.h; sourceTree = "<group>"; };
-		3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYCharacter.m; sourceTree = "<group>"; };
-		3D4044FA1BC5C12D00A49C70 /* AMYInteractiveItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYInteractiveItems.h; sourceTree = "<group>"; };
-		3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYInteractiveItems.m; sourceTree = "<group>"; };
-		3D594DD21BC6ACA70081DB45 /* AMYFishingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYFishingGame.h; sourceTree = "<group>"; };
-		3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYFishingGame.m; sourceTree = "<group>"; };
 		3D6D5EE91C4EB79E004FFA5F /* AMYMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYMainTableViewController.h; sourceTree = "<group>"; };
 		3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYMainTableViewController.m; sourceTree = "<group>"; };
 		3D6D5EEC1C4ED367004FFA5F /* AMYStorySnippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYStorySnippets.h; sourceTree = "<group>"; };
@@ -70,10 +59,6 @@
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
 		3D7F673A1C559195000AEB96 /* example.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.csv; sourceTree = "<group>"; };
 		3D7F673C1C55927B000AEB96 /* choicesInDream.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = choicesInDream.csv; sourceTree = "<group>"; };
-		3D82C7D11BF2995F0082A77E /* AMYStoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYStoryTableViewController.h; sourceTree = "<group>"; };
-		3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStoryTableViewController.m; sourceTree = "<group>"; };
-		3D82C7D41BF2A0310082A77E /* AMYStoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYStoryTableViewCell.h; sourceTree = "<group>"; };
-		3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStoryTableViewCell.m; sourceTree = "<group>"; };
 		7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8231DBC9ECED056C7715B9D4 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
 		F8AE51E7B2D1ACD486576B39 /* Pods-DreamGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,17 +125,7 @@
 				3D6D5EF01C4ED653004FFA5F /* AMYStoryDataStore.m */,
 				3D6D5EF21C4EE76F004FFA5F /* AMYStory.h */,
 				3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */,
-				3D4044FA1BC5C12D00A49C70 /* AMYInteractiveItems.h */,
-				3D4044FB1BC5C12D00A49C70 /* AMYInteractiveItems.m */,
-				3D4044F71BC5BDE700A49C70 /* AMYCharacter.h */,
-				3D4044F81BC5BDE700A49C70 /* AMYCharacter.m */,
-				3D594DD21BC6ACA70081DB45 /* AMYFishingGame.h */,
-				3D594DD31BC6ACA70081DB45 /* AMYFishingGame.m */,
 				3D4044DB1BC5B75E00A49C70 /* Main.storyboard */,
-				3D82C7D11BF2995F0082A77E /* AMYStoryTableViewController.h */,
-				3D82C7D21BF2995F0082A77E /* AMYStoryTableViewController.m */,
-				3D82C7D41BF2A0310082A77E /* AMYStoryTableViewCell.h */,
-				3D82C7D51BF2A0310082A77E /* AMYStoryTableViewCell.m */,
 				3D6D5EE91C4EB79E004FFA5F /* AMYMainTableViewController.h */,
 				3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */,
 				3D4044DE1BC5B75E00A49C70 /* Images.xcassets */,
@@ -351,18 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D594DD41BC6ACA70081DB45 /* AMYFishingGame.m in Sources */,
 				3D6D5EEE1C4ED367004FFA5F /* AMYStorySnippets.m in Sources */,
 				3D6D5EEB1C4EB79E004FFA5F /* AMYMainTableViewController.m in Sources */,
 				3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */,
 				3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */,
-				3D82C7D31BF2995F0082A77E /* AMYStoryTableViewController.m in Sources */,
-				3D4044F91BC5BDE700A49C70 /* AMYCharacter.m in Sources */,
 				3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */,
-				3D82C7D61BF2A0310082A77E /* AMYStoryTableViewCell.m in Sources */,
 				3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */,
 				3D4044D41BC5B75E00A49C70 /* main.m in Sources */,
-				3D4044FC1BC5C12D00A49C70 /* AMYInteractiveItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
