@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choice1:(NSString *)choice1 choice2:(NSString *)choice2 choice3:(NSString *)choice3 choice4:(NSString *)choice4
+- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choice1:(NSString *)choice1 choice2:(NSString *)choice2 choice3:(NSString *)choice3 choice4:(NSString *)choice4 choice5:(NSString *)choice5 choice6:(NSString *)choice6
 {
     self = [super init];
     
@@ -60,6 +60,16 @@
         {
             _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4];
             [_choices addObject:_choice4];
+        }
+        if (![choice5 isEqualToString:@""])
+        {
+            _choice4 = [[AMYChoice alloc] initWithIndexNumber:5 text:choice5];
+            [_choices addObject:_choice5];
+        }
+        if (![choice6 isEqualToString:@""])
+        {
+            _choice4 = [[AMYChoice alloc] initWithIndexNumber:6 text:choice6];
+            [_choices addObject:_choice6];
         }
     }
     return self;

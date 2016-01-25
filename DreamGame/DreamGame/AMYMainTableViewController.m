@@ -40,7 +40,7 @@
         NSArray *rawSnippet = csvRows[i];
         NSInteger indexNumber = [rawSnippet[0] integerValue];
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[6] indexNumber:indexNumber choice1:rawSnippet[2] choice2:rawSnippet[3] choice3:rawSnippet[4] choice4:rawSnippet[5]];
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[6] indexNumber:indexNumber choice1:rawSnippet[2] choice2:rawSnippet[3] choice3:rawSnippet[4] choice4:rawSnippet[5] choice5:@"" choice6:@""];
         
         [self.snippets addObject:snippet];
     }
@@ -113,8 +113,10 @@
         AMYChoice *choice = snippet.choices[(NSUInteger)row];
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
         cell.textLabel.text = choice.text;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
         cell.textLabel.numberOfLines = 0;
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
+        cell.detailTextLabel.hidden = YES;
     }
     return cell;
 }
