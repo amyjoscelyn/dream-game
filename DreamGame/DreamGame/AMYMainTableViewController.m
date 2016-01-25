@@ -33,6 +33,7 @@
     
     NSLog(@"%@", csvRows);
     
+//    self.snippets = [[NSMutableArray alloc] initWithArray:csvRows];
     /*
     
     
