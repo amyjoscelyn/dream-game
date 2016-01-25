@@ -41,7 +41,7 @@
         for (NSUInteger i = 2; i < 8; i++)
         {
             NSArray *snippetByComponents = [rawSnippet[i] componentsSeparatedByString:@" | "];
-            NSLog(@"there are %lu components in this snippet", snippetByComponents.count);
+//            NSLog(@"there are %lu components in this snippet", snippetByComponents.count);
             
             [choices addObject:snippetByComponents];
         }
@@ -49,7 +49,7 @@
         
         [self.snippets addObject:snippet];
     }
-    NSLog(@"there are %lu snippets", self.snippets.count);
+//    NSLog(@"there are %lu snippets", self.snippets.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -122,6 +122,8 @@
         
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
         cell.detailTextLabel.hidden = YES;
+        
+        //if price and tally are blank, they should not cause extra cells to appear
     }
     return cell;
 }
