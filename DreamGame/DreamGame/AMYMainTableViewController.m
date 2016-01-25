@@ -31,13 +31,9 @@
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-//    NSLog(@"%@", csvRows);
-    
     self.snippets = [[NSMutableArray alloc] init];
     
     [csvRows removeObjectAtIndex:0];
-    
-//    NSLog(@"first question: %@", csvRows.firstObject);
     
     for (NSUInteger i = 0; i < csvRows.count; i++)
     {
@@ -47,8 +43,6 @@
         AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[6] indexNumber:indexNumber choice1:rawSnippet[2] choice2:rawSnippet[3] choice3:rawSnippet[4] choice4:rawSnippet[5]];
         
         [self.snippets addObject:snippet];
-        
-//        NSLog(@"Question %lu: %@ \n %@ \n %@ \n %@ \n %@", snippet.snippetIndexNumber, snippet.flavorText, snippet.choice1.text, snippet.choice2.text, snippet.choice3.text, snippet.choice4.text);
     }
     NSLog(@"there are %lu snippets", self.snippets.count);
 }
@@ -166,13 +160,12 @@
 
 /*
  some things to do:
- make AMYChoice take in 6 choice options, but if you leave a few blank, they are not counted //I had trouble with this.
- figure out a way to store the story snippets somewhere other than here
+ make AMYStorySnippets take 6 options, or the highest amount of choices I provide
+ figure out a way to store the story snippets somewhere other than here--set up in another class
  when choice is chosen, provide the correct next snippet
  embed in a tab bar and start the character page, where the inventory will live, basic information (name, current location, a little about the place as you've learned, a little about yourself that you've learned), relationships (potentially)
  set up story method... something to pass to the tableViewController every time, I guess.  to start i can probably just have one for like the six snippets i've got, do a generic storySetup method like i have colorSetup and gameSetup methods in colorMatch.
  make a branch of current master, called original-work or something, and then delete the AMYItems and Character and stuff for now.  I can always import them in later.
- change color and boldness of choices to show they're different from the text, and tappable
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
  
  some generic stories I can provide with the template:

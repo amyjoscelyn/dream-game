@@ -37,14 +37,30 @@
     {
         _flavorText = flavorText;
         _snippetIndexNumber = indexNumber;
-        
-        _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1];
-        _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2];
-        _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3];
-        _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4];
-        
         _choices = [[NSMutableArray alloc] init];
-        _choices = [ @[ _choice1, _choice2, _choice3, _choice4 ] mutableCopy];
+        
+        //maybe here i can set up an 'if choice is blank, don't set as a property/if choice is not blank, set as property'
+        
+        if (![choice1 isEqualToString:@""])
+        {
+            _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1];
+            [_choices addObject:_choice1];
+        }
+        if (![choice2 isEqualToString:@""])
+        {
+            _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2];
+            [_choices addObject:_choice2];
+        }
+        if (![choice3 isEqualToString:@""])
+        {
+            _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3];
+            [_choices addObject:_choice3];
+        }
+        if (![choice4 isEqualToString:@""])
+        {
+            _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4];
+            [_choices addObject:_choice4];
+        }
     }
     return self;
 }
