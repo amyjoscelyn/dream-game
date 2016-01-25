@@ -29,60 +29,28 @@
     
     NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
-    NSArray *csvRows = [NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields];
+    NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    NSLog(@"%@", csvRows);
+//    NSLog(@"%@", csvRows);
     
-//    self.snippets = [[NSMutableArray alloc] initWithArray:csvRows];
-    /*
+    self.snippets = [[NSMutableArray alloc] init];
     
+    [csvRows removeObjectAtIndex:0];
     
-    NSLog(@"csvFile = '%@'", csvFile);
+//    NSLog(@"first question: %@", csvRows.firstObject);
     
-    NSArray *csvArraysByNewLines = [csvFile componentsSeparatedByString:@"\n"];
-    
-    NSUInteger lineCount = csvArraysByNewLines.count;
-    NSLog(@"there are %lu rows in this csv", lineCount);
-    NSLog(@"csv in arrays: %@", csvArraysByNewLines);
-    */
-    
-//    AMYStorySnippets *prologueHeader = [[AMYStorySnippets alloc] initWithFlavorText:@"Prologue: The Dream" indexNumber:0];
-//    
-//    prologueHeader.choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:@"Begin"];
-//    [prologueHeader.choices addObject:prologueHeader.choice1];
-//    
-//    AMYStorySnippets *prologue00 = [[AMYStorySnippets alloc] initWithFlavorText:@"The room spins around you.  The bubbly drink in your hand feels like it’s going straight to your" indexNumber:00 choice1:@"head" choice2:@"smile" choice3:@"hips"];
-//    
-//    prologue00.choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:@"eyes"];
-//    prologue00.choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:@"feet"];
-//    prologue00.choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:@"tongue"];
-//    
-//    [prologue00.choices addObject:prologue00.choice4];
-//    [prologue00.choices addObject:prologue00.choice5];
-//    [prologue00.choices addObject:prologue00.choice6];
-    
-    //    AMYStorySnippets *prologue00c00 = [[AMYStorySnippets alloc] initWithFlavorText:@"You feel pleasantly dizzy, enough to lighten your thoughts and make you feel like you’re floating around the room.  In fact, you’re hardly thinking at all, instead living very much in the present.  And what a present it is!  A large hall, filled with luxuries and the finest of society; you among them, wearing your very best, feeling like a spectacle at this elegant celebration. +++indulgent" indexNumber:0000];
-    //    AMYStorySnippets *prologue00c01 = [[AMYStorySnippets alloc] initWithFlavorText:@"There must be some converse relation between the two; the more of the sweet drink you consume, the wider your smile becomes.  Every direction you look, there are people, conversing in low, jewel-bright tones; they glance back at you and also smile.  You touch all the others in their tunics and gowns, their jackets and veils, with your smile, and feel like the most important person in the world right now. +++persuasive" indexNumber:0001];
-    //    AMYStorySnippets *prologue00c02 = [[AMYStorySnippets alloc] initWithFlavorText:@"All you feel like right now is dancing.  A few others nearby are swaying as well, and you waltz over to join them.  Music plays smoothly from a balcony above, a counterpoint to the susurration of conversation from those around you.  Their words blend together, creating melodies and harmonies that, when you let your mind float inside it, you swear you can hear the rhythm to.  It’s a catching rhythm, and all you want to do is dance, dance… twirl and leap to the music of the room until you float into the air.  Tonight, it all seems possible. +++romantic" indexNumber:0002];
-    //    AMYStorySnippets *prologue00c03 = [[AMYStorySnippets alloc] initWithFlavorText:@"The more you drink, the hazier the room becomes, the colors and faces all swirling together into one mass of glorious celebration.  How lucky you are to be here!  Sounds and smells all mesh into one, and as you sip on your sweet beverage you feel the sights mingling into the mix as well, until you swear you can smell the music of the orchestra, a lovely floral bouquet of strings and horns; the aromas coming from the banquet tables rising like colored smoke; the guests in their finery of red and gold like a waterfall in the eaves,  their dancing like the roar of a train down a crevasse, a waved golden ticket like the ringing of a bell… +++whimsical" indexNumber:0003];
-    //    AMYStorySnippets *prologue00c04 = [[AMYStorySnippets alloc] initWithFlavorText:@"You feel like you’re gliding around the massive hall, floating on the plush red carpet.  You hardly make a noise, as though the air itself is cushioning your body, an invisible cape that nonetheless tells everyone around that you are someone worth power, a shaper of the world.  You make your way through groups and couples over to the hardened stone of the dance floor, polished and surprisingly forgiving in the warm, golden light.  There you take a partner and the two of you whirl around, secrets and the hum of mischief fluttering around like the wings of a bat.  The most wondrous way to spend an evening, and the best night you’ve had in awhile… +++subtle/graceful" indexNumber:0004];
-    //    AMYStorySnippets *prologue00c05 = [[AMYStorySnippets alloc] initWithFlavorText:@"Words trip more and more easily off the more of the sweet drink you consume, as though the bubbles carry each idea straight from your heart to the ears of your listeners.  The revelers laugh and applaud your witticisms, and as you delight the small crowd around you your only thought is a fleeting wish that you will recall all of these words tomorrow so that others can be so taken with everything you say. +++witty" indexNumber:0005];
-    
-//    AMYStorySnippets *fillerSnippet = [[AMYStorySnippets alloc] initWithFlavorText:@"Your choice goes here." indexNumber:9999];
-//    
-//    AMYStorySnippets *prologue01 = [[AMYStorySnippets alloc] initWithFlavorText:@"Time passes as it would in a dream, all the highlights a single moment with nothing in between." indexNumber:01];
-//    
-//    AMYStorySnippets *prologue02 = [[AMYStorySnippets alloc] initWithFlavorText:@"You remember laughter, dancing, chatter, but none of it your own.  There was the swish of satin skirts, the spread of arms between groups like morphing webs trapping individuals into conversations, where eyebrows thick and thin would showcase a range of expression unseen any day before now." indexNumber:02];
-//    
-//    AMYStorySnippets *prologue03 = [[AMYStorySnippets alloc] initWithFlavorText:@"You take it all in, breathing in the dust falling from the ceiling, coming in from the hallways, which seemed more like tunnels the longer the night went on." indexNumber:03];
-//    
-//    AMYStorySnippets *prologue04 = [[AMYStorySnippets alloc] initWithFlavorText:@"From those dark tunnels, once gold and red like everything else in this grand hall, came the smell of something like burnt tea, billowed by smoke.  Motes of dust and hair filtered through the crowds." indexNumber:04];
-//    
-//    AMYStorySnippets *prologue05 = [[AMYStorySnippets alloc] initWithFlavorText:@"Just as the first bouts of coughing began, a line started to form outside of a small room.  “Free dream!” a man shouted, his cry taken up by everyone queued.  “Free dream, free dream!”  The cries were wails and shrieks, nearly deafening despite how calm those on line looked.  They waited patiently, the room they slowly gained access to bright and beckoning.  Dream!  You love dream!" indexNumber:05 choice1:@"I do love dream. #hadDreamBefore" choice2:@"I normally don’t, but today feels like the best day to have some. #firstTimeDream" choice3:@"I don’t believe it."];
-//    
-//    AMYStorySnippets *prologue06 = [[AMYStorySnippets alloc] initWithFlavorText:@"Nearly everyone in the room is now queued up, the line snaking out of the small room and around the perimeter, those under the balconies falling into the flickering shadow of the candlelights. " indexNumber:05 choice1:@"Join the line." choice2:@"Cut the line." choice3:@"Investigate the room."];
-//    
-//    self.snippets = [@[ prologueHeader, prologue00, fillerSnippet, prologue01, prologue02, prologue03, prologue04, prologue05, fillerSnippet, prologue06, fillerSnippet ] mutableCopy];
+    for (NSUInteger i = 0; i < csvRows.count; i++)
+    {
+        NSArray *rawSnippet = csvRows[i];
+        NSInteger indexNumber = [rawSnippet[0] integerValue];
+        
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[6] indexNumber:indexNumber choice1:rawSnippet[2] choice2:rawSnippet[3] choice3:rawSnippet[4] choice4:rawSnippet[5]];
+        
+        [self.snippets addObject:snippet];
+        
+//        NSLog(@"Question %lu: %@ \n %@ \n %@ \n %@ \n %@", snippet.snippetIndexNumber, snippet.flavorText, snippet.choice1.text, snippet.choice2.text, snippet.choice3.text, snippet.choice4.text);
+    }
+    NSLog(@"there are %lu snippets", self.snippets.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -92,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSUInteger numberOfSections = 1;
+    NSInteger numberOfSections = 1;
     if (!section == 0)
     {
         AMYStorySnippets *snippet = [self.snippets firstObject];
@@ -122,15 +90,15 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-    NSUInteger lightGreen = 75;
-    NSUInteger green = 135;
+//    NSUInteger lightGreen = 75;
+//    NSUInteger green = 135;
     NSUInteger blue = 250;
-    NSUInteger purple = 300;
-    NSUInteger red = 359;
+//    NSUInteger purple = 300;
+//    NSUInteger red = 359;
     
-    CGFloat textHue = lightGreen/359.0;
+//    CGFloat textHue = lightGreen/359.0;
 //    CGFloat textHue = green/359.0;
-//    CGFloat textHue = blue/359.0;
+    CGFloat textHue = blue/359.0;
 //    CGFloat textHue = purple/359.0;
 //    CGFloat textHue = red/359.0;
     

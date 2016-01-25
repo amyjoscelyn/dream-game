@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choice1:(NSString *)choice1 choice2:(NSString *)choice2 choice3:(NSString *)choice3
+- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choice1:(NSString *)choice1 choice2:(NSString *)choice2 choice3:(NSString *)choice3 choice4:(NSString *)choice4
 {
     self = [super init];
     
@@ -41,9 +41,10 @@
         _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1];
         _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2];
         _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3];
+        _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4];
         
         _choices = [[NSMutableArray alloc] init];
-        _choices = [ @[ _choice1, _choice2, _choice3 ] mutableCopy];
+        _choices = [ @[ _choice1, _choice2, _choice3, _choice4 ] mutableCopy];
     }
     return self;
 }
