@@ -14,8 +14,9 @@
 @interface AMYMainTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *snippets;
-@property (nonatomic) NSUInteger totalCost;
-@property (nonatomic) NSUInteger itemTally;
+@property (nonatomic, strong) NSMutableArray *branchingOptions;
+//@property (nonatomic) NSUInteger totalCost;
+//@property (nonatomic) NSUInteger itemTally;
 @property (nonatomic) BOOL endingTriggered;
 
 @end
@@ -27,13 +28,15 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    //this parses through the given csv
     NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    self.totalCost = 0;
-    self.itemTally = 0;
+    //    self.totalCost = 0;
+    //    self.itemTally = 0;
     self.snippets = [[NSMutableArray alloc] init];
+    self.branchingOptions = [[NSMutableArray alloc] init];
     
     [csvRows removeObjectAtIndex:0];
     
@@ -51,9 +54,18 @@
         }
         AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[8] indexNumber:indexNumber choices:choices];
         
-        [self.snippets addObject:snippet];
+        NSString *comment = rawSnippet[1];
+        
+        if ([comment containsString:@" - "])
+        {
+            [self.branchingOptions addObject:snippet];
+        }
+        else
+        {
+            [self.snippets addObject:snippet];
+        }
     }
-//    NSLog(@"there are %lu snippets", self.snippets.count);
+    //    NSLog(@"there are %lu snippets", self.snippets.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -74,7 +86,8 @@
             if (![snippet.flavorText isEqualToString:@"You've reached the end."])
             {
                 snippet.choices = [[NSMutableArray alloc] init];
-                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" price:@"" numberOfItem:@""];
+                //                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" price:@"" numberOfItem:@""];
+                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" followingSnippet:@""];
                 [snippet.choices addObject:snippet.choice1];
                 
                 numberOfChoices++;
@@ -93,17 +106,17 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-//    NSUInteger lightGreen = 75;
+    //    NSUInteger lightGreen = 75;
     NSUInteger green = 135;
-//    NSUInteger blue = 250;
-//    NSUInteger purple = 300;
-//    NSUInteger red = 359;
+    //    NSUInteger blue = 250;
+    //    NSUInteger purple = 300;
+    //    NSUInteger red = 359;
     
-//    CGFloat textHue = lightGreen/359.0;
+    //    CGFloat textHue = lightGreen/359.0;
     CGFloat textHue = green/359.0;
-//    CGFloat textHue = blue/359.0;
-//    CGFloat textHue = purple/359.0;
-//    CGFloat textHue = red/359.0;
+    //    CGFloat textHue = blue/359.0;
+    //    CGFloat textHue = purple/359.0;
+    //    CGFloat textHue = red/359.0;
     
     if (section == 0)
     {
@@ -151,7 +164,6 @@
     {
         indentation += 3;
     }
-    
     return indentation;
 }
 
@@ -160,17 +172,25 @@
     NSUInteger row = indexPath.row;
     
     AMYStorySnippets *snippet = self.snippets[0];
-    AMYChoice *selectedChoice = snippet.choices[row];
-    self.totalCost += selectedChoice.price;
-    self.itemTally += selectedChoice.numberOfItem;
+    AMYChoice *selectedChoice = snippet.choices[row]; //do i ever use this?
+    
+    for (AMYStorySnippets *snippet in self.branchingOptions)
+    {
+        if (snippet.snippetIndexNumber == selectedChoice.followingSnippet)
+        {
+            [self.snippets insertObject:snippet atIndex:1];
+        }
+    }
+    //    self.totalCost += selectedChoice.price;
+    //    self.itemTally += selectedChoice.numberOfItem;
     
     [self.snippets removeObjectAtIndex:0];
     if (!self.snippets.count && self.endingTriggered == NO)
     {
-        CGFloat priceInDollars = self.totalCost / 100.0;
-        AMYStorySnippets *statPage = [[AMYStorySnippets alloc] init];
-        statPage.flavorText = [NSString stringWithFormat:@"Today at the grocery store, you bought %lu items, and spent a total of $%.2f.", self.itemTally, priceInDollars];
-        [self.snippets addObject:statPage];
+        //        CGFloat priceInDollars = self.totalCost / 100.0;
+        //        AMYStorySnippets *statPage = [[AMYStorySnippets alloc] init];
+        //        statPage.flavorText = [NSString stringWithFormat:@"Today at the grocery store, you bought %lu items, and spent a total of $%.2f.", self.itemTally, priceInDollars];
+        //        [self.snippets addObject:statPage];
         
         AMYStorySnippets *conclusion = [[AMYStorySnippets alloc] init];
         conclusion.flavorText = @"You've reached the end.";
@@ -185,7 +205,7 @@
     //the choice index number can be used to figure out which of the appropriate snippets to show next
     
     [self.tableView reloadData];
-//    [self.tableView setContentOffset:CGPointZero animated:YES];
+    //    [self.tableView setContentOffset:CGPointZero animated:YES];
     //This ignores the nav bar and goes right to the very top of the screen
 }
 
@@ -198,6 +218,8 @@
  set up story method... something to pass to the tableViewController every time, I guess.  to start i can probably just have one for like the six snippets i've got, do a generic storySetup method like i have colorSetup and gameSetup methods in colorMatch.
  make a branch of current master, called original-work or something, and then delete the AMYItems and Character and stuff for now.  I can always import them in later.
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
+ It would be nice to have a 'replay' button at the end of these little games, instead of restarting the sim each time
+
  
  some generic stories I can provide with the template:
  if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.

@@ -1,10 +1,7 @@
 id,comment,choice1,choice2,choice3,choice4,choice5,choice6,story
 0,intro,Begin,,,,,,Your Day Off
 1,decision point 0,Go to the park. | 2,Shop a little. | 3,Stay in and watch tv. | 4,,,,What would you like to do today?
-2,park,,,,,,,"You had an enjoyable day at the park!  You took in a lot of nature, frolicked when you could, and even had a nice barbecue.  Returning home, you feel exhausted and completely satisfied."
-3,shopping,,,,,,,"After a full day of shopping, you bring home quite the haul, full of nice deals.  Pleased and proud, you show off your purchases, and after a day on your feet feel more than ready for bed."
-4,home,,,,,,,"Once you finally get up off the couch, you stretch mightily.  What a productive lazy day!  You caught up on two shows, and started a new one.  Satisfied, you’re ready for bed."
-5,,,,,,,,
-6,,,,,,,,
-7,,,,,,,,
-8,,,,,,,,
+2,branch - park,,,,,,,"You had an enjoyable day at the park!  You took in a lot of nature, frolicked when you could, and even had a nice barbecue.  Returning home, you feel exhausted and completely satisfied."
+3,branch - shopping,,,,,,,"After a full day of shopping, you bring home quite the haul, full of nice deals.  Pleased and proud, you show off your purchases, and after a day on your feet feel more than ready for bed."
+4,branch - home,,,,,,,"Once you finally get up off the couch, you stretch mightily.  What a productive lazy day!  You caught up on two shows, and started a new one.  Satisfied, you’re ready for bed."
+5,ending,,,,,,,"Your bed is freshly made, and you yawn as you turn down the covers.  You lay down and let your body sink into your comfortable bed, and you’re fast asleep almost before you head hits the pillow, dreaming of a good night’s sleep."

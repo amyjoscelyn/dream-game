@@ -66,11 +66,64 @@
             if (choice1.count == 1)
             {
                 [choice1 addObject:@""];
+            }
+            _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1[0] followingSnippet:choice1[1]];
+            [_choices addObject:_choice1];
+        }
+        if (![choice2[0] isEqualToString:@""])
+        {
+            if (choice2.count == 1)
+            {
+                [choice2 addObject:@""];
+            }
+            _choice2 = [[AMYChoice alloc] initWithIndexNumber:2 text:choice2[0] followingSnippet:choice2[1]];
+            [_choices addObject:_choice2];
+        }
+        if (![choice3[0] isEqualToString:@""])
+        {
+            if (choice3.count == 1)
+            {
+                [choice3 addObject:@""];
+            }
+            _choice3 = [[AMYChoice alloc] initWithIndexNumber:3 text:choice3[0] followingSnippet:choice3[1]];
+            [_choices addObject:_choice3];
+        }
+        if (![choice4[0] isEqualToString:@""])
+        {
+            if (choice4.count == 1)
+            {
+                [choice4 addObject:@""];
+            }
+            _choice4 = [[AMYChoice alloc] initWithIndexNumber:4 text:choice4[0] followingSnippet:choice4[1]];
+            [_choices addObject:_choice4];
+        }
+        if (![choice5[0] isEqualToString:@""])
+        {
+            if (choice5.count == 1)
+            {
+                [choice5 addObject:@""];
+            }
+            _choice5 = [[AMYChoice alloc] initWithIndexNumber:5 text:choice5[0] followingSnippet:choice5[1]];
+            [_choices addObject:_choice5];
+        }
+        if (![choice6[0] isEqualToString:@""])
+        {
+            if (choice6.count == 1)
+            {
+                [choice6 addObject:@""];
+            }
+            _choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:choice6[0] followingSnippet:choice6[1]];
+            [_choices addObject:_choice6];
+        }
+        
+        /*if (![choice1[0] isEqualToString:@""])
+        {
+            if (choice1.count == 1)
+            {
+                [choice1 addObject:@""];
                 [choice1 addObject:@""];
             }
             //                    NSLog(@"%@ | %@ | %@", choice1[0], choice1[1], choice1[2]);
-            
-            //I need to make this method not incude three things within the array parsed out of choices, but just two--the text, and where it's going next (as in, which snippet to add to the snippets array to be read in the story)
             
             _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1[0] price:choice1[1] numberOfItem:choice1[2]];
             [_choices addObject:_choice1];
@@ -124,7 +177,7 @@
             }
             _choice6 = [[AMYChoice alloc] initWithIndexNumber:6 text:choice6[0] price:choice6[1] numberOfItem:choice6[2]];
             [_choices addObject:_choice6];
-        }
+        }*/
     }
     return self;
 }

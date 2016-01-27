@@ -16,23 +16,38 @@
     return self;
 }
 
-- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem
+//- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem
+//{
+//    self = [super init];
+//    
+//    if (self)
+//    {
+//        if (![price isEqualToString:@""])
+//        {
+//            _price = price.integerValue;
+//        }
+//        if (![numberOfItem isEqualToString:@""])
+//        {
+//            _numberOfItem = numberOfItem.integerValue;
+//        }
+//        _indexNumber = indexNumber;
+//        _text = text;
+//    }
+//    return self;
+//}
+
+- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text followingSnippet:(NSString *)followingSnippet
 {
     self = [super init];
     
     if (self)
     {
-        if (![price isEqualToString:@""])
+        if (![followingSnippet isEqualToString:@""])
         {
-            _price = price.integerValue;
+            _followingSnippet = followingSnippet.integerValue;
         }
-        if (![numberOfItem isEqualToString:@""])
-        {
-            _numberOfItem = numberOfItem.integerValue;
-        }
-        
-        _indexNumber = indexNumber;
         _text = text;
+        _indexNumber = indexNumber;
     }
     return self;
 }
