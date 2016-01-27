@@ -27,7 +27,7 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"a-grocery-trip2" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     

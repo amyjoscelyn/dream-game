@@ -21,6 +21,7 @@
 		3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */; };
 		3D7F673B1C559195000AEB96 /* example.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F673A1C559195000AEB96 /* example.csv */; };
 		3D7F673D1C55927B000AEB96 /* choicesInDream.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F673C1C55927B000AEB96 /* choicesInDream.csv */; };
+		3DFEC0E81C594E8F005F1924 /* branching.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DFEC0E71C594E8F005F1924 /* branching.csv */; };
 		691742A96CE385055450F671 /* libPods-DreamGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
 		3D7F673A1C559195000AEB96 /* example.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.csv; sourceTree = "<group>"; };
 		3D7F673C1C55927B000AEB96 /* choicesInDream.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = choicesInDream.csv; sourceTree = "<group>"; };
+		3DFEC0E71C594E8F005F1924 /* branching.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = branching.csv; sourceTree = "<group>"; };
 		7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8231DBC9ECED056C7715B9D4 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
 		F8AE51E7B2D1ACD486576B39 /* Pods-DreamGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
 				3D7F673A1C559195000AEB96 /* example.csv */,
 				3D7F673C1C55927B000AEB96 /* choicesInDream.csv */,
+				3DFEC0E71C594E8F005F1924 /* branching.csv */,
 				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
 			);
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
+				3DFEC0E81C594E8F005F1924 /* branching.csv in Resources */,
 				3D7F673B1C559195000AEB96 /* example.csv in Resources */,
 				3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,

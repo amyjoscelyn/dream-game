@@ -70,6 +70,8 @@
             }
             //                    NSLog(@"%@ | %@ | %@", choice1[0], choice1[1], choice1[2]);
             
+            //I need to make this method not incude three things within the array parsed out of choices, but just two--the text, and where it's going next (as in, which snippet to add to the snippets array to be read in the story)
+            
             _choice1 = [[AMYChoice alloc] initWithIndexNumber:1 text:choice1[0] price:choice1[1] numberOfItem:choice1[2]];
             [_choices addObject:_choice1];
         }
