@@ -29,7 +29,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching1" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
@@ -172,7 +172,7 @@
     NSUInteger row = indexPath.row;
     
     AMYStorySnippets *snippet = self.snippets[0];
-    AMYChoice *selectedChoice = snippet.choices[row]; //do i ever use this?
+    AMYChoice *selectedChoice = snippet.choices[row];
     
     for (AMYStorySnippets *snippet in self.branchingOptions)
     {
