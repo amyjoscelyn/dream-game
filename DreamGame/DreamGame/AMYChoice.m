@@ -13,41 +13,39 @@
 - (instancetype)init
 {
     self = [super init];
+    if (self)
+    {
+        _content = @"Continue";
+    }
+    
     return self;
 }
 
-//- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem
-//{
-//    self = [super init];
-//    
-//    if (self)
-//    {
-//        if (![price isEqualToString:@""])
-//        {
-//            _price = price.integerValue;
-//        }
-//        if (![numberOfItem isEqualToString:@""])
-//        {
-//            _numberOfItem = numberOfItem.integerValue;
-//        }
-//        _indexNumber = indexNumber;
-//        _text = text;
-//    }
-//    return self;
-//}
-
-- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text followingSnippet:(NSString *)followingSnippet
+- (instancetype)initWithChoiceID:(NSString *)choiceID comment:(NSString *)comment requirements:(NSString *)requirements requirementValues:(NSString *)requirementValues effectIDs:(NSString *)effectIDs destinationID:(NSString *)destinationID content:(NSString *)content
 {
     self = [super init];
-    
     if (self)
     {
-        if (![followingSnippet isEqualToString:@""])
+        _choiceID = choiceID;
+        _comment = comment;
+        _destinationID = destinationID;
+        _content = content;
+        
+        //for requirements, since it's becoming a dictionary, there must be an equal amount of requirements to requirementValues
+        _requirements = [[NSMutableDictionary alloc] init];
+        
+        NSMutableArray *arrayOfReqs = [[requirements componentsSeparatedByString:@","] mutableCopy];
+        NSMutableArray *arrayOfReqValues = [[requirementValues componentsSeparatedByString:@","] mutableCopy];
+        
+        if (arrayOfReqs.count == arrayOfReqValues.count && arrayOfReqs.count)
         {
-            _followingSnippet = followingSnippet.integerValue;
+            for (NSUInteger i = 0; i < arrayOfReqs.count; i++)
+            {
+                [_requirements setObject:arrayOfReqs[i] forKey:arrayOfReqValues[i]];
+            }
         }
-        _text = text;
-        _indexNumber = indexNumber;
+        
+        //_effectIDs = effectIDs;
     }
     return self;
 }

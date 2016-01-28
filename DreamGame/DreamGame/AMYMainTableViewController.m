@@ -13,10 +13,10 @@
 
 @interface AMYMainTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *snippets;
+@property (nonatomic, strong) NSMutableArray *questions;
 @property (nonatomic, strong) NSMutableArray *branchingOptions;
-//@property (nonatomic) NSUInteger totalCost;
-//@property (nonatomic) NSUInteger itemTally;
+@property (nonatomic, strong) NSMutableArray *choices;
+@property (nonatomic, strong) NSMutableArray *effects;
 @property (nonatomic) BOOL endingTriggered;
 
 @end
@@ -28,33 +28,32 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    //this parses through the given csv
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"question-Questions" ofType:@"csv"];
-    NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
-    NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
+    //this parses through the given csv--Questions
+    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
+    NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
+    NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    //    self.totalCost = 0;
-    //    self.itemTally = 0;
-    self.snippets = [[NSMutableArray alloc] init];
-    self.branchingOptions = [[NSMutableArray alloc] init];
+    //parses through the Choices csv
+    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
+    NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
+    NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    [csvRows removeObjectAtIndex:0];
+    self.questions = [[NSMutableArray alloc] init];
+    self.branchingOptions = [[NSMutableArray alloc] init]; //I don't know if I need this now, with my separate tables and unique codes and all, and every option with a destination
+    self.choices = [[NSMutableArray alloc] init];
     
-    for (NSUInteger i = 0; i < csvRows.count; i++)
+    [questionCSVRows removeObjectAtIndex:0];
+    [choiceCSVRows removeObjectAtIndex:0];
+    
+    for (NSUInteger i = 0; i < questionCSVRows.count; i++)
     {
-        NSArray *rawSnippet = csvRows[i];
-        NSInteger indexNumber = [rawSnippet[0] integerValue];
-        NSMutableArray *choices = [[NSMutableArray alloc] init];
+        NSArray *question = questionCSVRows[i];
+//        
+//        NSMutableArray *choices = [[question[4] componentsSeparatedByString:@","] mutableCopy];
         
-        for (NSUInteger i = 2; i < 8; i++)
-        {
-            NSArray *snippetByComponents = [rawSnippet[i] componentsSeparatedByString:@" | "];
-            
-            [choices addObject:snippetByComponents];
-        }
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithFlavorText:rawSnippet[8] indexNumber:indexNumber choices:choices];
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:question[0] comment:question[1] effects:question[2] choices:question[3] destination:question[4] content:question[5]];
         
-        NSString *comment = rawSnippet[1];
+        NSString *comment = question[1];
         
         if ([comment containsString:@" - "])
         {
@@ -62,10 +61,10 @@
         }
         else
         {
-            [self.snippets addObject:snippet];
+            [self.questions addObject:snippet];
         }
     }
-        NSLog(@"there are %lu snippets \n there are %lu branching options", self.snippets.count, self.branchingOptions.count);
+        NSLog(@"there are %lu snippets \n there are %lu branching options", self.questions.count, self.branchingOptions.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -78,17 +77,17 @@
     NSInteger numberOfSections = 1;
     if (!section == 0)
     {
-        AMYStorySnippets *snippet = [self.snippets firstObject];
-        NSUInteger numberOfChoices = snippet.choices.count;
+        AMYStorySnippets *question = [self.questions firstObject];
+        NSUInteger numberOfChoices = question.choices.count;
         
         if (!numberOfChoices)
         {
-            if (![snippet.flavorText isEqualToString:@"You've reached the end."])
+            if (![question.content isEqualToString:@"You've reached the end."])
             {
-                snippet.choices = [[NSMutableArray alloc] init];
-                //                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" price:@"" numberOfItem:@""];
-                snippet.choice1 = [[AMYChoice alloc] initWithIndexNumber:0 text:@"Continue" followingSnippet:@""];
-                [snippet.choices addObject:snippet.choice1];
+                question.choices = [[NSMutableArray alloc] init];
+                
+                question.choice1 = [[AMYChoice alloc] init];
+                [question.choices addObject:question.choice1];
                 
                 numberOfChoices++;
                 
@@ -108,20 +107,20 @@
     
     //    NSUInteger lightGreen = 75;
 //    NSUInteger green = 135;
-        NSUInteger blue = 250;
+//        NSUInteger blue = 250;
     //    NSUInteger purple = 300;
-    //    NSUInteger red = 359;
+        NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
 //    CGFloat textHue = green/359.0;
-        CGFloat textHue = blue/359.0;
+//        CGFloat textHue = blue/359.0;
     //    CGFloat textHue = purple/359.0;
-    //    CGFloat textHue = red/359.0;
+        CGFloat textHue = red/359.0;
     
     if (section == 0)
     {
-        AMYStorySnippets *snippet = self.snippets[(NSUInteger)section];
-        cell.textLabel.text = snippet.flavorText;
+        AMYStorySnippets *snippet = self.questions[(NSUInteger)section];
+        cell.textLabel.text = snippet.content;
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.detailTextLabel.hidden = YES;
         cell.textLabel.numberOfLines = 0;
@@ -131,13 +130,13 @@
     }
     else if (section == 1)
     {
-        AMYStorySnippets *snippet = [self.snippets firstObject];
+        AMYStorySnippets *snippet = [self.questions firstObject];
         AMYChoice *choice = snippet.choices[(NSUInteger)row];
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
-        cell.textLabel.text = choice.text;
+        cell.textLabel.text = choice.content;
         cell.textLabel.numberOfLines = 0;
         
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", choice.indexNumber];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", choice.choiceID];
         cell.detailTextLabel.hidden = YES;
         
         //if price and tally are blank, they should not cause extra cells to appear
@@ -171,38 +170,26 @@
 {
     NSUInteger row = indexPath.row;
     
-    AMYStorySnippets *snippet = self.snippets[0];
+    AMYStorySnippets *snippet = self.questions[0];
     AMYChoice *selectedChoice = snippet.choices[row];
     
     for (AMYStorySnippets *snippet in self.branchingOptions)
     {
-        if (snippet.snippetIndexNumber == selectedChoice.followingSnippet)
+        if (snippet.questionID == selectedChoice.destinationID)
         {
-            [self.snippets insertObject:snippet atIndex:1];
+            [self.questions insertObject:snippet atIndex:1];
         }
     }
-    //    self.totalCost += selectedChoice.price;
-    //    self.itemTally += selectedChoice.numberOfItem;
     
-    [self.snippets removeObjectAtIndex:0];
-    if (!self.snippets.count && self.endingTriggered == NO)
+    [self.questions removeObjectAtIndex:0];
+    if (!self.questions.count && self.endingTriggered == NO)
     {
-        //        CGFloat priceInDollars = self.totalCost / 100.0;
-        //        AMYStorySnippets *statPage = [[AMYStorySnippets alloc] init];
-        //        statPage.flavorText = [NSString stringWithFormat:@"Today at the grocery store, you bought %lu items, and spent a total of $%.2f.", self.itemTally, priceInDollars];
-        //        [self.snippets addObject:statPage];
-        
         AMYStorySnippets *conclusion = [[AMYStorySnippets alloc] init];
-        conclusion.flavorText = @"You've reached the end.";
-        [self.snippets addObject:conclusion];
+        conclusion.content = @"You've reached the end.";
+        [self.questions addObject:conclusion];
         
         self.endingTriggered = YES;
     }
-    
-    //if we're at the register, take the total price and have the cashier ask for that much.  add this scene into the story.
-    //for now, just add a page at the end that says how much you spent and how many items you bought
-    
-    //the choice index number can be used to figure out which of the appropriate snippets to show next
     
     [self.tableView reloadData];
     //    [self.tableView setContentOffset:CGPointZero animated:YES];

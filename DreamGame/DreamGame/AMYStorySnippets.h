@@ -11,9 +11,11 @@
 
 @interface AMYStorySnippets : NSObject
 
-@property (nonatomic, strong) NSString *flavorText;
-@property (nonatomic) NSUInteger snippetIndexNumber;
-
+@property (nonatomic, strong) NSString *questionID;
+@property (nonatomic, strong) NSString *comment;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *destinationID;
+@property (nonatomic, strong) NSMutableArray *effects;
 @property (nonatomic, strong) NSMutableArray *choices;
 
 @property (nonatomic, strong) AMYChoice *choice1;
@@ -23,8 +25,10 @@
 @property (nonatomic, strong) AMYChoice *choice5;
 @property (nonatomic, strong) AMYChoice *choice6;
 
-- initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber;
 
-- (id)initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber choices:(NSArray *)choices;
 
+- initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber; //do I still need this?  I think the answer is yes, for my programmatically inserted ones, but I can probably do without and just use the other one
+
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSString *)choiceIDs destination:(NSString *)destinationID content:(NSString *)content;
+                                                                                               
 @end

@@ -10,15 +10,15 @@
 
 @interface AMYChoice : NSObject
 
-@property (nonatomic) NSUInteger indexNumber;
-@property (nonatomic, strong) NSString *text;
-@property (nonatomic) NSInteger followingSnippet;
+@property (nonatomic, strong) NSString *choiceID;
+@property (nonatomic, strong) NSString *comment;
+@property (nonatomic, strong) NSMutableDictionary *requirements;
+@property (nonatomic, strong) NSMutableArray *effectIDs;
+@property (nonatomic, strong) NSString *destinationID;
+@property (nonatomic, strong) NSString *content;
 
-//@property (nonatomic) NSInteger price;
-//@property (nonatomic) NSInteger numberOfItem;
+- (instancetype)init;
 
-//- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text price:(NSString *)price numberOfItem:(NSString *)numberOfItem;
-
-- (instancetype)initWithIndexNumber:(NSUInteger)indexNumber text:(NSString *)text followingSnippet:(NSString *)followingSnippet;
+- (instancetype)initWithChoiceID:(NSString *)choiceID comment:(NSString *)comment requirements:(NSString *)requirements requirementValues:(NSString *)requirementValues effectIDs:(NSString *)effectIDs destinationID:(NSString *)destinationID content:(NSString *)content;
 
 @end
