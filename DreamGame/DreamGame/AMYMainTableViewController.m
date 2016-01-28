@@ -29,7 +29,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching1" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching2" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
@@ -65,7 +65,7 @@
             [self.snippets addObject:snippet];
         }
     }
-    //    NSLog(@"there are %lu snippets", self.snippets.count);
+        NSLog(@"there are %lu snippets \n there are %lu branching options", self.snippets.count, self.branchingOptions.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -107,14 +107,14 @@
     NSInteger row = indexPath.row;
     
     //    NSUInteger lightGreen = 75;
-    NSUInteger green = 135;
-    //    NSUInteger blue = 250;
+//    NSUInteger green = 135;
+        NSUInteger blue = 250;
     //    NSUInteger purple = 300;
     //    NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
-    CGFloat textHue = green/359.0;
-    //    CGFloat textHue = blue/359.0;
+//    CGFloat textHue = green/359.0;
+        CGFloat textHue = blue/359.0;
     //    CGFloat textHue = purple/359.0;
     //    CGFloat textHue = red/359.0;
     
