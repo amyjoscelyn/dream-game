@@ -29,7 +29,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"branching2" ofType:@"csv"];
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"question-Questions" ofType:@"csv"];
     NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
     NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
