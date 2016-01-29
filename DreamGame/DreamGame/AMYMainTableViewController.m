@@ -14,9 +14,10 @@
 @interface AMYMainTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *questions;
-@property (nonatomic, strong) NSMutableArray *branchingOptions;
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) NSMutableArray *effects;
+@property (nonatomic, strong) NSMutableArray *convergentStory;
+@property (nonatomic, strong) NSMutableArray *branchingOptions;
 @property (nonatomic) BOOL endingTriggered;
 
 @end
@@ -28,32 +29,76 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    //this parses through the given csv--Questions
-    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
-    NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
-    NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
-    
-    //parses through the Choices csv
-    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
-    NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
-    NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
+    //this parses through the given csv
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"qceModel" ofType:@"csv"];
+    NSURL *csvURL = [NSURL fileURLWithPath:csvPath];
+    NSMutableArray *csvRows = [[NSArray arrayWithContentsOfCSVURL:csvURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
     self.questions = [[NSMutableArray alloc] init];
-    self.branchingOptions = [[NSMutableArray alloc] init]; //I don't know if I need this now, with my separate tables and unique codes and all, and every option with a destination
     self.choices = [[NSMutableArray alloc] init];
+    self.effects = [[NSMutableArray alloc] init];
+    self.convergentStory = [[NSMutableArray alloc] init];
+    self.branchingOptions = [[NSMutableArray alloc] init];
     
-    [questionCSVRows removeObjectAtIndex:0];
-    [choiceCSVRows removeObjectAtIndex:0];
+    /*
+     okay.  So we've got a huge list of these rows, all with different types.  What I want to do is separate them by type.
+     For that, I can take a look at their ID, and if it begins with a q, it should go into a questions array; c for choice; and e into effect.
+     I have properties for each of those already, but those are to contain snippets, I guess... well, actually, I only need snippets to go into the questions/branching options arrays, because they're the only ones that deal firsthand with those arrays.  The choices and effects property arrays are unused so far, and in fact, every time we handle choices and effects, it's within context of those other two property arrays, so they are fair game!
+     This being the case, I can iterate through the parsed csv info right here, right now, and move the choices into the choices array, and effects into effects.  This way, later on, when I am iterating through all of the choices/effects to find a single ID, I don't have to go through every single line of the raw csv to do it.
+     */
     
-    for (NSUInteger i = 0; i < questionCSVRows.count; i++)
+    [csvRows removeObjectAtIndex:0];
+    
+    for (NSArray *csvRow in csvRows)
     {
-        NSArray *question = questionCSVRows[i];
-//        
-//        NSMutableArray *choices = [[question[4] componentsSeparatedByString:@","] mutableCopy];
+        NSString *identification = csvRow[0];
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:question[0] comment:question[1] effects:question[2] choices:question[3] destination:question[4] content:question[5]];
+        if ([identification containsString:@"q"])
+        {
+            [self.questions addObject:csvRow];
+        }
+        else if ([identification containsString:@"c"])
+        {
+            [self.choices addObject:csvRow];
+//            [csvRows removeObject:csvRow];
+        }
+        else if ([identification containsString:@"e"])
+        {
+            [self.effects addObject:csvRow];
+        }
+    }
+    
+    for (NSUInteger i = 0; i < self.questions.count; i++)
+    {
+        NSArray *row = self.questions[i];
         
-        NSString *comment = question[1];
+        NSString *identification = row[0];
+        NSString *comment = row[1];
+        //        NSString *requirement = row[2];
+        //        NSString *requirementValue = row[3];
+        NSMutableArray *effectIDsAsStrings = [[row[4] componentsSeparatedByString:@","] mutableCopy];
+        NSMutableArray *choiceIDsAsStrings = [[row[5] componentsSeparatedByString:@","] mutableCopy];
+        NSString *destinationID = row[6];
+        NSString *content = row[7];
+        
+        NSMutableArray *choices = [[NSMutableArray alloc] init];
+        
+        if (choiceIDsAsStrings.count)
+        {
+            for (NSString *choiceID in choiceIDsAsStrings)
+            {
+                for (NSArray *choice in self.choices)
+                {
+                    NSString *identification = choice[0];
+                    if ([choiceID isEqualToString:identification])
+                    {
+                        [choices addObject:choice];
+                    }
+                }
+            } //and then do this exact same thing for effects.
+        }
+        
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:identification comment:comment effects:effectIDsAsStrings choices:choices destination:destinationID content:content];
         
         if ([comment containsString:@" - "])
         {
@@ -61,10 +106,10 @@
         }
         else
         {
-            [self.questions addObject:snippet];
+            [self.convergentStory addObject:snippet];
         }
     }
-        NSLog(@"there are %lu snippets \n there are %lu branching options", self.questions.count, self.branchingOptions.count);
+    NSLog(@"there are %lu converging storypoints and %lu branching options \n there are %lu questions, %lu choices, and %lu effects", self.convergentStory.count, self.branchingOptions.count, self.questions.count, self.choices.count, self.effects.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -106,16 +151,16 @@
     NSInteger row = indexPath.row;
     
     //    NSUInteger lightGreen = 75;
-//    NSUInteger green = 135;
-//        NSUInteger blue = 250;
+    //    NSUInteger green = 135;
+    //        NSUInteger blue = 250;
     //    NSUInteger purple = 300;
-        NSUInteger red = 359;
+    NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
-//    CGFloat textHue = green/359.0;
-//        CGFloat textHue = blue/359.0;
+    //    CGFloat textHue = green/359.0;
+    //        CGFloat textHue = blue/359.0;
     //    CGFloat textHue = purple/359.0;
-        CGFloat textHue = red/359.0;
+    CGFloat textHue = red/359.0;
     
     if (section == 0)
     {
@@ -206,7 +251,7 @@
  make a branch of current master, called original-work or something, and then delete the AMYItems and Character and stuff for now.  I can always import them in later.
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
  It would be nice to have a 'replay' button at the end of these little games, instead of restarting the sim each time
-
+ 
  
  some generic stories I can provide with the template:
  if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.

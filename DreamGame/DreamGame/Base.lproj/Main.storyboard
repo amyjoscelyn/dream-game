@@ -8,7 +8,6 @@
         <!--Story Table View Controller-->
         <scene sceneID="hEh-hy-NAP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ViK-ax-vGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="rSJ-Kc-yDK" customClass="AMYStoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C9t-nk-oOc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -80,6 +79,7 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViK-ax-vGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="242" y="184"/>
         </scene>
