@@ -29,20 +29,20 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv--Questions
-    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Questions" ofType:@"csv"];
+    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Questions2" ofType:@"csv"];
     NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
     NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
     //parses through the Choices csv
-    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Choices" ofType:@"csv"];
+    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Choices1" ofType:@"csv"];
     NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
     NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    //    NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
+//        NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
     
     self.mainStorypoints = [[NSMutableArray alloc] init];
-    self.branchingOptions = [[NSMutableArray alloc] init]; //I don't know if I need this now, with my separate tables and unique codes and all, and every option with a destination
-    self.choices = [[NSMutableArray alloc] init]; //do I need this?
+    self.branchingOptions = [[NSMutableArray alloc] init];
+//    self.choices = [[NSMutableArray alloc] init]; //do I need this?
     
     [questionCSVRows removeObjectAtIndex:0];
     [choiceCSVRows removeObjectAtIndex:0];
@@ -71,10 +71,9 @@
         NSString *effects = question[2];
         NSString *destination = question[4];
         NSString *content = question[5];
+//        NSLog(@"choices: %@", choices);
         
         AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment effects:effects choices:choices destination:destination content:content];
-        
-        
         
         if ([comment containsString:@" - "])
         {
@@ -159,8 +158,6 @@
         
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", choice.choiceID];
         cell.detailTextLabel.hidden = YES;
-        
-        //if price and tally are blank, they should not cause extra cells to appear
     }
     return cell;
 }

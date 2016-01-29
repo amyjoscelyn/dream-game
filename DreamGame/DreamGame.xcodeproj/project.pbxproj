@@ -22,6 +22,8 @@
 		3D8362EA1C5B0D5F00307390 /* question-Choices.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E71C5B0D5F00307390 /* question-Choices.csv */; };
 		3D8362EB1C5B0D5F00307390 /* question-Effects.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E81C5B0D5F00307390 /* question-Effects.csv */; };
 		3D8362EC1C5B0D5F00307390 /* question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E91C5B0D5F00307390 /* question-Questions.csv */; };
+		3D8362EE1C5C1C5700307390 /* question-Choices1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362ED1C5C1C5700307390 /* question-Choices1.csv */; };
+		3D8362F01C5C1C6500307390 /* question-Questions2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362EF1C5C1C6500307390 /* question-Questions2.csv */; };
 		3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DFEC0EB1C59B30F005F1924 /* branching2.csv */; };
 		691742A96CE385055450F671 /* libPods-DreamGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		3D8362E71C5B0D5F00307390 /* question-Choices.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices.csv"; sourceTree = "<group>"; };
 		3D8362E81C5B0D5F00307390 /* question-Effects.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Effects.csv"; sourceTree = "<group>"; };
 		3D8362E91C5B0D5F00307390 /* question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions.csv"; sourceTree = "<group>"; };
+		3D8362ED1C5C1C5700307390 /* question-Choices1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices1.csv"; sourceTree = "<group>"; };
+		3D8362EF1C5C1C6500307390 /* question-Questions2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions2.csv"; sourceTree = "<group>"; };
 		3DFEC0EB1C59B30F005F1924 /* branching2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = branching2.csv; sourceTree = "<group>"; };
 		7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8231DBC9ECED056C7715B9D4 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +141,10 @@
 				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
 				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
 				3D8362E71C5B0D5F00307390 /* question-Choices.csv */,
+				3D8362ED1C5C1C5700307390 /* question-Choices1.csv */,
 				3D8362E81C5B0D5F00307390 /* question-Effects.csv */,
 				3D8362E91C5B0D5F00307390 /* question-Questions.csv */,
+				3D8362EF1C5C1C6500307390 /* question-Questions2.csv */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
 			);
 			path = DreamGame;
@@ -264,9 +270,11 @@
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
 				3D8362EA1C5B0D5F00307390 /* question-Choices.csv in Resources */,
 				3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */,
+				3D8362F01C5C1C6500307390 /* question-Questions2.csv in Resources */,
 				3D8362EB1C5B0D5F00307390 /* question-Effects.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
 				3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */,
+				3D8362EE1C5C1C5700307390 /* question-Choices1.csv in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
 				3D8362EC1C5B0D5F00307390 /* question-Questions.csv in Resources */,
 			);

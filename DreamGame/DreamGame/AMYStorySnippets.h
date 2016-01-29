@@ -25,10 +25,6 @@
 @property (nonatomic, strong) AMYChoice *choice5;
 @property (nonatomic, strong) AMYChoice *choice6;
 
-
-
-//- initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber; //do I still need this?  I think the answer is yes, for my programmatically inserted ones, but I can probably do without and just use the other one
-
 - (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content;
                                                                                                
 @end
