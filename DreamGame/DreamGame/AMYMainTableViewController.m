@@ -13,7 +13,7 @@
 
 @interface AMYMainTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *questions;
+@property (nonatomic, strong) NSMutableArray *mainStorypoints;
 @property (nonatomic, strong) NSMutableArray *branchingOptions;
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) NSMutableArray *effects;
@@ -29,18 +29,18 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv--Questions
-    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
+    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Questions" ofType:@"csv"];
     NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
     NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
     //parses through the Choices csv
-    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"new-csv-model/question-Questions" ofType:@"csv"];
+    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Choices" ofType:@"csv"];
     NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
     NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-    self.questions = [[NSMutableArray alloc] init];
+    self.mainStorypoints = [[NSMutableArray alloc] init];
     self.branchingOptions = [[NSMutableArray alloc] init]; //I don't know if I need this now, with my separate tables and unique codes and all, and every option with a destination
-    self.choices = [[NSMutableArray alloc] init];
+    self.choices = [[NSMutableArray alloc] init]; //do I need this?
     
     [questionCSVRows removeObjectAtIndex:0];
     [choiceCSVRows removeObjectAtIndex:0];
@@ -48,10 +48,10 @@
     for (NSUInteger i = 0; i < questionCSVRows.count; i++)
     {
         NSArray *question = questionCSVRows[i];
-//        
-//        NSMutableArray *choices = [[question[4] componentsSeparatedByString:@","] mutableCopy];
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:question[0] comment:question[1] effects:question[2] choices:question[3] destination:question[4] content:question[5]];
+        NSMutableArray *choices = [[question[4] componentsSeparatedByString:@","] mutableCopy];
+        
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:question[0] comment:question[1] effects:question[2] choices:choices destination:question[4] content:question[5]];
         
         NSString *comment = question[1];
         
@@ -61,10 +61,10 @@
         }
         else
         {
-            [self.questions addObject:snippet];
+            [self.mainStorypoints addObject:snippet];
         }
     }
-        NSLog(@"there are %lu snippets \n there are %lu branching options", self.questions.count, self.branchingOptions.count);
+        NSLog(@"there are %lu main storypoints and %lu branching options", self.mainStorypoints.count, self.branchingOptions.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -77,7 +77,7 @@
     NSInteger numberOfSections = 1;
     if (!section == 0)
     {
-        AMYStorySnippets *question = [self.questions firstObject];
+        AMYStorySnippets *question = [self.mainStorypoints firstObject];
         NSUInteger numberOfChoices = question.choices.count;
         
         if (!numberOfChoices)
@@ -119,7 +119,7 @@
     
     if (section == 0)
     {
-        AMYStorySnippets *snippet = self.questions[(NSUInteger)section];
+        AMYStorySnippets *snippet = self.mainStorypoints[(NSUInteger)section];
         cell.textLabel.text = snippet.content;
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.detailTextLabel.hidden = YES;
@@ -130,7 +130,7 @@
     }
     else if (section == 1)
     {
-        AMYStorySnippets *snippet = [self.questions firstObject];
+        AMYStorySnippets *snippet = [self.mainStorypoints firstObject];
         AMYChoice *choice = snippet.choices[(NSUInteger)row];
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
         cell.textLabel.text = choice.content;
@@ -170,23 +170,23 @@
 {
     NSUInteger row = indexPath.row;
     
-    AMYStorySnippets *snippet = self.questions[0];
+    AMYStorySnippets *snippet = self.mainStorypoints[0];
     AMYChoice *selectedChoice = snippet.choices[row];
     
     for (AMYStorySnippets *snippet in self.branchingOptions)
     {
         if (snippet.questionID == selectedChoice.destinationID)
         {
-            [self.questions insertObject:snippet atIndex:1];
+            [self.mainStorypoints insertObject:snippet atIndex:1];
         }
     }
     
-    [self.questions removeObjectAtIndex:0];
-    if (!self.questions.count && self.endingTriggered == NO)
+    [self.mainStorypoints removeObjectAtIndex:0];
+    if (!self.mainStorypoints.count && self.endingTriggered == NO)
     {
         AMYStorySnippets *conclusion = [[AMYStorySnippets alloc] init];
         conclusion.content = @"You've reached the end.";
-        [self.questions addObject:conclusion];
+        [self.mainStorypoints addObject:conclusion];
         
         self.endingTriggered = YES;
     }

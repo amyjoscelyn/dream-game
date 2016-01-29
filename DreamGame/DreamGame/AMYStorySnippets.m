@@ -29,7 +29,7 @@
     return self;
 }*/
 
-- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSString *)choiceIDs destination:(NSString *)destinationID content:(NSString *)content
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSArray *)choiceIDs destination:(NSString *)destinationID content:(NSString *)content
 {
     self = [super init];
     if (self)
@@ -39,9 +39,7 @@
         _destinationID = destinationID;
         _content = content;
         
-        /*
-         we need to initialize the choices, by getting them from that separate table csv, looking them up by choiceID, and gathering their information here... not a problem at all!
-         */
+        NSLog(@"choices: %@", choiceIDs);
         
         
         //_effects = effects;
