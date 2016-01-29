@@ -38,6 +38,8 @@
     NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
     NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
+    //    NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
+    
     self.mainStorypoints = [[NSMutableArray alloc] init];
     self.branchingOptions = [[NSMutableArray alloc] init]; //I don't know if I need this now, with my separate tables and unique codes and all, and every option with a destination
     self.choices = [[NSMutableArray alloc] init]; //do I need this?
@@ -48,12 +50,31 @@
     for (NSUInteger i = 0; i < questionCSVRows.count; i++)
     {
         NSArray *question = questionCSVRows[i];
+        NSMutableArray *choices = [[NSMutableArray alloc] init];
         
-        NSMutableArray *choices = [[question[4] componentsSeparatedByString:@","] mutableCopy];
+        NSMutableArray *choiceIDs = [[question[3] componentsSeparatedByString:@","] mutableCopy];
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:question[0] comment:question[1] effects:question[2] choices:choices destination:question[4] content:question[5]];
-        
+        for (NSString *choiceID in choiceIDs)
+        {
+            for (NSArray *row in choiceCSVRows)
+            {
+                NSString *rowID = row[0];
+                
+                if ([choiceID isEqualToString:rowID])
+                {
+                    [choices addObject:row];
+                }
+            }
+        }
+        NSString *questionID = question[0];
         NSString *comment = question[1];
+        NSString *effects = question[2];
+        NSString *destination = question[4];
+        NSString *content = question[5];
+        
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment effects:effects choices:choices destination:destination content:content];
+        
+        
         
         if ([comment containsString:@" - "])
         {
@@ -64,7 +85,7 @@
             [self.mainStorypoints addObject:snippet];
         }
     }
-        NSLog(@"there are %lu main storypoints and %lu branching options", self.mainStorypoints.count, self.branchingOptions.count);
+    //        NSLog(@"there are %lu main storypoints and %lu branching options", self.mainStorypoints.count, self.branchingOptions.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -106,16 +127,16 @@
     NSInteger row = indexPath.row;
     
     //    NSUInteger lightGreen = 75;
-//    NSUInteger green = 135;
-//        NSUInteger blue = 250;
+    //    NSUInteger green = 135;
+    //        NSUInteger blue = 250;
     //    NSUInteger purple = 300;
-        NSUInteger red = 359;
+    NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
-//    CGFloat textHue = green/359.0;
-//        CGFloat textHue = blue/359.0;
+    //    CGFloat textHue = green/359.0;
+    //        CGFloat textHue = blue/359.0;
     //    CGFloat textHue = purple/359.0;
-        CGFloat textHue = red/359.0;
+    CGFloat textHue = red/359.0;
     
     if (section == 0)
     {
@@ -170,14 +191,22 @@
 {
     NSUInteger row = indexPath.row;
     
-    AMYStorySnippets *snippet = self.mainStorypoints[0];
-    AMYChoice *selectedChoice = snippet.choices[row];
+    AMYStorySnippets *currentSnippet = self.mainStorypoints[0];
+    AMYChoice *selectedChoice = currentSnippet.choices[row];
     
-    for (AMYStorySnippets *snippet in self.branchingOptions)
+    NSString *choiceDestinationID = selectedChoice.destinationID;
+    if (!choiceDestinationID)
     {
-        if (snippet.questionID == selectedChoice.destinationID)
+        NSString *currentDestinationID = currentSnippet.destinationID;
+        choiceDestinationID = currentDestinationID;
+    }
+    for (AMYStorySnippets *branchingSnippet in self.branchingOptions)
+    {
+        NSString *questionID = branchingSnippet.questionID;
+        
+        if (questionID == choiceDestinationID)
         {
-            [self.mainStorypoints insertObject:snippet atIndex:1];
+            [self.mainStorypoints insertObject:branchingSnippet atIndex:1];
         }
     }
     
@@ -206,7 +235,7 @@
  make a branch of current master, called original-work or something, and then delete the AMYItems and Character and stuff for now.  I can always import them in later.
  make choices take a double tap--the selected one should be highlighted, so people know what they've chosen so it's never an accident.  this is important because there are no take backs.
  It would be nice to have a 'replay' button at the end of these little games, instead of restarting the sim each time
-
+ 
  
  some generic stories I can provide with the template:
  if I have several snippets in a row sans choice, then they should all form at the same time--but not too many that the person needs to scroll.  I'll have to think about this.  When putting it in my outside file, I might need to include a couple snippets in one line, but split them with a different symbol... i don't know.

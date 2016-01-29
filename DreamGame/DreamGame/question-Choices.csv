@@ -1,10 +1,6 @@
 choiceID,comment,requirement,requirementValue,effectIDs,destinationID,content
-c00,begin,,,,,Begin
+c00,begin,,,,q01,Begin
 c01,branch - park,,,,q02,Spend the day at the park.
 c02,branch - shop,,,,q10,Shop in town.
 c03,branch - home,,,,q17,Stay in and watch tv.
 c04,end,,,,,Night-night!
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
