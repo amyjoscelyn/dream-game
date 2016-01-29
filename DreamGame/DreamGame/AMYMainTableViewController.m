@@ -109,7 +109,7 @@
             [self.convergentStory addObject:snippet];
         }
     }
-    NSLog(@"there are %lu converging storypoints and %lu branching options \n there are %lu questions, %lu choices, and %lu effects", self.convergentStory.count, self.branchingOptions.count, self.questions.count, self.choices.count, self.effects.count);
+//    NSLog(@"there are %lu converging storypoints and %lu branching options \n there are %lu questions, %lu choices, and %lu effects", self.convergentStory.count, self.branchingOptions.count, self.questions.count, self.choices.count, self.effects.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -123,22 +123,22 @@
     if (!section == 0)
     {
         AMYStorySnippets *question = [self.questions firstObject];
-        NSUInteger numberOfChoices = question.choices.count;
-        
-        if (!numberOfChoices)
-        {
-            if (![question.content isEqualToString:@"You've reached the end."])
-            {
-                question.choices = [[NSMutableArray alloc] init];
-                
-                question.choice1 = [[AMYChoice alloc] init];
-                [question.choices addObject:question.choice1];
-                
-                numberOfChoices++;
-                
-            } //this could be its own method
-        }
-        numberOfSections = numberOfChoices;
+//        NSUInteger numberOfChoices = question.choices.count;
+//        
+//        if (!numberOfChoices)
+//        {
+//            if (![question.content isEqualToString:@"You've reached the end."])
+//            {
+//                question.choices = [[NSMutableArray alloc] init];
+//                
+//                question.choice1 = [[AMYChoice alloc] init];
+//                [question.choices addObject:question.choice1];
+//                
+//                numberOfChoices++;
+//                
+//            } //this could be its own method
+//        }
+//        numberOfSections = numberOfChoices;
     }
     return numberOfSections;
 }

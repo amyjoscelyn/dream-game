@@ -29,6 +29,6 @@
 
 //- initWithFlavorText:(NSString *)flavorText indexNumber:(NSUInteger)indexNumber; //do I still need this?  I think the answer is yes, for my programmatically inserted ones, but I can probably do without and just use the other one
 
-- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSArray *)effectIDs choices:(NSArray *)choiceIDs destination:(NSString *)destinationID content:(NSString *)content;
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSArray *)effectIDs choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content;
                                                                                                
 @end

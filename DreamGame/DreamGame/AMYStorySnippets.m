@@ -29,7 +29,7 @@
     return self;
 }*/
 
-- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSArray *)effectIDs choices:(NSArray *)choiceIDs destination:(NSString *)destinationID content:(NSString *)content
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSArray *)effectIDs choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content
 {
     self = [super init];
     if (self)
@@ -39,16 +39,31 @@
         _destinationID = destinationID;
         _content = content;
         
-        NSLog(@"choiceIDs: %@", choiceIDs);
         //I NEED TO INITIALIZE THESE CHOICES!!!!!!!!!
-        
         /*
-         we need to initialize the choices, by getting them from that separate table csv, looking them up by choiceID, and gathering their information here... not a problem at all!
+         some of them are blank.  if they are blank, don't initialize them, i guess.  but at least initialize the mutable array?
+         when they are not blank, take each one out and initialize it--it's an array of strings
          */
-        
+        if (choices.count)
+        {
+            NSLog(@"choices: %@", choices);
+            
+            for (NSArray *choice in choices)
+            {
+                NSString *choiceID = choice[0];
+                NSString *choiceComment = choice[1];
+                //requirements are not set here yet
+                NSString *choiceEffects = choice[4];
+                NSString *choiceDestination = choice[6];
+                NSString *choiceContent = choice[7];
+                
+                AMYChoice *choice = [[AMYChoice alloc] initWithChoiceID:choiceID comment:choiceComment requirements:@"" requirementValues:@"" effectIDs:choiceEffects destinationID:choiceDestination content:choiceContent];
+                
+                [self.choices addObject:choice];
+            }
+        }
         
         //_effects = effects;
-        //_choices = choices;
     }
     return self;
 }
