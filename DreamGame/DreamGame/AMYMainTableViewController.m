@@ -150,6 +150,7 @@
     }
     else if (section == 1)
     {
+        //it has to be something here, because the choices aren't showing up for my new fields
         AMYStorySnippets *snippet = [self.mainStorypoints firstObject];
         AMYChoice *choice = snippet.choices[(NSUInteger)row];
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
