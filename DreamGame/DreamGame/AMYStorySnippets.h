@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *comment;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *destinationID;
-@property (nonatomic, strong) NSMutableArray *effects;
+//@property (nonatomic, strong) NSMutableArray *effects;
 @property (nonatomic, strong) NSMutableArray *choices;
 
 @property (nonatomic, strong) AMYChoice *choice1;
@@ -25,6 +25,6 @@
 @property (nonatomic, strong) AMYChoice *choice5;
 @property (nonatomic, strong) AMYChoice *choice6;
 
-- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content;
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content;
                                                                                                
 @end

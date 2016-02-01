@@ -29,12 +29,12 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //this parses through the given csv--Questions
-    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Questions2" ofType:@"csv"];
+    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Question-Questions" ofType:@"csv"];
     NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
     NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
     //parses through the Choices csv
-    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Choices1" ofType:@"csv"];
+    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Choice-Table" ofType:@"csv"];
     NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
     NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
@@ -52,7 +52,7 @@
         NSArray *question = questionCSVRows[i];
         NSMutableArray *choices = [[NSMutableArray alloc] init];
         
-        NSMutableArray *choiceIDs = [[question[3] componentsSeparatedByString:@","] mutableCopy];
+        NSMutableArray *choiceIDs = [[question[5] componentsSeparatedByString:@", "] mutableCopy];
         
         for (NSString *choiceID in choiceIDs)
         {
@@ -68,12 +68,12 @@
         }
         NSString *questionID = question[0];
         NSString *comment = question[1];
-        NSString *effects = question[2];
-        NSString *destination = question[4];
-        NSString *content = question[5];
+//        NSString *effects = question[2];
+        NSString *destination = question[3];
+        NSString *content = question[6];
 //        NSLog(@"choices: %@", choices);
         
-        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment effects:effects choices:choices destination:destination content:content];
+        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment choices:choices destination:destination content:content];
         
         if ([comment containsString:@" - "])
         {
@@ -128,14 +128,14 @@
     //    NSUInteger lightGreen = 75;
     //    NSUInteger green = 135;
     //        NSUInteger blue = 250;
-    //    NSUInteger purple = 300;
-    NSUInteger red = 359;
+        NSUInteger purple = 300;
+//    NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
     //    CGFloat textHue = green/359.0;
     //        CGFloat textHue = blue/359.0;
-    //    CGFloat textHue = purple/359.0;
-    CGFloat textHue = red/359.0;
+        CGFloat textHue = purple/359.0;
+//    CGFloat textHue = red/359.0;
     
     if (section == 0)
     {

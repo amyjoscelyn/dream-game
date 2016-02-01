@@ -16,7 +16,7 @@
     return self;
 }
 
-- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment effects:(NSString *)effectIDs choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content
+- (instancetype)initWithQuestionID:(NSString *)questionID comment:(NSString *)comment choices:(NSArray *)choices destination:(NSString *)destinationID content:(NSString *)content
 {
     self = [super init];
     if (self)

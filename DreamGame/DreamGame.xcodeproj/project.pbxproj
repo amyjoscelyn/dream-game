@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */; };
 		3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */; };
+		3D23DB101C600AC800C5FFBA /* Mark-Choice-Table.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */; };
+		3D23DB121C600AD600C5FFBA /* Mark-Effects-Table.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */; };
+		3D23DB141C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */; };
+		3D23DB161C600AE600C5FFBA /* Mark-Question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a-grocery-trip2.csv"; sourceTree = "<group>"; };
 		3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamGame.xcdatamodel; sourceTree = "<group>"; };
+		3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Choice-Table.csv"; sourceTree = "<group>"; };
+		3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Effects-Table.csv"; sourceTree = "<group>"; };
+		3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Prerequisite-Table.csv"; sourceTree = "<group>"; };
+		3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Question-Questions.csv"; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +149,10 @@
 				3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */,
 				3D4044DE1BC5B75E00A49C70 /* Images.xcassets */,
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
+				3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */,
+				3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */,
+				3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */,
+				3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */,
 				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
 				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
 				3D8362E71C5B0D5F00307390 /* question-Choices.csv */,
@@ -275,12 +287,16 @@
 				3D8362EA1C5B0D5F00307390 /* question-Choices.csv in Resources */,
 				3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */,
 				3D8362F01C5C1C6500307390 /* question-Questions2.csv in Resources */,
+				3D23DB141C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv in Resources */,
 				3D8362EB1C5B0D5F00307390 /* question-Effects.csv in Resources */,
+				3D23DB121C600AD600C5FFBA /* Mark-Effects-Table.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
+				3D23DB101C600AC800C5FFBA /* Mark-Choice-Table.csv in Resources */,
 				3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */,
 				3D8362EE1C5C1C5700307390 /* question-Choices1.csv in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
 				3D8362EC1C5B0D5F00307390 /* question-Questions.csv in Resources */,
+				3D23DB161C600AE600C5FFBA /* Mark-Question-Questions.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
