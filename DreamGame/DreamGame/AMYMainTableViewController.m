@@ -38,6 +38,11 @@
     NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
     NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
+    //parses through the Effects csv
+    NSString *effectCSVPath = [[NSBundle mainBundle] pathForResource:@"question-Effects1" ofType:@"csv"];
+    NSURL *effectCSVURL = [NSURL fileURLWithPath:effectCSVPath];
+    NSMutableArray *effectCSVRows = [[NSArray arrayWithContentsOfCSVURL:effectCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
+    
 //        NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
     
     self.mainStorypoints = [[NSMutableArray alloc] init];

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */; };
+		3D3FEF4A1C5F04610001864A /* question-Effects1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D3FEF491C5F04610001864A /* question-Effects1.csv */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -19,9 +20,6 @@
 		3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF01C4ED653004FFA5F /* AMYStoryDataStore.m */; };
 		3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */; };
 		3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */; };
-		3D8362EA1C5B0D5F00307390 /* question-Choices.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E71C5B0D5F00307390 /* question-Choices.csv */; };
-		3D8362EB1C5B0D5F00307390 /* question-Effects.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E81C5B0D5F00307390 /* question-Effects.csv */; };
-		3D8362EC1C5B0D5F00307390 /* question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362E91C5B0D5F00307390 /* question-Questions.csv */; };
 		3D8362EE1C5C1C5700307390 /* question-Choices1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362ED1C5C1C5700307390 /* question-Choices1.csv */; };
 		3D8362F01C5C1C6500307390 /* question-Questions2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D8362EF1C5C1C6500307390 /* question-Questions2.csv */; };
 		3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DFEC0EB1C59B30F005F1924 /* branching2.csv */; };
@@ -40,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a-grocery-trip2.csv"; sourceTree = "<group>"; };
+		3D3FEF491C5F04610001864A /* question-Effects1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Effects1.csv"; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,9 +60,6 @@
 		3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStory.m; sourceTree = "<group>"; };
 		3D6D5EF51C4EE944004FFA5F /* AMYChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYChoice.h; sourceTree = "<group>"; };
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
-		3D8362E71C5B0D5F00307390 /* question-Choices.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices.csv"; sourceTree = "<group>"; };
-		3D8362E81C5B0D5F00307390 /* question-Effects.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Effects.csv"; sourceTree = "<group>"; };
-		3D8362E91C5B0D5F00307390 /* question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions.csv"; sourceTree = "<group>"; };
 		3D8362ED1C5C1C5700307390 /* question-Choices1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices1.csv"; sourceTree = "<group>"; };
 		3D8362EF1C5C1C6500307390 /* question-Questions2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions2.csv"; sourceTree = "<group>"; };
 		3DFEC0EB1C59B30F005F1924 /* branching2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = branching2.csv; sourceTree = "<group>"; };
@@ -140,10 +136,8 @@
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
 				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
 				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
-				3D8362E71C5B0D5F00307390 /* question-Choices.csv */,
 				3D8362ED1C5C1C5700307390 /* question-Choices1.csv */,
-				3D8362E81C5B0D5F00307390 /* question-Effects.csv */,
-				3D8362E91C5B0D5F00307390 /* question-Questions.csv */,
+				3D3FEF491C5F04610001864A /* question-Effects1.csv */,
 				3D8362EF1C5C1C6500307390 /* question-Questions2.csv */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
 			);
@@ -269,15 +263,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
-				3D8362EA1C5B0D5F00307390 /* question-Choices.csv in Resources */,
 				3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */,
 				3D8362F01C5C1C6500307390 /* question-Questions2.csv in Resources */,
-				3D8362EB1C5B0D5F00307390 /* question-Effects.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
+				3D3FEF4A1C5F04610001864A /* question-Effects1.csv in Resources */,
 				3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */,
 				3D8362EE1C5C1C5700307390 /* question-Choices1.csv in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
-				3D8362EC1C5B0D5F00307390 /* question-Questions.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

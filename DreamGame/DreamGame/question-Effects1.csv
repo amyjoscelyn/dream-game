@@ -1,0 +1,5 @@
+effectID,comment,property,result
+e01,add sandwich,self.sandwich,choice text
+e02,add snack,self.snack,choice text
+e03,add drink,self.drink,choice text
+e04,add dessert,self.dessert,choice text
