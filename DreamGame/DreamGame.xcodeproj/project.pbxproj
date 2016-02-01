@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */; };
+		3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a-grocery-trip2.csv"; sourceTree = "<group>"; };
+		3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamGame.xcdatamodel; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				3D4044DB1BC5B75E00A49C70 /* Main.storyboard */,
 				3D6D5EE91C4EB79E004FFA5F /* AMYMainTableViewController.h */,
 				3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */,
+				3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */,
 				3D4044DE1BC5B75E00A49C70 /* Images.xcassets */,
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
 				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6D5EEE1C4ED367004FFA5F /* AMYStorySnippets.m in Sources */,
+				3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */,
 				3D6D5EEB1C4EB79E004FFA5F /* AMYMainTableViewController.m in Sources */,
 				3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */,
 				3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */,
@@ -562,6 +566,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */,
+			);
+			currentVersion = 3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */;
+			path = DreamGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D4044C61BC5B75D00A49C70 /* Project object */;
 }

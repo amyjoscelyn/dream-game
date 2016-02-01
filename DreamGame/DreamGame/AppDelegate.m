@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "AMYCharacter.h"
-#import "AMYFishingGame.h"
 
 @interface AppDelegate ()
 
@@ -19,47 +17,87 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    AMYCharacter *amy = [[AMYCharacter alloc] initWithName:@"Amy"];
-//    NSLog(@"Hey. My name is %@.", amy.name);
-    
-//    AMYInteractiveItems *fishingSkill = [[AMYInteractiveItems alloc] initWithName:@"fishing skill" edible:NO wearable:NO inherentValue:0];
-//    [amy learnSkill:fishingSkill];
-    
-    
-//    AMYFishingGame *fishingGame = [[AMYFishingGame alloc] init];
-//    NSUInteger fishingScore = [fishingGame goFish];
-//    NSLog(@"You scored %lu.", fishingScore);
-//    
-//    [fishingGame collectFishingPrize:fishingScore];
-    
-
-    //    AMYInteractiveItems *food = [[AMYInteractiveItems alloc] initWithName:@"yummy food" edible:YES wearable:NO inherentValue:1];
-    //    [amy takeItem:food];
-    //    [amy eatFood:food];
-
-//    AMYInteractiveItems *fish = [[AMYInteractiveItems alloc] initWithName:@"normal fish" edible:YES wearable:NO inherentValue:1];
-//    AMYInteractiveItems *treasure = [[AMYInteractiveItems alloc] initWithName:@"gold" edible:NO wearable:NO inherentValue:100];
-//    AMYInteractiveItems *hat = [[AMYInteractiveItems alloc] initWithName:@"striped hat" edible:NO wearable:YES inherentValue:25];
-//    AMYInteractiveItems *cloak = [[AMYInteractiveItems alloc] initWithName:@"ragged cloak" edible:NO wearable:YES inherentValue:5];
-//    
-//    [amy takeItem:fish];
-//    [amy takeItem:treasure];
-//    [amy takeItem:hat];
-//    [amy takeItem:cloak];
-//    
-//    NSUInteger inventoryCount = amy.inventory.count;
-//    NSLog(@"I have %lu items in my inventory. They are: %@", inventoryCount, amy.inventory);
-//    
-//    [amy useItem:fish];
-//    [amy useItem:treasure];
-//    [amy useItem:hat];
-//    [amy useItem:cloak];
-//    
-//    inventoryCount = amy.inventory.count;
-//    NSLog(@"I have %lu items in my inventory. They are: %@", inventoryCount, amy.inventory);
-    
-    
     return YES;
+}
+
+#pragma mark - Core Data stack
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "AMY.Dream" in the application's documents directory.
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Dream" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it.
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    
+    // Create the coordinator and store
+    
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Dream.sqlite"];
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        dict[NSUnderlyingErrorKey] = error;
+        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        // Replace this with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    return _managedObjectContext;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end
