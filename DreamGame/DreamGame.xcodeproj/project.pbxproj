@@ -13,6 +13,14 @@
 		3D23DB121C600AD600C5FFBA /* Mark-Effects-Table.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */; };
 		3D23DB141C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */; };
 		3D23DB161C600AE600C5FFBA /* Mark-Question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */; };
+		3D23DB271C601DDE00C5FFBA /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB181C601DDE00C5FFBA /* Choice+CoreDataProperties.m */; };
+		3D23DB281C601DDE00C5FFBA /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB1A1C601DDE00C5FFBA /* Choice.m */; };
+		3D23DB291C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB1C1C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.m */; };
+		3D23DB2A1C601DDE00C5FFBA /* Prerequisite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB1E1C601DDE00C5FFBA /* Prerequisite.m */; };
+		3D23DB2B1C601DDE00C5FFBA /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB201C601DDE00C5FFBA /* Effect+CoreDataProperties.m */; };
+		3D23DB2C1C601DDE00C5FFBA /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB221C601DDE00C5FFBA /* Effect.m */; };
+		3D23DB2D1C601DDE00C5FFBA /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB241C601DDE00C5FFBA /* Question+CoreDataProperties.m */; };
+		3D23DB2E1C601DDE00C5FFBA /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB261C601DDE00C5FFBA /* Question.m */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -44,12 +52,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "a-grocery-trip2.csv"; sourceTree = "<group>"; };
+		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "a-grocery-trip2.csv"; path = "DreamGame/a-grocery-trip2.csv"; sourceTree = "<group>"; };
 		3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamGame.xcdatamodel; sourceTree = "<group>"; };
-		3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Choice-Table.csv"; sourceTree = "<group>"; };
-		3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Effects-Table.csv"; sourceTree = "<group>"; };
-		3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Prerequisite-Table.csv"; sourceTree = "<group>"; };
-		3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mark-Question-Questions.csv"; sourceTree = "<group>"; };
+		3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Mark-Choice-Table.csv"; path = "DreamGame/Mark-Choice-Table.csv"; sourceTree = "<group>"; };
+		3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Mark-Effects-Table.csv"; path = "DreamGame/Mark-Effects-Table.csv"; sourceTree = "<group>"; };
+		3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Mark-Prerequisite-Table.csv"; path = "DreamGame/Mark-Prerequisite-Table.csv"; sourceTree = "<group>"; };
+		3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Mark-Question-Questions.csv"; path = "DreamGame/Mark-Question-Questions.csv"; sourceTree = "<group>"; };
+		3D23DB171C601DDE00C5FFBA /* Choice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Choice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D23DB181C601DDE00C5FFBA /* Choice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Choice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D23DB191C601DDE00C5FFBA /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
+		3D23DB1A1C601DDE00C5FFBA /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
+		3D23DB1B1C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prerequisite+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D23DB1C1C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Prerequisite+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D23DB1D1C601DDE00C5FFBA /* Prerequisite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prerequisite.h; sourceTree = "<group>"; };
+		3D23DB1E1C601DDE00C5FFBA /* Prerequisite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prerequisite.m; sourceTree = "<group>"; };
+		3D23DB1F1C601DDE00C5FFBA /* Effect+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Effect+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D23DB201C601DDE00C5FFBA /* Effect+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Effect+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D23DB211C601DDE00C5FFBA /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		3D23DB221C601DDE00C5FFBA /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
+		3D23DB231C601DDE00C5FFBA /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D23DB241C601DDE00C5FFBA /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D23DB251C601DDE00C5FFBA /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		3D23DB261C601DDE00C5FFBA /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,12 +95,12 @@
 		3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStory.m; sourceTree = "<group>"; };
 		3D6D5EF51C4EE944004FFA5F /* AMYChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYChoice.h; sourceTree = "<group>"; };
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
-		3D8362E71C5B0D5F00307390 /* question-Choices.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices.csv"; sourceTree = "<group>"; };
-		3D8362E81C5B0D5F00307390 /* question-Effects.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Effects.csv"; sourceTree = "<group>"; };
-		3D8362E91C5B0D5F00307390 /* question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions.csv"; sourceTree = "<group>"; };
-		3D8362ED1C5C1C5700307390 /* question-Choices1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Choices1.csv"; sourceTree = "<group>"; };
-		3D8362EF1C5C1C6500307390 /* question-Questions2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "question-Questions2.csv"; sourceTree = "<group>"; };
-		3DFEC0EB1C59B30F005F1924 /* branching2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = branching2.csv; sourceTree = "<group>"; };
+		3D8362E71C5B0D5F00307390 /* question-Choices.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "question-Choices.csv"; path = "DreamGame/question-Choices.csv"; sourceTree = "<group>"; };
+		3D8362E81C5B0D5F00307390 /* question-Effects.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "question-Effects.csv"; path = "DreamGame/question-Effects.csv"; sourceTree = "<group>"; };
+		3D8362E91C5B0D5F00307390 /* question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "question-Questions.csv"; path = "DreamGame/question-Questions.csv"; sourceTree = "<group>"; };
+		3D8362ED1C5C1C5700307390 /* question-Choices1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "question-Choices1.csv"; path = "DreamGame/question-Choices1.csv"; sourceTree = "<group>"; };
+		3D8362EF1C5C1C6500307390 /* question-Questions2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "question-Questions2.csv"; path = "DreamGame/question-Questions2.csv"; sourceTree = "<group>"; };
+		3DFEC0EB1C59B30F005F1924 /* branching2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = branching2.csv; path = DreamGame/branching2.csv; sourceTree = "<group>"; };
 		7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8231DBC9ECED056C7715B9D4 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
 		F8AE51E7B2D1ACD486576B39 /* Pods-DreamGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,18 +172,9 @@
 				3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */,
 				3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */,
 				3D4044DE1BC5B75E00A49C70 /* Images.xcassets */,
+				3DA309C61C63F5AF00AC8594 /* Managed Data */,
 				3D4044E01BC5B75E00A49C70 /* LaunchScreen.xib */,
-				3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */,
-				3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */,
-				3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */,
-				3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */,
-				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
-				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
-				3D8362E71C5B0D5F00307390 /* question-Choices.csv */,
-				3D8362ED1C5C1C5700307390 /* question-Choices1.csv */,
-				3D8362E81C5B0D5F00307390 /* question-Effects.csv */,
-				3D8362E91C5B0D5F00307390 /* question-Questions.csv */,
-				3D8362EF1C5C1C6500307390 /* question-Questions2.csv */,
+				3DA309C71C63F5DE00AC8594 /* CSVs */,
 				3D4044D11BC5B75E00A49C70 /* Supporting Files */,
 			);
 			path = DreamGame;
@@ -189,6 +204,48 @@
 				3D4044EC1BC5B75E00A49C70 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DA309C61C63F5AF00AC8594 /* Managed Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D23DB171C601DDE00C5FFBA /* Choice+CoreDataProperties.h */,
+				3D23DB181C601DDE00C5FFBA /* Choice+CoreDataProperties.m */,
+				3D23DB191C601DDE00C5FFBA /* Choice.h */,
+				3D23DB1A1C601DDE00C5FFBA /* Choice.m */,
+				3D23DB1B1C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.h */,
+				3D23DB1C1C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.m */,
+				3D23DB1D1C601DDE00C5FFBA /* Prerequisite.h */,
+				3D23DB1E1C601DDE00C5FFBA /* Prerequisite.m */,
+				3D23DB1F1C601DDE00C5FFBA /* Effect+CoreDataProperties.h */,
+				3D23DB201C601DDE00C5FFBA /* Effect+CoreDataProperties.m */,
+				3D23DB211C601DDE00C5FFBA /* Effect.h */,
+				3D23DB221C601DDE00C5FFBA /* Effect.m */,
+				3D23DB231C601DDE00C5FFBA /* Question+CoreDataProperties.h */,
+				3D23DB241C601DDE00C5FFBA /* Question+CoreDataProperties.m */,
+				3D23DB251C601DDE00C5FFBA /* Question.h */,
+				3D23DB261C601DDE00C5FFBA /* Question.m */,
+			);
+			name = "Managed Data";
+			sourceTree = "<group>";
+		};
+		3DA309C71C63F5DE00AC8594 /* CSVs */ = {
+			isa = PBXGroup;
+			children = (
+				3D23DB0F1C600AC800C5FFBA /* Mark-Choice-Table.csv */,
+				3D23DB111C600AD600C5FFBA /* Mark-Effects-Table.csv */,
+				3D23DB131C600ADE00C5FFBA /* Mark-Prerequisite-Table.csv */,
+				3D23DB151C600AE600C5FFBA /* Mark-Question-Questions.csv */,
+				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
+				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
+				3D8362E71C5B0D5F00307390 /* question-Choices.csv */,
+				3D8362ED1C5C1C5700307390 /* question-Choices1.csv */,
+				3D8362E81C5B0D5F00307390 /* question-Effects.csv */,
+				3D8362E91C5B0D5F00307390 /* question-Questions.csv */,
+				3D8362EF1C5C1C6500307390 /* question-Questions2.csv */,
+			);
+			name = CSVs;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6093F7DFE96B4C6A78C0C6E0 /* Frameworks */ = {
@@ -364,11 +421,19 @@
 			files = (
 				3D6D5EEE1C4ED367004FFA5F /* AMYStorySnippets.m in Sources */,
 				3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */,
+				3D23DB2C1C601DDE00C5FFBA /* Effect.m in Sources */,
 				3D6D5EEB1C4EB79E004FFA5F /* AMYMainTableViewController.m in Sources */,
 				3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */,
+				3D23DB2B1C601DDE00C5FFBA /* Effect+CoreDataProperties.m in Sources */,
+				3D23DB271C601DDE00C5FFBA /* Choice+CoreDataProperties.m in Sources */,
 				3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */,
 				3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */,
+				3D23DB2A1C601DDE00C5FFBA /* Prerequisite.m in Sources */,
 				3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */,
+				3D23DB291C601DDE00C5FFBA /* Prerequisite+CoreDataProperties.m in Sources */,
+				3D23DB2D1C601DDE00C5FFBA /* Question+CoreDataProperties.m in Sources */,
+				3D23DB2E1C601DDE00C5FFBA /* Question.m in Sources */,
+				3D23DB281C601DDE00C5FFBA /* Choice.m in Sources */,
 				3D4044D41BC5B75E00A49C70 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
