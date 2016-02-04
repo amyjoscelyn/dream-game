@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Question.h"
 #import "Effect.h"
 #import "Prerequisite.h"
-#import "Question.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

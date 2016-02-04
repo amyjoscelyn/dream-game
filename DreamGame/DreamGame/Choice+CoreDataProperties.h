@@ -2,7 +2,7 @@
 //  Choice+CoreDataProperties.h
 //  
 //
-//  Created by Amy Joscelyn on 2/1/16.
+//  Created by Amy Joscelyn on 2/4/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *content;
 @property (nullable, nonatomic, retain) NSString *storyID;
+@property (nullable, nonatomic, retain) NSString *comment;
 @property (nullable, nonatomic, retain) NSSet<Effect *> *effects;
 @property (nullable, nonatomic, retain) NSSet<Prerequisite *> *prerequisites;
 @property (nullable, nonatomic, retain) NSSet<Question *> *questionIns;

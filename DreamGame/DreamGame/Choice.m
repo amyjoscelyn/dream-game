@@ -7,6 +7,7 @@
 //
 
 #import "Choice.h"
+//#import "Question.h"
 
 @implementation Choice
 
@@ -23,17 +24,15 @@
     {
         NSArray *choice = choiceCSVRows[i];
         
-        //content-6, storyID-0, effects-4, prerequisites-3, questionIns-2, questionOut-5, COMMENT-1
+        //content-6, storyID-0, effects-4, prerequisites-3, questionIns-2, questionOut-5, comment-1
         self.storyID = choice[0];
-        //comment = choice[1];  THIS IS MISSING FROM ATTRIBUTES
+        self.comment = choice[1];
         self.questionIns = choice[2];
         self.prerequisites = choice[3];
         self.effects = choice[4];
         self.questionOut = choice[5];
         self.content = choice[6];
     }
-
-    
     
 }
 

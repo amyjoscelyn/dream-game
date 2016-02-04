@@ -17,35 +17,11 @@
     NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
     NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
     
-//    //parses through the Choices csv
-//    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Choice-Table" ofType:@"csv"];
-//    NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
-//    NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
-    
     [questionCSVRows removeObjectAtIndex:0];
-//    [choiceCSVRows removeObjectAtIndex:0];
     
     for (NSUInteger i = 0; i < questionCSVRows.count; i++)
     {
         NSArray *question = questionCSVRows[i];
-        //the two lines below are unused
-//        NSMutableArray *choices = [[NSMutableArray alloc] init];
-//        
-//        NSMutableArray *choiceIDs = [[question[5] componentsSeparatedByString:@", "] mutableCopy];
-        
-        //this logic takes the choiceIDs and compares them to the choices in the csv.  It iterates through until it finds the matches, and then the matched choice is added to an array that the question holds onto.
-//        for (NSString *choiceID in choiceIDs)
-//        {
-//            for (NSArray *row in choiceCSVRows)
-//            {
-//                NSString *rowID = row[0];
-//                
-//                if ([choiceID isEqualToString:rowID])
-//                {
-//                    [choices addObject:row];
-//                }
-//            }
-        }
         //comment-1, content-6, storyID-0, choiceIns-4, choiceOuts-5, questionAfter-3, questionBefores-2
         self.storyID = question[0];
         self.comment = question[1];

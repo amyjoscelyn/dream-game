@@ -2,7 +2,7 @@
 //  Effect+CoreDataProperties.h
 //  
 //
-//  Created by Amy Joscelyn on 2/1/16.
+//  Created by Amy Joscelyn on 2/4/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
