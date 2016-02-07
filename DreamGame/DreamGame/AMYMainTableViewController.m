@@ -35,69 +35,70 @@
     AMYStoryDataStore *dataStore = [AMYStoryDataStore sharedStoryDataStore];
     
     [dataStore fetchData];
-
+    
     NSLog(@"%@", dataStore.prerequisites);
+    NSLog(@"%@", dataStore.effects);
     
     //generateStory method should be called here, if there's not already a story in place.  But I guess that would be part of the singleton, since that logic is already contained there?
     
     /*
-//    //this parses through the given csv--Questions
-//    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Question-Questions" ofType:@"csv"];
-//    NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
-//    NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
-//    
-//    //parses through the Choices csv
-//    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Choice-Table" ofType:@"csv"];
-//    NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
-//    NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
-    
-//        NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
-    
-    self.mainStorypoints = [[NSMutableArray alloc] init];
-    self.branchingOptions = [[NSMutableArray alloc] init];
-//    self.choices = [[NSMutableArray alloc] init]; //do I need this?
-    
-//    [questionCSVRows removeObjectAtIndex:0];
-//    [choiceCSVRows removeObjectAtIndex:0];
-    
-//    for (NSUInteger i = 0; i < questionCSVRows.count; i++)
-//    {
-//        NSArray *question = questionCSVRows[i];
-//        NSMutableArray *choices = [[NSMutableArray alloc] init];
-//        
-//        NSMutableArray *choiceIDs = [[question[5] componentsSeparatedByString:@", "] mutableCopy];
-//        
-//        for (NSString *choiceID in choiceIDs)
-//        {
-//            for (NSArray *row in choiceCSVRows)
-//            {
-//                NSString *rowID = row[0];
-//                
-//                if ([choiceID isEqualToString:rowID])
-//                {
-//                    [choices addObject:row];
-//                }
-//            }
-//        }
-//        NSString *questionID = question[0];
-//        NSString *comment = question[1];
-////        NSString *effects = question[2];
-//        NSString *destination = question[3];
-//        NSString *content = question[6];
-////        NSLog(@"choices: %@", choices);
-//        
-//        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment choices:choices destination:destination content:content];
-//        
-//        if ([comment containsString:@" - "])
-//        {
-//            [self.branchingOptions addObject:snippet];
-//        }
-//        else
-//        {
-//            [self.mainStorypoints addObject:snippet];
-//        }
-//    }
-    //        NSLog(@"there are %lu main storypoints and %lu branching options", self.mainStorypoints.count, self.branchingOptions.count);
+     //    //this parses through the given csv--Questions
+     //    NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Question-Questions" ofType:@"csv"];
+     //    NSURL *questionCSVURL = [NSURL fileURLWithPath:questionCSVPath];
+     //    NSMutableArray *questionCSVRows = [[NSArray arrayWithContentsOfCSVURL:questionCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
+     //
+     //    //parses through the Choices csv
+     //    NSString *choiceCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Choice-Table" ofType:@"csv"];
+     //    NSURL *choiceCSVURL = [NSURL fileURLWithPath:choiceCSVPath];
+     //    NSMutableArray *choiceCSVRows = [[NSArray arrayWithContentsOfCSVURL:choiceCSVURL options:CHCSVParserOptionsSanitizesFields] mutableCopy];
+     
+     //        NSLog(@"questions: %@ vs choices: %@", questionCSVRows[1], choiceCSVRows[1]);
+     
+     self.mainStorypoints = [[NSMutableArray alloc] init];
+     self.branchingOptions = [[NSMutableArray alloc] init];
+     //    self.choices = [[NSMutableArray alloc] init]; //do I need this?
+     
+     //    [questionCSVRows removeObjectAtIndex:0];
+     //    [choiceCSVRows removeObjectAtIndex:0];
+     
+     //    for (NSUInteger i = 0; i < questionCSVRows.count; i++)
+     //    {
+     //        NSArray *question = questionCSVRows[i];
+     //        NSMutableArray *choices = [[NSMutableArray alloc] init];
+     //
+     //        NSMutableArray *choiceIDs = [[question[5] componentsSeparatedByString:@", "] mutableCopy];
+     //
+     //        for (NSString *choiceID in choiceIDs)
+     //        {
+     //            for (NSArray *row in choiceCSVRows)
+     //            {
+     //                NSString *rowID = row[0];
+     //
+     //                if ([choiceID isEqualToString:rowID])
+     //                {
+     //                    [choices addObject:row];
+     //                }
+     //            }
+     //        }
+     //        NSString *questionID = question[0];
+     //        NSString *comment = question[1];
+     ////        NSString *effects = question[2];
+     //        NSString *destination = question[3];
+     //        NSString *content = question[6];
+     ////        NSLog(@"choices: %@", choices);
+     //
+     //        AMYStorySnippets *snippet = [[AMYStorySnippets alloc] initWithQuestionID:questionID comment:comment choices:choices destination:destination content:content];
+     //
+     //        if ([comment containsString:@" - "])
+     //        {
+     //            [self.branchingOptions addObject:snippet];
+     //        }
+     //        else
+     //        {
+     //            [self.mainStorypoints addObject:snippet];
+     //        }
+     //    }
+     //        NSLog(@"there are %lu main storypoints and %lu branching options", self.mainStorypoints.count, self.branchingOptions.count);
      */
 }
 
@@ -142,14 +143,14 @@
     //    NSUInteger lightGreen = 75;
     //    NSUInteger green = 135;
     //        NSUInteger blue = 250;
-        NSUInteger purple = 300;
-//    NSUInteger red = 359;
+    NSUInteger purple = 300;
+    //    NSUInteger red = 359;
     
     //    CGFloat textHue = lightGreen/359.0;
     //    CGFloat textHue = green/359.0;
     //        CGFloat textHue = blue/359.0;
-        CGFloat textHue = purple/359.0;
-//    CGFloat textHue = red/359.0;
+    CGFloat textHue = purple/359.0;
+    //    CGFloat textHue = red/359.0;
     
     if (section == 0)
     {
@@ -201,7 +202,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        //I can have a -retrieveNextStorySnippet method here, to go into core data and extract the next question from the destinationID of the current choice chosen.
+    //I can have a -retrieveNextStorySnippet method here, to go into core data and extract the next question from the destinationID of the current choice chosen.
     NSUInteger row = indexPath.row;
     
     AMYStorySnippets *currentSnippet = self.mainStorypoints[0];

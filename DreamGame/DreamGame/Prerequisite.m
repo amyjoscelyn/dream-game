@@ -14,8 +14,8 @@
 
 // Insert code here to add functionality to your managed object subclass
 
-+ (Prerequisite *)createPrerequisiteFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-    
++ (Prerequisite *)createPrerequisiteFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
     Prerequisite *prerequsite = [NSEntityDescription insertNewObjectForEntityForName:@"Prerequisite" inManagedObjectContext:managedObjectContext];
     prerequsite.storyID = csvRow[0];
     prerequsite.comment = csvRow[1];
@@ -30,7 +30,8 @@
     return prerequsite;
 }
 
-- (NSString *)description {
+- (NSString *)description
+{
     NSMutableString *description = [[NSMutableString alloc] initWithString:@"Prerequisite - "];
     [description appendFormat:@"%@ - %@", self.storyID, self.comment];
     [description appendFormat:@"\n  %@.%@", self.checkObject, self.checkProperty];

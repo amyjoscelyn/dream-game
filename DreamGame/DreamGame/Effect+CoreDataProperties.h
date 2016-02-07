@@ -1,9 +1,9 @@
 //
 //  Effect+CoreDataProperties.h
-//  
+//  DreamGame
 //
-//  Created by Amy Joscelyn on 2/4/16.
-//
+//  Created by Amy Joscelyn on 2/6/16.
+//  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int64_t integerValue;
 @property (nullable, nonatomic, retain) NSString *operator;
 @property (nullable, nonatomic, retain) NSString *storyID;
+@property (nullable, nonatomic, retain) NSString *stringValue;
 @property (nullable, nonatomic, retain) NSSet<Choice *> *choices;
 @property (nullable, nonatomic, retain) NSSet<Prerequisite *> *prerequisites;
 

@@ -9,6 +9,7 @@
 #import "AMYStoryDataStore.h"
 #import <CHCSVParser/CHCSVParser.h>
 #import "Prerequisite+CoreDataProperties.h"
+#import "Effect+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
 
@@ -48,6 +49,16 @@
 
 - (void)fetchData
 {
+    NSFetchRequest *effectRequest = [NSFetchRequest fetchRequestWithEntityName:@"Effect"];
+    effectRequest.sortDescriptors = @[self.sortByStoryIDAsc];
+    
+    self.effects = [self.managedObjectContext executeFetchRequest:effectRequest error:nil];
+    
+    if (self.effects.count == 0)
+    {
+        [self generateEffects];
+    }
+    
     NSFetchRequest *prerequisiteRequest = [NSFetchRequest fetchRequestWithEntityName:@"Prerequisite"];
     prerequisiteRequest.sortDescriptors = @[self.sortByStoryIDAsc];
     
@@ -60,6 +71,21 @@
 }
 
 # pragma Generator Methods
+
+- (void)generateEffects
+{
+    // read from the CSV to get an array
+    //this parses through the given csv--Effects
+    
+    NSArray *effectRows = [self parsedCSVContentsWithFileName:@"Effects-Table 1"];
+    
+    for (NSArray *csvRow in effectRows)
+    {
+        [Effect createEffectFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+    }
+    [self saveContext];
+    [self fetchData];
+}
 
 - (void)generatePrerequisites
 {
