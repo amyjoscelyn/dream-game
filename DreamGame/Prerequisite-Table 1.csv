@@ -1,0 +1,8 @@
+storyId,comment,choices,effects,checkObject,checkProperty,comparator,stringValue
+richMan,disposable income,,,player,wallet,>=,100
+poorMan,,,,player,wallet,<,20
+thousandaire,,,,player,wallet,>=,1000
+mansWorld,meninists unite,,,player,gender,==,male
+whitePrivelege,i can’t stand racism!,,,player,race,==,white
+tipsy,got a nice buzz going,,,player,bloodAlcohol,>=,0.01
+smashedOutDrunk,don’t drive anything,,,player,bloodAlcohol,>=,0.08

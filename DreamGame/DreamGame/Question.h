@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import <CHCSVParser/CHCSVParser.h>
-#import "Choice.h"
 
 @class Choice;
 

@@ -1,0 +1,8 @@
+storyID,comment,questionIns,prerequisites,effects,questionOut,content
+c000300,,q0003,,,q0010,Be responsible and get to work.
+c000301,,q0003,,,q0020,Throw your phone against the wall and snooze.
+c003000,,q0030,richMan,,q0100,"Day off, yeah! Hit the town! Paint it red!"
+c003001,,q0030,,,q0200,My LinkedIn is SO out of date… fml.
+c010000,,q0100,,,q0101,Watch a movie.
+c010001,,q0100,,tipsy,q0102,Get wasted and watch a movie!
+c010002,,q0100,"mansWorld, whitePrivelege",arrestedMyCase,q0103,Insult a cop.

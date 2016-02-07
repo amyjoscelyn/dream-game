@@ -7,6 +7,7 @@
 //
 
 #import "Question.h"
+#import "Choice.h"
 
 @implementation Question
 
@@ -25,10 +26,10 @@
         //comment-1, content-6, storyID-0, choiceIns-4, choiceOuts-5, questionAfter-3, questionBefores-2
         self.storyID = question[0];
         self.comment = question[1];
-        self.questionBefores = question[2];
-        self.questionAfter = question[3];
-        self.choiceIns = question[4];
-        self.choiceOuts = question[5];
+//        self.questionBefores = question[2];
+//        self.questionAfter = question[3];
+//        self.choiceIns = question[4];
+//        self.choiceOuts = question[5];
         self.content = question[6];
         
         //Do I need this logic?  Where would I put the properties??  Would it be in my data store?  Or would this be a part of a new story entity?  I feel like this was a tool for ease for finding the destination question from choices.  Now that I should refrain from deleting the story (because what happens if the player reverts to an old save point and half the story after is gone?), I don't think I need this in my logic flow anymore.  We'll see.

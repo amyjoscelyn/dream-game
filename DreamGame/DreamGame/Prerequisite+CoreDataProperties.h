@@ -1,9 +1,9 @@
 //
 //  Prerequisite+CoreDataProperties.h
-//  
+//  DreamGame
 //
-//  Created by Amy Joscelyn on 2/4/16.
-//
+//  Created by Amy Joscelyn on 2/6/16.
+//  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Prerequisite (CoreDataProperties)
 
-@property (nonatomic) BOOL boolValue;
+@property (nullable, nonatomic, retain) NSString *boolString;
 @property (nullable, nonatomic, retain) NSString *checkObject;
 @property (nullable, nonatomic, retain) NSString *checkProperty;
 @property (nullable, nonatomic, retain) NSString *comment;

@@ -8,6 +8,7 @@
 
 //#import <CHCSVParser/CHCSVParser.h>
 #import "AMYMainTableViewController.h"
+#import "AMYStoryDataStore.h"
 #import "AMYStorySnippets.h"
 #import "AMYChoice.h"
 
@@ -30,6 +31,12 @@
 {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    AMYStoryDataStore *dataStore = [AMYStoryDataStore sharedStoryDataStore];
+    
+    [dataStore fetchData];
+
+    NSLog(@"%@", dataStore.prerequisites);
     
     //generateStory method should be called here, if there's not already a story in place.  But I guess that would be part of the singleton, since that logic is already contained there?
     

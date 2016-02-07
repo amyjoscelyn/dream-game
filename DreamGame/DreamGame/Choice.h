@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Question.h"
-#import "Effect.h"
-#import "Prerequisite.h"
+
+@class Question, Effect, Prerequisite;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Choice : NSManagedObject
-
-//- (Choice *)getChoiceForQuestion:(Question *)
 
 - (void)generateChoices;
 

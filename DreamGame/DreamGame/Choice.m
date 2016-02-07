@@ -7,7 +7,9 @@
 //
 
 #import "Choice.h"
-//#import "Question.h"
+#import "Question.h"
+#import "Prerequisite.h"
+#import "Effect.h"
 
 @implementation Choice
 
@@ -27,10 +29,10 @@
         //content-6, storyID-0, effects-4, prerequisites-3, questionIns-2, questionOut-5, comment-1
         self.storyID = choice[0];
         self.comment = choice[1];
-        self.questionIns = choice[2];
-        self.prerequisites = choice[3];
-        self.effects = choice[4];
-        self.questionOut = choice[5];
+//        self.questionIns = choice[2];
+//        self.prerequisites = choice[3];
+//        self.effects = choice[4];
+//        self.questionOut = choice[5];
         self.content = choice[6];
     }
     
