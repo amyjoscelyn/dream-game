@@ -11,6 +11,7 @@
 #import "Prerequisite+CoreDataProperties.h"
 #import "Effect+CoreDataProperties.h"
 #import "Choice+CoreDataProperties.h"
+#import "Question+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
 
@@ -79,6 +80,16 @@
     {
         [self generateChoices];
     }
+    
+    NSFetchRequest *questionRequest = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
+    questionRequest.sortDescriptors = @[self.sortByStoryIDAsc];
+    
+    self.questions = [self.managedObjectContext executeFetchRequest:questionRequest error:nil];
+    
+    if (self.questions.count == 0)
+    {
+        [self generateQuestions];
+    }
 }
 
 # pragma Generator Methods
@@ -123,6 +134,21 @@
     for (NSArray *csvRow in choiceRows)
     {
         [Choice createChoiceFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+    }
+    [self saveContext];
+    [self fetchData];
+}
+
+- (void)generateQuestions
+{
+    // read from the CSV to get an array
+    //this parses through the given csv--Question
+    
+    NSArray *questionRows = [self parsedCSVContentsWithFileName:@"Question-Questions"];
+    
+    for (NSArray *csvRow in questionRows)
+    {
+        [Question createQuestionFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
     }
     [self saveContext];
     [self fetchData];

@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Question : NSManagedObject
 
-- (void)generateStory;
+//- (void)generateStory;
+
++ (Question *)createQuestionFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
 

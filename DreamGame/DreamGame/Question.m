@@ -11,7 +11,31 @@
 
 @implementation Question
 
-- (void)generateStory
++ (Question *)createQuestionFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    Question *question = [NSEntityDescription insertNewObjectForEntityForName:@"Question" inManagedObjectContext:managedObjectContext];
+    question.storyID = csvRow[0];
+    question.comment = csvRow[1];
+    // 2 is questionBefores
+    // 3 is questionAfter
+    // 4 is choiceIns
+    // 5 is choiceOuts
+    question.content = csvRow[6];
+    
+    NSLog(@"Question: %@", question);
+    return question;
+}
+
+- (NSString *)description
+{
+    NSMutableString *description = [[NSMutableString alloc] initWithString:@"Question - "];
+    [description appendFormat:@"%@ - %@", self.storyID, self.comment];
+    [description appendFormat:@"\n %@", self.content];
+    
+    return description;
+}
+
+/*- (void)generateStory
 {
     //this parses through the given csv--Questions
     NSString *questionCSVPath = [[NSBundle mainBundle] pathForResource:@"Mark-Question-Questions" ofType:@"csv"];
@@ -45,5 +69,5 @@
         //generateChoices method should go here, to fill out the choices for each question?  or should all of it happen dynamically, programmatically, while the game is in progress?  It doesn't take long, and it would save a lot of memory to have it just be in raw CSV and not all stored as separate properties until needed.  A person can only play through a fraction of the game during any one sitting/playthrough, anyway.
     }
 }
-
+*/
 @end
