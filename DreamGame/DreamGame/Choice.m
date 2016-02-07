@@ -13,6 +13,31 @@
 
 @implementation Choice
 
++ (Choice *)createChoiceFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    Choice *choice = [NSEntityDescription insertNewObjectForEntityForName:@"Choice" inManagedObjectContext:managedObjectContext];
+    choice.storyID = csvRow[0];
+    choice.comment = csvRow[1];
+    // 2 is questionIns
+    // 3 is prerequisites
+    // 4 is effects
+    // 5 is destinationID/questionOut
+    choice.content = csvRow[6];
+    
+    NSLog(@"Choice: %@", choice);
+    return choice;
+}
+
+- (NSString *)description
+{
+    NSMutableString *description = [[NSMutableString alloc] initWithString:@"Choice - "];
+    [description appendFormat:@"%@ - %@", self.storyID, self.comment];
+    [description appendFormat:@"\n %@", self.content];
+    
+    return description;
+}
+
+/*
 - (void)generateChoices
 {
     //parses through the Choices csv
@@ -36,7 +61,7 @@
         self.content = choice[6];
     }
     
-}
+} */
 
 /*
  Okay.  So we have raw csv data of choices that needs to be parsed through to get the choices into their proper property homes within this entity.  If I were to have a generateChoices method, it could do something similar to the Question generateQuestions method.  Then, when I need a choice, they're already all here.  I can just access this font of them, go through this source, and take only the ones I need, as in the ones that match the ID of the current question.  It will be the same kind of logic used to find the destination question after a choice has been selected.

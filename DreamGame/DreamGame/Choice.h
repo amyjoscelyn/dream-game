@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Choice : NSManagedObject
 
-- (void)generateChoices;
+//- (void)generateChoices;
+
++ (Choice *)createChoiceFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
 

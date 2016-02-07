@@ -10,6 +10,7 @@
 #import <CHCSVParser/CHCSVParser.h>
 #import "Prerequisite+CoreDataProperties.h"
 #import "Effect+CoreDataProperties.h"
+#import "Choice+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
 
@@ -68,6 +69,16 @@
     {
         [self generatePrerequisites];
     }
+
+    NSFetchRequest *choiceRequest = [NSFetchRequest fetchRequestWithEntityName:@"Choice"];
+    choiceRequest.sortDescriptors = @[self.sortByStoryIDAsc];
+    
+    self.choices = [self.managedObjectContext executeFetchRequest:choiceRequest error:nil];
+    
+    if (self.choices.count == 0)
+    {
+        [self generateChoices];
+    }
 }
 
 # pragma Generator Methods
@@ -97,6 +108,21 @@
     for (NSArray *csvRow in prerequisiteRows)
     {
         [Prerequisite createPrerequisiteFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+    }
+    [self saveContext];
+    [self fetchData];
+}
+
+- (void)generateChoices
+{
+    // read from the CSV to get an array
+    //this parses through the given csv--Choice
+    
+    NSArray *choiceRows = [self parsedCSVContentsWithFileName:@"Choice-Table 1"];
+    
+    for (NSArray *csvRow in choiceRows)
+    {
+        [Choice createChoiceFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
     }
     [self saveContext];
     [self fetchData];

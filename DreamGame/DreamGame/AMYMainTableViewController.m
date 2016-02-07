@@ -38,6 +38,7 @@
     
     NSLog(@"%@", dataStore.prerequisites);
     NSLog(@"%@", dataStore.effects);
+    NSLog(@"%@", dataStore.choices);
     
     //generateStory method should be called here, if there's not already a story in place.  But I guess that would be part of the singleton, since that logic is already contained there?
     
