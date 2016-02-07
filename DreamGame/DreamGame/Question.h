@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import <CHCSVParser/CHCSVParser.h>
+#import <CHCSVParser/CHCSVParser.h> //do I need this imported here?
 
 @class Choice;
 

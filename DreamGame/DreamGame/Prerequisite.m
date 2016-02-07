@@ -26,7 +26,7 @@
     prerequsite.comparator = csvRow[6];
     prerequsite.stringValue = csvRow[7];
 
-    NSLog(@"Prerequisite: %@", prerequsite);
+//    NSLog(@"Prerequisite: %@", prerequsite);
     return prerequsite;
 }
 

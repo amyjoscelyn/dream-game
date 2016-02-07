@@ -11,7 +11,7 @@
 #import "Prerequisite+CoreDataProperties.h"
 #import "Effect+CoreDataProperties.h"
 #import "Choice+CoreDataProperties.h"
-#import "Question+CoreDataProperties.h"
+//#import "Question+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
 
@@ -20,7 +20,7 @@
 @property (strong, nonatomic, readwrite) NSArray *effects;
 @property (strong, nonatomic, readwrite) NSArray *prerequisites;
 
-@property (strong, nonatomic) NSSortDescriptor *sortByStoryIDAsc;
+@property (strong, nonatomic, readwrite) NSSortDescriptor *sortByStoryIDAsc;
 
 @end
 
@@ -51,16 +51,6 @@
 
 - (void)fetchData
 {
-    NSFetchRequest *effectRequest = [NSFetchRequest fetchRequestWithEntityName:@"Effect"];
-    effectRequest.sortDescriptors = @[self.sortByStoryIDAsc];
-    
-    self.effects = [self.managedObjectContext executeFetchRequest:effectRequest error:nil];
-    
-    if (self.effects.count == 0)
-    {
-        [self generateEffects];
-    }
-    
     NSFetchRequest *prerequisiteRequest = [NSFetchRequest fetchRequestWithEntityName:@"Prerequisite"];
     prerequisiteRequest.sortDescriptors = @[self.sortByStoryIDAsc];
     
@@ -69,6 +59,16 @@
     if (self.prerequisites.count == 0)
     {
         [self generatePrerequisites];
+    }
+    
+    NSFetchRequest *effectRequest = [NSFetchRequest fetchRequestWithEntityName:@"Effect"];
+    effectRequest.sortDescriptors = @[self.sortByStoryIDAsc];
+    
+    self.effects = [self.managedObjectContext executeFetchRequest:effectRequest error:nil];
+    
+    if (self.effects.count == 0)
+    {
+        [self generateEffects];
     }
 
     NSFetchRequest *choiceRequest = [NSFetchRequest fetchRequestWithEntityName:@"Choice"];
@@ -94,21 +94,6 @@
 
 # pragma Generator Methods
 
-- (void)generateEffects
-{
-    // read from the CSV to get an array
-    //this parses through the given csv--Effects
-    
-    NSArray *effectRows = [self parsedCSVContentsWithFileName:@"Effects-Table 1"];
-    
-    for (NSArray *csvRow in effectRows)
-    {
-        [Effect createEffectFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
-    }
-    [self saveContext];
-    [self fetchData];
-}
-
 - (void)generatePrerequisites
 {
     // read from the CSV to get an array
@@ -124,6 +109,34 @@
     [self fetchData];
 }
 
+- (void)generateEffects
+{
+    // read from the CSV to get an array
+    //this parses through the given csv--Effects
+    
+    NSArray *effectRows = [self parsedCSVContentsWithFileName:@"Effects-Table 1"];
+    
+    for (NSArray *csvRow in effectRows)
+    {
+        Effect *newEffect = [Effect createEffectFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+        
+        NSArray *prerequisiteStoryIDs = [csvRow[3] componentsSeparatedByString:@", "];
+        for (NSString *prerequisiteStoryID in prerequisiteStoryIDs)
+        {
+            for (Prerequisite *prerequisite in self.prerequisites)
+            {
+                if ([prerequisite.storyID isEqualToString:prerequisiteStoryID])
+                {
+                    //NSLog(@"Add prerequisite %@", prerequisite.storyID);
+                    [newEffect addPrerequisitesObject:prerequisite];
+                }
+            }
+        }
+    }
+    [self saveContext];
+    [self fetchData];
+}
+
 - (void)generateChoices
 {
     // read from the CSV to get an array
@@ -133,7 +146,32 @@
     
     for (NSArray *csvRow in choiceRows)
     {
-        [Choice createChoiceFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+        Choice *newChoice = [Choice createChoiceFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+        
+        NSArray *prerequisiteStoryIDs = [csvRow[3] componentsSeparatedByString:@", "];
+        for (NSString *prerequisiteStoryID in prerequisiteStoryIDs)
+        {
+            for (Prerequisite *prerequisite in self.prerequisites)
+            {
+                if ([prerequisite.storyID isEqualToString:prerequisiteStoryID])
+                {
+//                    NSLog(@"Add prerequisite %@", prerequisite.storyID);
+                    [newChoice addPrerequisitesObject:prerequisite];
+                }
+            }
+        }
+        NSArray *effectStoryIDs = [csvRow[4] componentsSeparatedByString:@", "];
+        for (NSString *effectStoryID in effectStoryIDs)
+        {
+            for (Effect *effect in self.effects)
+            {
+                if ([effect.storyID isEqualToString:effectStoryID])
+                {
+//                    NSLog(@"Add effect %@", effect.storyID);
+                    [newChoice addEffectsObject:effect];
+                }
+            }
+        }
     }
     [self saveContext];
     [self fetchData];
@@ -146,10 +184,61 @@
     
     NSArray *questionRows = [self parsedCSVContentsWithFileName:@"Question-Questions"];
     
+    NSMutableArray *allQuestions = [NSMutableArray new];
     for (NSArray *csvRow in questionRows)
     {
-        [Question createQuestionFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+        Question *newQuestion = [Question createQuestionFromCSVRow:csvRow managedObjectContext:self.managedObjectContext];
+        
+        NSArray *choiceOutsStoryIDs = [csvRow[5] componentsSeparatedByString:@", "];
+        for (NSString *choiceOutStoryID in choiceOutsStoryIDs)
+        {
+            for (Choice *choiceOut in self.choices)
+            {
+                if ([choiceOut.storyID isEqualToString:choiceOutStoryID])
+                {
+                    NSLog(@"Add choice %@", choiceOut.storyID);
+                    [newQuestion addChoiceOutsObject:choiceOut];
+                }
+            }
+        }
+        [allQuestions addObject:newQuestion];
     }
+    
+    for (NSInteger i = 0; i < questionRows.count; i++)
+    {
+        NSArray *questionRow = questionRows[i];
+        Question *thisQuestion = allQuestions[i];
+        
+        NSString *questionAfterStoryID = questionRow[3];
+        for (Question *question in allQuestions)
+        {
+            if ([question.storyID isEqualToString:questionAfterStoryID])
+            {
+                thisQuestion.questionAfter = question;
+            }
+        }
+    }
+    
+    NSArray *choiceRows = [self parsedCSVContentsWithFileName:@"Choice-Table 1"];
+    for (NSInteger i = 0; i < choiceRows.count; i++)
+    {
+        NSArray *choiceRow = choiceRows[i];
+        NSString *choiceRowStoryID = choiceRow[0];
+        NSPredicate *thisChoicePredicate = [NSPredicate predicateWithFormat:@"storyID == %@", choiceRowStoryID];
+        Choice *thisChoice = [self.choices filteredArrayUsingPredicate:thisChoicePredicate][0];
+        
+        NSLog(@"CHOICE MATCH: %@ vs %@", choiceRowStoryID, thisChoice.storyID);
+        
+        NSString *questionOutStoryID = choiceRow[5];
+        for (Question *question in allQuestions)
+        {
+            if ([question.storyID isEqualToString:questionOutStoryID])
+            {
+                NSLog(@"QUESTION AFTER %@ is %@", thisChoice, question);
+                thisChoice.questionOut = question;
+            }
+        }
+    }    
     [self saveContext];
     [self fetchData];
 }

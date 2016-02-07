@@ -24,7 +24,7 @@
     // 5 is destinationID/questionOut
     choice.content = csvRow[6];
     
-    NSLog(@"Choice: %@", choice);
+//    NSLog(@"Choice: %@", choice);
     return choice;
 }
 

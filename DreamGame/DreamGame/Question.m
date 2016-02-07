@@ -22,7 +22,7 @@
     // 5 is choiceOuts
     question.content = csvRow[6];
     
-    NSLog(@"Question: %@", question);
+//    NSLog(@"Question: %@", question);
     return question;
 }
 
