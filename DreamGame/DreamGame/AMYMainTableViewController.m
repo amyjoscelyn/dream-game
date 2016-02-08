@@ -100,7 +100,7 @@
             cell.textLabel.text = choice.content;
         }
         else
-        {
+        {//maybe this should be in section 3, and hide section 2?
             cell.textLabel.text = @"Continue";
         }
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
@@ -125,6 +125,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row = indexPath.row;
+    
+    
     
     [self.tableView reloadData];
     

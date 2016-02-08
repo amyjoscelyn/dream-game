@@ -90,6 +90,8 @@
     {
         [self generateQuestions];
     }
+    
+    self.currentQuestion = self.questions[0];
 }
 
 # pragma Generator Methods
@@ -227,18 +229,18 @@
         NSPredicate *thisChoicePredicate = [NSPredicate predicateWithFormat:@"storyID == %@", choiceRowStoryID];
         Choice *thisChoice = [self.choices filteredArrayUsingPredicate:thisChoicePredicate][0];
         
-        NSLog(@"CHOICE MATCH: %@ vs %@", choiceRowStoryID, thisChoice.storyID);
+//        NSLog(@"CHOICE MATCH: %@ vs %@", choiceRowStoryID, thisChoice.storyID);
         
         NSString *questionOutStoryID = choiceRow[5];
         for (Question *question in allQuestions)
         {
             if ([question.storyID isEqualToString:questionOutStoryID])
             {
-                NSLog(@"QUESTION AFTER %@ is %@", thisChoice, question);
+//                NSLog(@"QUESTION AFTER %@ is %@", thisChoice, question);
                 thisChoice.questionOut = question;
             }
         }
-    }    
+    }
     [self saveContext];
     [self fetchData];
 }
