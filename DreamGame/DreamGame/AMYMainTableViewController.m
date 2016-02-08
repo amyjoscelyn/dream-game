@@ -18,6 +18,8 @@
 @property (nonatomic) BOOL endingTriggered;
 
 @property (nonatomic, strong) AMYStoryDataStore *dataStore;
+@property (strong, nonatomic) Question *currentQuestion;
+@property (strong, nonatomic) NSArray *sortedChoices;
 
 @end
 
@@ -31,6 +33,16 @@
     self.dataStore = [AMYStoryDataStore sharedStoryDataStore];
     
     [self.dataStore fetchData];
+    
+    self.currentQuestion = self.dataStore.currentQuestion;
+    //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
+}
+
+- (void)setCurrentQuestion:(Question *)currentQuestion {
+    _currentQuestion = currentQuestion;
+    _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
+    
+    _dataStore.currentQuestion = currentQuestion;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -48,7 +60,7 @@
         }
         case 1:
         {
-            NSInteger choiceOutsCount = self.dataStore.currentQuestion.choiceOuts.count;
+            NSInteger choiceOutsCount = self.currentQuestion.choiceOuts.count;
             if (choiceOutsCount > 0)
             {
                 return choiceOutsCount;
@@ -74,11 +86,9 @@
     NSUInteger purple = 300;
     CGFloat textHue = purple/359.0;
     
-    Question *question = self.dataStore.currentQuestion;
-    
     if (section == 0)
     {
-        cell.textLabel.text = question.content;
+        cell.textLabel.text = self.currentQuestion.content;
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.detailTextLabel.hidden = YES;
         cell.textLabel.numberOfLines = 0;
@@ -88,21 +98,24 @@
     }
     else if (section == 1)
     {
-        NSLog(@"there are %lu choices for this question", question.choiceOuts.count);
-        NSArray *sortedChoices = [NSArray new];
+        NSLog(@"there are %lu choices for this question", self.currentQuestion.choiceOuts.count);
+        NSLog(@"~~~~~~~~~sorted choices: %@", self.sortedChoices);
         
-        if (question.choiceOuts.count > 0)
+        if (self.sortedChoices.count > 0)
         {
-            sortedChoices = [question.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
-            NSLog(@"~~~~~~~~~sorted choices: %@", sortedChoices);
-            Choice *choice = sortedChoices[row];
+            Choice *choice = self.sortedChoices[row];
             NSLog(@"choice: %@", choice);
             cell.textLabel.text = choice.content;
         }
-        else
+        else if (self.currentQuestion.questionAfter)
         {//maybe this should be in section 3, and hide section 2?
             cell.textLabel.text = @"Continue";
         }
+        else
+        {
+            cell.textLabel.text = @"The end. (tap to restart)";
+        }
+        
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.hidden = YES;
@@ -124,12 +137,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) { return; }
+    
     NSUInteger row = indexPath.row;
     
-    
+    if (self.currentQuestion.questionAfter)
+    {
+        self.currentQuestion = self.currentQuestion.questionAfter;
+        //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
+    }
+    else if (self.dataStore.currentQuestion.choiceOuts.count > 0)
+    {
+        Choice *selectedChoice = self.sortedChoices[row];
+        self.currentQuestion = selectedChoice.questionOut;
+    } else {
+        self.currentQuestion = self.dataStore.questions[0];
+        // go to next chapter or restart
+    }
     
     [self.tableView reloadData];
-    
 }
 
 @end

@@ -254,6 +254,13 @@
     
     // removes header from the contents
     [csvRows removeObjectAtIndex:0];
+    
+    for (NSArray *csvRow in csvRows) {
+        NSString *storyID = csvRow[0];
+        if (storyID.length == 0) {
+            [csvRows removeObject:csvRow];
+        }
+    }
 
     return csvRows;
 }
