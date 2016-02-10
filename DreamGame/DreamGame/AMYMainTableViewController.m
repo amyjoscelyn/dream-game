@@ -38,7 +38,8 @@
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
-- (void)setCurrentQuestion:(Question *)currentQuestion {
+- (void)setCurrentQuestion:(Question *)currentQuestion
+{
     _currentQuestion = currentQuestion;
     _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     
@@ -64,7 +65,8 @@
             if (choiceOutsCount > 0)
             {
                 return choiceOutsCount;
-            } else
+            }
+            else
             {
                 return 1;
             }
@@ -98,22 +100,26 @@
     }
     else if (section == 1)
     {
-        NSLog(@"there are %lu choices for this question", self.currentQuestion.choiceOuts.count);
-        NSLog(@"~~~~~~~~~sorted choices: %@", self.sortedChoices);
+//        NSLog(@"there are %lu choices for this question", self.currentQuestion.choiceOuts.count);
+//        NSLog(@"~~~~~~~~~sorted choices: %@", self.sortedChoices);
         
         if (self.sortedChoices.count > 0)
         {
             Choice *choice = self.sortedChoices[row];
-            NSLog(@"choice: %@", choice);
+//            NSLog(@"choice: %@", choice);
             cell.textLabel.text = choice.content;
         }
         else if (self.currentQuestion.questionAfter)
         {//maybe this should be in section 3, and hide section 2?
             cell.textLabel.text = @"Continue";
         }
+        else if ([self.currentQuestion.content isEqualToString:@"THE END."])
+        {
+            cell.textLabel.text = @"(tap to restart)";
+        }
         else
         {
-            cell.textLabel.text = @"The end. (tap to restart)";
+            cell.textLabel.text = @"You have reached a precarious end with no further content! (tap to restart)";
         }
         
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];

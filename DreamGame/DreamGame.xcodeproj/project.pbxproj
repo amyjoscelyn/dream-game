@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */; };
 		3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DACA1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld */; };
 		3D23DB281C601DDE00C5FFBA /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB1A1C601DDE00C5FFBA /* Choice.m */; };
 		3D23DB2A1C601DDE00C5FFBA /* Prerequisite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB1E1C601DDE00C5FFBA /* Prerequisite.m */; };
 		3D23DB2C1C601DDE00C5FFBA /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB221C601DDE00C5FFBA /* Effect.m */; };
 		3D23DB2E1C601DDE00C5FFBA /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D23DB261C601DDE00C5FFBA /* Question.m */; };
+		3D2FA0691C6AECA200FAD00F /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FA0651C6AECA200FAD00F /* Choice-Table 1.csv */; };
+		3D2FA06A1C6AECA200FAD00F /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FA0661C6AECA200FAD00F /* Effect-Table 1.csv */; };
+		3D2FA06B1C6AECA200FAD00F /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FA0671C6AECA200FAD00F /* Prerequisite-Table 1.csv */; };
+		3D2FA06C1C6AECA200FAD00F /* Question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FA0681C6AECA200FAD00F /* Question-Questions.csv */; };
 		3D4044D41BC5B75E00A49C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D31BC5B75E00A49C70 /* main.m */; };
 		3D4044D71BC5B75E00A49C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4044D61BC5B75E00A49C70 /* AppDelegate.m */; };
 		3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4044DB1BC5B75E00A49C70 /* Main.storyboard */; };
@@ -25,14 +28,9 @@
 		3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */; };
 		3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */; };
 		3D82B6571C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */; };
-		3D82B65C1C66ECC8003C2095 /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D82B6581C66ECC8003C2095 /* Choice-Table 1.csv */; };
-		3D82B65D1C66ECC8003C2095 /* Effects-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D82B6591C66ECC8003C2095 /* Effects-Table 1.csv */; };
-		3D82B65E1C66ECC8003C2095 /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D82B65A1C66ECC8003C2095 /* Prerequisite-Table 1.csv */; };
-		3D82B65F1C66ECC8003C2095 /* Question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D82B65B1C66ECC8003C2095 /* Question-Questions.csv */; };
 		3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */; };
 		3DA309D01C64140300AC8594 /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */; };
 		3DA309D31C64141E00AC8594 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */; };
-		3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DFEC0EB1C59B30F005F1924 /* branching2.csv */; };
 		691742A96CE385055450F671 /* libPods-DreamGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "a-grocery-trip2.csv"; path = "DreamGame/a-grocery-trip2.csv"; sourceTree = "<group>"; };
 		3D23DACB1C5FD8D700C5FFBA /* DreamGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamGame.xcdatamodel; sourceTree = "<group>"; };
 		3D23DB191C601DDE00C5FFBA /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
 		3D23DB1A1C601DDE00C5FFBA /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
@@ -57,6 +54,10 @@
 		3D23DB221C601DDE00C5FFBA /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
 		3D23DB251C601DDE00C5FFBA /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		3D23DB261C601DDE00C5FFBA /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		3D2FA0651C6AECA200FAD00F /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
+		3D2FA0661C6AECA200FAD00F /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
+		3D2FA0671C6AECA200FAD00F /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
+		3D2FA0681C6AECA200FAD00F /* Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Questions.csv"; sourceTree = "<group>"; };
 		3D4044CE1BC5B75E00A49C70 /* DreamGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4044D21BC5B75E00A49C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4044D31BC5B75E00A49C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,17 +81,12 @@
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
 		3D82B6551C66BCA0003C2095 /* Prerequisite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prerequisite+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Prerequisite+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3D82B6581C66ECC8003C2095 /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
-		3D82B6591C66ECC8003C2095 /* Effects-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effects-Table 1.csv"; sourceTree = "<group>"; };
-		3D82B65A1C66ECC8003C2095 /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
-		3D82B65B1C66ECC8003C2095 /* Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Questions.csv"; sourceTree = "<group>"; };
 		3DA309C81C6413DD00AC8594 /* Choice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Choice+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Choice+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DA309CE1C64140300AC8594 /* Effect+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Effect+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Effect+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DA309D11C64141E00AC8594 /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3DFEC0EB1C59B30F005F1924 /* branching2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = branching2.csv; path = DreamGame/branching2.csv; sourceTree = "<group>"; };
 		7C0B20A447FEC170EFDF264A /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8231DBC9ECED056C7715B9D4 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
 		F8AE51E7B2D1ACD486576B39 /* Pods-DreamGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamGame/Pods-DreamGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,12 +218,10 @@
 		3DA309C71C63F5DE00AC8594 /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				3D82B6581C66ECC8003C2095 /* Choice-Table 1.csv */,
-				3D82B6591C66ECC8003C2095 /* Effects-Table 1.csv */,
-				3D82B65A1C66ECC8003C2095 /* Prerequisite-Table 1.csv */,
-				3D82B65B1C66ECC8003C2095 /* Question-Questions.csv */,
-				3DFEC0EB1C59B30F005F1924 /* branching2.csv */,
-				3D2375631C56946F009CBF74 /* a-grocery-trip2.csv */,
+				3D2FA0651C6AECA200FAD00F /* Choice-Table 1.csv */,
+				3D2FA0661C6AECA200FAD00F /* Effect-Table 1.csv */,
+				3D2FA0671C6AECA200FAD00F /* Prerequisite-Table 1.csv */,
+				3D2FA0681C6AECA200FAD00F /* Question-Questions.csv */,
 			);
 			name = CSVs;
 			path = ..;
@@ -326,14 +320,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
-				3D2375641C56946F009CBF74 /* a-grocery-trip2.csv in Resources */,
-				3D82B65C1C66ECC8003C2095 /* Choice-Table 1.csv in Resources */,
+				3D2FA06B1C6AECA200FAD00F /* Prerequisite-Table 1.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
-				3DFEC0EC1C59B30F005F1924 /* branching2.csv in Resources */,
+				3D2FA06C1C6AECA200FAD00F /* Question-Questions.csv in Resources */,
+				3D2FA06A1C6AECA200FAD00F /* Effect-Table 1.csv in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
-				3D82B65F1C66ECC8003C2095 /* Question-Questions.csv in Resources */,
-				3D82B65E1C66ECC8003C2095 /* Prerequisite-Table 1.csv in Resources */,
-				3D82B65D1C66ECC8003C2095 /* Effects-Table 1.csv in Resources */,
+				3D2FA0691C6AECA200FAD00F /* Choice-Table 1.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

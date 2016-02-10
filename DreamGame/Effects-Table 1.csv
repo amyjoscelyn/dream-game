@@ -1,6 +1,0 @@
-storyID,comment,choices,prerequisites,actionObject,actionProperty,operator,stringValue
-popABrewsky,have a beer,,,player,bloodAlcohol,+,0.01
-sexChange,inverts the player’s gender,,,player,gender,!,
-longIslandIceTead,get drunk fast,,tipsy,player,bloodAlcohol,+,0.02
-moonshinerize,make yourself blind,,"smashedOutDrunk, whitePrivelege",player,bloodAlcohol,+,0.15
-arrestedMyCase,do not pass go,,,player,wanted,=,YES

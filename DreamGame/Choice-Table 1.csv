@@ -1,8 +1,21 @@
 storyID,comment,questionIns,prerequisites,effects,questionOut,content
-c000300,,q0003,,,q0010,Be responsible and get to work.
-c000301,,q0003,,,q0020,Throw your phone against the wall and snooze.
-c003000,,q0030,richMan,,q0100,"Day off, yeah! Hit the town! Paint it red!"
-c003001,,q0030,,,q0200,My LinkedIn is SO out of date… fml.
-c010000,,q0100,,,q0101,Watch a movie.
-c010001,,q0100,,tipsy,q0102,Get wasted and watch a movie!
-c010002,,q0100,"mansWorld, whitePrivelege",arrestedMyCase,q0103,Insult a cop.
+c0004.0,Call it a day.,q0004,,,q0010,Go back.
+c0004.1,Let’s go camping!,q0004,,,q0020,Keep going.
+c0023.0,Fork at large tree—left,q0023,,,q0030,Go left.
+c0023.1,Fork at large tree—right,q0023,,,,Go right.
+c0033.0,At clearing—stay,q0033,,,q0040,Set up camp now.
+c0033.1,At clearing—leave,q0033,,,,Keep exploring.
+c0045.0,open basket for dinner,q0045,,,q0046,Open the picnic basket.
+c0047.0,note,q0047,,,q0048.0,Read the note.
+c0047.1,ignore note,q0047,,,q0048.1,Ignore the note.
+c0049.0,campfire treat,q0049,,,q0050.0,Make S'mores.
+c0049.1,campfire restraint,q0049,,,q0050.1,Don't make S'mores.
+c0053.0,go to bed,q0053,,,q0070,Go to bed.
+c0053.1,stay up late,q0053,,,q0060,Stay up late.
+c0076.0,not scared,q0076,,,q0080,Right.
+c0076.1,definitely afraid,q0076,,,q0090,"Well, maybe… except what if…"
+c0106.0,back to fork,q0106,,,q0110,Go back to the fork.
+c0106.1,explore circle,q0106,,,,Explore more here.
+c0114.0,go back to clearing from fork,q0114,,,,Go left.
+c0114.1,SHOULD THIS BE THE SAME AS c0023.1?,q0114,,,,Go right.
+c0114.2,leave woods,q0114,,,q0120,Go back.
