@@ -119,7 +119,7 @@
         }
         else
         {
-            cell.textLabel.text = @"You have reached a precarious end with no further content! (tap to restart)";
+            cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
         
         cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
