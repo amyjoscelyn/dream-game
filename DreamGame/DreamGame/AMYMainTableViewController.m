@@ -21,6 +21,8 @@
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
 
+@property (nonatomic) CGFloat textHue;
+
 @end
 
 @implementation AMYMainTableViewController
@@ -35,7 +37,13 @@
     [self.dataStore fetchData];
     
     self.currentQuestion = self.dataStore.currentQuestion;
-    self.tableView.backgroundColor = [UIColor colorWithHue:130/359.0 saturation:0.1 brightness:0.88 alpha:1.0];
+    
+    NSUInteger forestSeaGreen = 130;
+    self.textHue = forestSeaGreen/359.0;
+    
+    self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
+    
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
@@ -86,15 +94,17 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-    NSUInteger brown = 30;
-    CGFloat textHue = brown/359.0;
+    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
     
     if (section == 0)
     {
         cell.textLabel.text = self.currentQuestion.content;
-        cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.25 alpha:1.0];
-        cell.detailTextLabel.hidden = YES;
+        cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
+        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
+        
+        cell.detailTextLabel.hidden = YES;
+        
         cell.userInteractionEnabled = NO;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 45;
@@ -123,7 +133,8 @@
             cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
         
-        cell.textLabel.textColor = [UIColor colorWithHue:textHue saturation:1.0 brightness:0.5 alpha:1.0];
+        cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.5 alpha:1.0];
+        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.hidden = YES;
     }
