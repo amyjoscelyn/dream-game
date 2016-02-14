@@ -35,6 +35,7 @@
     [self.dataStore fetchData];
     
     self.currentQuestion = self.dataStore.currentQuestion;
+    self.tableView.backgroundColor = [UIColor colorWithHue:130/359.0 saturation:0.1 brightness:0.88 alpha:1.0];
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
@@ -85,8 +86,8 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-    NSUInteger purple = 300;
-    CGFloat textHue = purple/359.0;
+    NSUInteger brown = 30;
+    CGFloat textHue = brown/359.0;
     
     if (section == 0)
     {
