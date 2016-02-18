@@ -8,9 +8,9 @@
 
 #import "AMYStoryDataStore.h"
 #import <CHCSVParser/CHCSVParser.h>
-#import "Prerequisite+CoreDataProperties.h"
-#import "Effect+CoreDataProperties.h"
-#import "Choice+CoreDataProperties.h"
+//#import "Prerequisite+CoreDataProperties.h"
+//#import "Effect+CoreDataProperties.h"
+//#import "Choice+CoreDataProperties.h"
 //#import "Question+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
@@ -113,7 +113,6 @@
 
 - (void)generateEffects
 {
-    // read from the CSV to get an array
     //this parses through the given csv--Effects
     
     NSArray *effectRows = [self parsedCSVContentsWithFileName:@"Effects-Table 1"];
@@ -141,7 +140,6 @@
 
 - (void)generateChoices
 {
-    // read from the CSV to get an array
     //this parses through the given csv--Choice
     
     NSArray *choiceRows = [self parsedCSVContentsWithFileName:@"Choice-Table 1"];
@@ -181,7 +179,6 @@
 
 - (void)generateQuestions
 {
-    // read from the CSV to get an array
     //this parses through the given csv--Question
     
     NSArray *questionRows = [self parsedCSVContentsWithFileName:@"Question-Questions"];
@@ -261,7 +258,6 @@
             [csvRows removeObject:csvRow];
         }
     }
-
     return csvRows;
 }
 
@@ -316,7 +312,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return _persistentStoreCoordinator;
 }
 

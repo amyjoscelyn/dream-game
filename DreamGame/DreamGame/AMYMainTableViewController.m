@@ -132,7 +132,6 @@
         {
             cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
-        
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.5 alpha:1.0];
         cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
@@ -161,19 +160,31 @@
     
     if (self.currentQuestion.questionAfter)
     {
-        self.currentQuestion = self.currentQuestion.questionAfter;
+        [self setCurrentQuestion:self.currentQuestion.questionAfter];
         //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     }
     else if (self.dataStore.currentQuestion.choiceOuts.count > 0)
     {
         Choice *selectedChoice = self.sortedChoices[row];
-        self.currentQuestion = selectedChoice.questionOut;
-    } else {
-        self.currentQuestion = self.dataStore.questions[0];
+        [self setCurrentQuestion:selectedChoice.questionOut];
+    }
+    else
+    {
+        [self setCurrentQuestion:self.dataStore.questions[0]];
         // go to next chapter or restart
     }
-    
     [self.tableView reloadData];
 }
+
+/*
+ I have the entities set up already for prerequisites and effects.
+ Effects: write some into the content, attribute them to choices, then write code to read those effects--properties that will change when the effect is triggered
+ Prerequisites: write some into the choices (if there are two choices that are superficially the same, but lead to different corresponding questions because of different prerequisites, the properties should filter through the prereqs and only display one of those similar choices to avoid confusion and apparent duplication), write code to have them read the properties.  Only display the ones that pass the check--the check is a BOOL, and if the BOOL is YES, display the choice.  If it is NO, ignore it.
+ 
+ I still need to set up some entities, for the story, the world, and the character.
+ Story: this entity should hold the state of the entire story--the current question the app is closed on, as well as the latest saved state if the story's progress is manually saved.  It should also hold relationships with the World and the PlayerCharacter as well as Question.
+ World: this should have attributes for all of the appropriate world details that are dynamic and can be changed by effects from the player's choices.
+ PlayerCharacter: this should have attributes for the character that differs player to player, game to game: Name, PhysicalCharacteristics, Traits, Skills, and Inventory.  Some of those might be better suited as their own Entities than as mere attributes, but I can decide that when I get there.
+ */
 
 @end

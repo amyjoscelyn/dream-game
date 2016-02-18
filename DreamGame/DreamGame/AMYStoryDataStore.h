@@ -26,7 +26,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (nonatomic, strong) NSMutableArray *snippets; //do I still need this?  did I ever?
+//@property (nonatomic, strong) NSMutableArray *snippets; //do I still need this?  did I ever?
 
 @property (strong, nonatomic, readonly) NSSortDescriptor *sortByStoryIDAsc;
 

@@ -12,6 +12,6 @@
 
 @implementation AMYStory
 
-
+//do I need this class?  This might be able to keep track of the story's progress between saves.
 
 @end
