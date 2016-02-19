@@ -1,5 +1,5 @@
 //
-//  Playthrough+CoreDataProperties.m
+//  Character+CoreDataProperties.h
 //  DreamGame
 //
 //  Created by Amy Joscelyn on 2/19/16.
@@ -9,11 +9,16 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Playthrough+CoreDataProperties.h"
+#import "Character.h"
 
-@implementation Playthrough (CoreDataProperties)
+NS_ASSUME_NONNULL_BEGIN
 
-@dynamic currentQuestion;
-@dynamic playerCharacter;
+@interface Character (CoreDataProperties)
+
+@property (nonatomic) BOOL noMores;
+@property (nonatomic) BOOL campedOut;
+@property (nullable, nonatomic, retain) Playthrough *playthrough;
 
 @end
+
+NS_ASSUME_NONNULL_END

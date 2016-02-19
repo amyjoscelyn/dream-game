@@ -24,6 +24,8 @@
 		3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF31C4EE76F004FFA5F /* AMYStory.m */; };
 		3D6D5EF71C4EE944004FFA5F /* AMYChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */; };
 		3D82B6571C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */; };
+		3D95E9461C776DA70029971D /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */; };
+		3D95E9471C776DA70029971D /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9451C776DA70029971D /* Character.m */; };
 		3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */; };
 		3DA309D01C64140300AC8594 /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */; };
 		3DA309D31C64141E00AC8594 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */; };
@@ -79,6 +81,10 @@
 		3D6D5EF61C4EE944004FFA5F /* AMYChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYChoice.m; sourceTree = "<group>"; };
 		3D82B6551C66BCA0003C2095 /* Prerequisite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prerequisite+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Prerequisite+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D95E9421C776DA70029971D /* Character+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D95E9441C776DA70029971D /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		3D95E9451C776DA70029971D /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
 		3DA309C81C6413DD00AC8594 /* Choice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Choice+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Choice+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DA309CE1C64140300AC8594 /* Effect+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Effect+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 		3DA309C61C63F5AF00AC8594 /* Managed Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D95E9421C776DA70029971D /* Character+CoreDataProperties.h */,
+				3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */,
+				3D95E9441C776DA70029971D /* Character.h */,
+				3D95E9451C776DA70029971D /* Character.m */,
 				3DBCE34D1C76965B00D11500 /* Playthrough+CoreDataProperties.h */,
 				3DBCE34E1C76965B00D11500 /* Playthrough+CoreDataProperties.m */,
 				3DBCE34F1C76965B00D11500 /* Playthrough.h */,
@@ -401,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D95E9461C776DA70029971D /* Character+CoreDataProperties.m in Sources */,
 				3D6D5EEE1C4ED367004FFA5F /* AMYStorySnippets.m in Sources */,
 				3D23DACC1C5FD8D700C5FFBA /* DreamGame.xcdatamodeld in Sources */,
 				3D23DB2C1C601DDE00C5FFBA /* Effect.m in Sources */,
@@ -411,6 +422,7 @@
 				3D23DB2A1C601DDE00C5FFBA /* Prerequisite.m in Sources */,
 				3D6D5EF41C4EE76F004FFA5F /* AMYStory.m in Sources */,
 				3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */,
+				3D95E9471C776DA70029971D /* Character.m in Sources */,
 				3DA309D31C64141E00AC8594 /* Question+CoreDataProperties.m in Sources */,
 				3D23DB2E1C601DDE00C5FFBA /* Question.m in Sources */,
 				3D23DB281C601DDE00C5FFBA /* Choice.m in Sources */,
