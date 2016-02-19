@@ -1,1 +1,5 @@
 storyID,comment,choices,prerequisites,actionObject,actionProperty,operator,stringValue
+Game Over,game has ended,"c0004.0, c0114.2, c0142.0, c0245.0, c0245.1",,story,gameOver,\=,YES
+No’Mores,no more s’mores,"c0049.0, c0212.0",,character,noMores,\=,YES
+Camped Out,,"c0076.0, c0076.1, c0212.0, c0212.1",,world,campedOut,\=,YES
+Ankle Hurt,,"c0140.0, c0140.1",,character,hurt,+,ankle
