@@ -32,6 +32,7 @@
 {
     NSMutableString *description = [[NSMutableString alloc] initWithString:@"Choice - "];
     [description appendFormat:@"%@ - %@", self.storyID, self.comment];
+//    [description appendFormat:@"\n %@", self.effects];
     [description appendFormat:@"\n %@", self.content];
     
     return description;

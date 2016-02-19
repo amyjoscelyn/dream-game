@@ -11,12 +11,6 @@
 
 @interface AMYMainTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *mainStorypoints;
-@property (nonatomic, strong) NSMutableArray *branchingOptions;
-@property (nonatomic, strong) NSMutableArray *choices;
-@property (nonatomic, strong) NSMutableArray *effects;
-@property (nonatomic) BOOL endingTriggered;
-
 @property (nonatomic, strong) AMYStoryDataStore *dataStore;
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
@@ -170,6 +164,16 @@
     else if (self.dataStore.playthrough.currentQuestion.choiceOuts.count > 0)
     {
         Choice *selectedChoice = self.sortedChoices[row];
+        
+        if (selectedChoice.effects.count)
+        {
+            for (Effect *effect in selectedChoice.effects)
+            {
+                [self doTheThing:effect];
+            }
+            
+//            NSLog(@"effects: %@", selectedChoice.effects);
+        }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
     }
     else
@@ -178,6 +182,43 @@
         // go to next chapter or restart
     }
     [self.tableView reloadData];
+}
+
+- (void)doTheThing:(Effect *)effect
+{
+    //this handles all effects from selected choice
+    
+    NSLog(@"effect: %@", effect);
+    NSString *actionObject = effect.actionObject;
+    NSString *actionProperty = effect.actionProperty;
+//    NSString *operator = effect.operator;
+    NSString *stringValue = effect.stringValue;
+    
+    if ([actionObject isEqualToString:@"story"])
+    {
+        // do the thing on self.dataStore.playthrough;
+        if ([actionProperty isEqualToString:@"gameOver"])
+        {
+            //do the thing on playthrough.gameOver
+            if ([stringValue isEqualToString:@"YES"])
+            {
+                //gameOver = YES;
+            }
+            
+        }
+    }
+    else if ([actionObject isEqualToString:@"character"])
+    {
+        // do the thing on self.dataStore.playerCharacter;
+        if ([actionProperty isEqualToString:@"noMores"])
+        {
+            //do the thing on playerChar.noMores
+            if ([stringValue isEqualToString:@"YES"])
+            {
+                self.dataStore.playerCharacter.noMores = YES;
+            }
+        }
+    }
 }
 
 /*
