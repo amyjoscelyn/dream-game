@@ -13,6 +13,7 @@
 #import "Effect+CoreDataProperties.h"
 #import "Prerequisite+CoreDataProperties.h"
 #import "Playthrough+CoreDataProperties.h"
+#import "Character+CoreDataProperties.h"
 
 @interface AMYStoryDataStore : NSObject
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic, readonly) NSArray *prerequisites;
 
 @property (strong, nonatomic, readonly) Playthrough *playthrough;
+@property (strong, nonatomic, readonly) Character *playerCharacter;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

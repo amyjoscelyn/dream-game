@@ -17,6 +17,7 @@
 @property (strong, nonatomic, readwrite) NSArray *prerequisites;
 
 @property (strong, nonatomic, readwrite) Playthrough *playthrough;
+@property (strong, nonatomic, readwrite) Character *playerCharacter;
 
 @property (strong, nonatomic, readwrite) NSSortDescriptor *sortByStoryIDAsc;
 
@@ -93,9 +94,13 @@
     
     NSFetchRequest *playthroughRequest = [NSFetchRequest fetchRequestWithEntityName:@"Playthrough"];
     
-    NSArray *result = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil];
+    NSArray *playthroughRequestResult = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil];
     
-    if (result.count > 0)
+    if (self.playthrough)
+    {
+        return;
+    }
+    else if (playthroughRequestResult.count > 0)
     {
         self.playthrough = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil][0];
         NSLog(@"we have a standing playthrough :)");
@@ -103,6 +108,25 @@
     else
     {
         [self generatePlaythrough];
+        return;
+    }
+    
+    NSFetchRequest *characterRequest = [NSFetchRequest fetchRequestWithEntityName:@"Character"];
+    
+    NSArray *characterRequestResult = [self.managedObjectContext executeFetchRequest:characterRequest error:nil];
+    
+    if (self.playerCharacter)
+    {
+        return;
+    }
+    else if (characterRequestResult.count > 0)
+    {
+        self.playerCharacter = [self.managedObjectContext executeFetchRequest:characterRequest error:nil][0];
+        NSLog(@"we have the player's character now :)");
+    }
+    else
+    {
+        [self generatePlayerCharacter];
         return;
     }
 }
@@ -257,11 +281,23 @@
 
 - (void)generatePlaythrough
 {
-    //this generates a new playthrough for the first gam
+    //this generates a new playthrough for the first game
     
     Playthrough *playthrough = [Playthrough createNewPlaythroughWithManagedObjectContext:self.managedObjectContext];
     
     playthrough.currentQuestion = self.questions[0];
+    
+    [self saveContext];
+    [self fetchData];
+}
+
+- (void)generatePlayerCharacter
+{
+    //this generates a new character for the player
+    
+    Character *character = [Character createNewCharacterWithManagedObjectContext:self.managedObjectContext];
+    
+    self.playerCharacter = character;
     
     [self saveContext];
     [self fetchData];
