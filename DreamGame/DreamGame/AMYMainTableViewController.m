@@ -11,15 +11,18 @@
 
 @interface AMYMainTableViewController ()
 
+//do I need the first two?  Do i need any of these in this first section?
 @property (nonatomic, strong) NSMutableArray *mainStorypoints;
 @property (nonatomic, strong) NSMutableArray *branchingOptions;
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) NSMutableArray *effects;
-@property (nonatomic) BOOL endingTriggered;
+@property (nonatomic) BOOL endingTriggered; //do I need this?
 
 @property (nonatomic, strong) AMYStoryDataStore *dataStore;
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
+
+@property (strong, nonatomic) NSMutableArray *questionHistory;
 
 @property (nonatomic) CGFloat textHue;
 
@@ -31,6 +34,8 @@
 {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 45;
     
     self.dataStore = [AMYStoryDataStore sharedStoryDataStore];
     
@@ -44,6 +49,8 @@
     
     self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
     self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
+    
+    self.questionHistory = [[NSMutableArray alloc] init];
     
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
@@ -61,7 +68,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    //section 1: past choices
+    //section 2: current question
+    //section 3: choices
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 45;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+//    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+//    CGSize screenSize = screenBounds.size;
+//    UILabel *calcLabel = [[UILabel alloc] init];
+//    calcLabel.numberOfLines = 0;
+//    NSInteger section = indexPath.section;
+//
+//    if (section == 0) {
+//        Question *question = self.questionHistory[indexPath.row];
+//        calcLabel.text = question.content;
+//    } else if (section == 1) {
+//        calcLabel.text = self.currentQuestion.content;
+//    } else if (section == 2) {
+//        if (self.sortedChoices.count)
+//        {
+//            Choice *choice = self.sortedChoices[indexPath.row];
+//            calcLabel.text = choice.content;
+//        }
+//        else{
+//            return 45;
+//        }
+//    }
+//    
+//    CGSize size = [calcLabel sizeThatFits:CGSizeMake(screenSize.width, FLT_MAX)];
+//    
+//    return UITableViewAutomaticDimension;
+//    return size.height;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -70,9 +114,14 @@
     {
         case 0:
         {
-            return 1;
+            //if there's no story history for this playthrough, this section should be hidden//return 0
+            return self.questionHistory.count;
         }
         case 1:
+        {
+            return 1;
+        }
+        case 2:
         {
             NSInteger choiceOutsCount = self.currentQuestion.choiceOuts.count;
             if (choiceOutsCount > 0)
@@ -102,6 +151,11 @@
     
     if (section == 0)
     {
+        NSString *pastQuestion = self.questionHistory[row];
+        cell.textLabel.text = pastQuestion;
+    }
+    else if (section == 1)
+    {
         cell.textLabel.text = self.currentQuestion.content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
@@ -110,10 +164,8 @@
         cell.detailTextLabel.hidden = YES;
         
         cell.userInteractionEnabled = NO;
-        tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight = 45;
     }
-    else if (section == 1)
+    else if (section == 2)
     {
 //        NSLog(@"there are %lu choices for this question", self.currentQuestion.choiceOuts.count);
 //        NSLog(@"~~~~~~~~~sorted choices: %@", self.sortedChoices);
@@ -164,16 +216,22 @@
     
     if (self.currentQuestion.questionAfter)
     {
+        [self.questionHistory addObject:self.currentQuestion.content];
+        
         [self setCurrentQuestionOfStory:self.currentQuestion.questionAfter];
         //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     }
     else if (self.dataStore.playthrough.currentQuestion.choiceOuts.count > 0)
     {
+        [self.questionHistory addObject:self.currentQuestion.content];
+        
         Choice *selectedChoice = self.sortedChoices[row];
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
     }
     else
     {
+        [self.questionHistory addObject:self.currentQuestion.content];
+        
         [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
         // go to next chapter or restart
     }
