@@ -377,7 +377,6 @@
     return _persistentStoreCoordinator;
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext
 {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)

@@ -197,12 +197,11 @@
     if ([actionObject isEqualToString:@"story"])
     {
         // do the thing on self.dataStore.playthrough;
-        if ([actionProperty isEqualToString:@"gameOver"])
+        if ([actionProperty isEqualToString:@"campedOut"])
         {
-            //do the thing on playthrough.gameOver
             if ([stringValue isEqualToString:@"YES"])
             {
-                //gameOver = YES;
+                self.dataStore.playthrough.campedOut = YES;
             }
             
         }
