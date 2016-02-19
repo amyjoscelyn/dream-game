@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AMYStoryDataStore.h"
 
 @interface AppDelegate ()
 

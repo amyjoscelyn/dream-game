@@ -36,7 +36,8 @@
     
     [self.dataStore fetchData];
     
-    self.currentQuestion = self.dataStore.currentQuestion;
+    [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
+    NSLog(@"First question we see: %@", self.currentQuestion.storyID);
     
     NSUInteger forestSeaGreen = 130;
     self.textHue = forestSeaGreen/359.0;
@@ -47,12 +48,15 @@
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
-- (void)setCurrentQuestion:(Question *)currentQuestion
+- (void)setCurrentQuestionOfStory:(Question *)currentQuestion
 {
     _currentQuestion = currentQuestion;
     _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     
-    _dataStore.currentQuestion = currentQuestion;
+    _dataStore.playthrough.currentQuestion = currentQuestion;
+    NSLog(@"current question: %@", self.currentQuestion.storyID);
+    
+    [_dataStore saveContext];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -160,17 +164,17 @@
     
     if (self.currentQuestion.questionAfter)
     {
-        [self setCurrentQuestion:self.currentQuestion.questionAfter];
+        [self setCurrentQuestionOfStory:self.currentQuestion.questionAfter];
         //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     }
-    else if (self.dataStore.currentQuestion.choiceOuts.count > 0)
+    else if (self.dataStore.playthrough.currentQuestion.choiceOuts.count > 0)
     {
         Choice *selectedChoice = self.sortedChoices[row];
-        [self setCurrentQuestion:selectedChoice.questionOut];
+        [self setCurrentQuestionOfStory:selectedChoice.questionOut];
     }
     else
     {
-        [self setCurrentQuestion:self.dataStore.questions[0]];
+        [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
         // go to next chapter or restart
     }
     [self.tableView reloadData];
@@ -182,7 +186,7 @@
  Prerequisites: write some into the choices (if there are two choices that are superficially the same, but lead to different corresponding questions because of different prerequisites, the properties should filter through the prereqs and only display one of those similar choices to avoid confusion and apparent duplication), write code to have them read the properties.  Only display the ones that pass the check--the check is a BOOL, and if the BOOL is YES, display the choice.  If it is NO, ignore it.
  
  I still need to set up some entities, for the story, the world, and the character.
- Story: this entity should hold the state of the entire story--the current question the app is closed on, as well as the latest saved state if the story's progress is manually saved.  It should also hold relationships with the World and the PlayerCharacter as well as Question.
+ Playthrough: this entity should hold the state of the entire story--the current question the app is closed on, as well as the latest saved state if the story's progress is manually saved.  It should also hold relationships with the World and the PlayerCharacter as well as Question.
  World: this should have attributes for all of the appropriate world details that are dynamic and can be changed by effects from the player's choices.
  PlayerCharacter: this should have attributes for the character that differs player to player, game to game: Name, PhysicalCharacteristics, Traits, Skills, and Inventory.  Some of those might be better suited as their own Entities than as mere attributes, but I can decide that when I get there.
  */

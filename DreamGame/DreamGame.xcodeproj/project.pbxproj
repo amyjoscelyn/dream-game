@@ -27,6 +27,8 @@
 		3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */; };
 		3DA309D01C64140300AC8594 /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */; };
 		3DA309D31C64141E00AC8594 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */; };
+		3DBCE3511C76965B00D11500 /* Playthrough+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCE34E1C76965B00D11500 /* Playthrough+CoreDataProperties.m */; };
+		3DBCE3521C76965B00D11500 /* Playthrough.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCE3501C76965B00D11500 /* Playthrough.m */; };
 		3DCDD7C71C70445000B1573D /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DCDD7C31C70445000B1573D /* Choice-Table 1.csv */; };
 		3DCDD7C81C70445000B1573D /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DCDD7C41C70445000B1573D /* Effect-Table 1.csv */; };
 		3DCDD7C91C70445000B1573D /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DCDD7C51C70445000B1573D /* Prerequisite-Table 1.csv */; };
@@ -83,6 +85,10 @@
 		3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Effect+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DA309D11C64141E00AC8594 /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3DBCE34D1C76965B00D11500 /* Playthrough+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Playthrough+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3DBCE34E1C76965B00D11500 /* Playthrough+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Playthrough+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3DBCE34F1C76965B00D11500 /* Playthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playthrough.h; sourceTree = "<group>"; };
+		3DBCE3501C76965B00D11500 /* Playthrough.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playthrough.m; sourceTree = "<group>"; };
 		3DCDD7C31C70445000B1573D /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
 		3DCDD7C41C70445000B1573D /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
 		3DCDD7C51C70445000B1573D /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
@@ -195,6 +201,10 @@
 		3DA309C61C63F5AF00AC8594 /* Managed Data */ = {
 			isa = PBXGroup;
 			children = (
+				3DBCE34D1C76965B00D11500 /* Playthrough+CoreDataProperties.h */,
+				3DBCE34E1C76965B00D11500 /* Playthrough+CoreDataProperties.m */,
+				3DBCE34F1C76965B00D11500 /* Playthrough.h */,
+				3DBCE3501C76965B00D11500 /* Playthrough.m */,
 				3DA309C81C6413DD00AC8594 /* Choice+CoreDataProperties.h */,
 				3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */,
 				3D23DB191C601DDE00C5FFBA /* Choice.h */,
@@ -405,8 +415,10 @@
 				3D23DB2E1C601DDE00C5FFBA /* Question.m in Sources */,
 				3D23DB281C601DDE00C5FFBA /* Choice.m in Sources */,
 				3DA309D01C64140300AC8594 /* Effect+CoreDataProperties.m in Sources */,
+				3DBCE3511C76965B00D11500 /* Playthrough+CoreDataProperties.m in Sources */,
 				3D4044D41BC5B75E00A49C70 /* main.m in Sources */,
 				3D82B6571C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m in Sources */,
+				3DBCE3521C76965B00D11500 /* Playthrough.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

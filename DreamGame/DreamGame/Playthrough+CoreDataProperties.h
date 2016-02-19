@@ -1,5 +1,5 @@
 //
-//  Question+CoreDataProperties.m
+//  Playthrough+CoreDataProperties.h
 //  DreamGame
 //
 //  Created by Amy Joscelyn on 2/18/16.
@@ -9,17 +9,14 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Question+CoreDataProperties.h"
+#import "Playthrough.h"
 
-@implementation Question (CoreDataProperties)
+NS_ASSUME_NONNULL_BEGIN
 
-@dynamic comment;
-@dynamic content;
-@dynamic storyID;
-@dynamic choiceIns;
-@dynamic choiceOuts;
-@dynamic questionAfter;
-@dynamic questionBefores;
-@dynamic playthrough;
+@interface Playthrough (CoreDataProperties)
+
+@property (nullable, nonatomic, retain) Question *currentQuestion;
 
 @end
+
+NS_ASSUME_NONNULL_END

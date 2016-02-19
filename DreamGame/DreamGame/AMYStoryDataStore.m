@@ -8,10 +8,6 @@
 
 #import "AMYStoryDataStore.h"
 #import <CHCSVParser/CHCSVParser.h>
-//#import "Prerequisite+CoreDataProperties.h"
-//#import "Effect+CoreDataProperties.h"
-//#import "Choice+CoreDataProperties.h"
-//#import "Question+CoreDataProperties.h"
 
 @interface AMYStoryDataStore()
 
@@ -19,6 +15,8 @@
 @property (strong, nonatomic, readwrite) NSArray *choices;
 @property (strong, nonatomic, readwrite) NSArray *effects;
 @property (strong, nonatomic, readwrite) NSArray *prerequisites;
+
+@property (strong, nonatomic, readwrite) Playthrough *playthrough;
 
 @property (strong, nonatomic, readwrite) NSSortDescriptor *sortByStoryIDAsc;
 
@@ -79,6 +77,7 @@
     if (self.choices.count == 0)
     {
         [self generateChoices];
+        return;
     }
     
     NSFetchRequest *questionRequest = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
@@ -89,9 +88,23 @@
     if (self.questions.count == 0)
     {
         [self generateQuestions];
+        return;
     }
     
-    self.currentQuestion = self.questions[0];
+    NSFetchRequest *playthroughRequest = [NSFetchRequest fetchRequestWithEntityName:@"Playthrough"];
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil];
+    
+    if (result.count > 0)
+    {
+        self.playthrough = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil][0];
+        NSLog(@"we have a standing playthrough :)");
+    }
+    else
+    {
+        [self generatePlaythrough];
+        return;
+    }
 }
 
 # pragma Generator Methods
@@ -238,6 +251,18 @@
             }
         }
     }
+    [self saveContext];
+    [self fetchData];
+}
+
+- (void)generatePlaythrough
+{
+    //this generates a new playthrough for the first gam
+    
+    Playthrough *playthrough = [Playthrough createNewPlaythroughWithManagedObjectContext:self.managedObjectContext];
+    
+    playthrough.currentQuestion = self.questions[0];
+    
     [self saveContext];
     [self fetchData];
 }

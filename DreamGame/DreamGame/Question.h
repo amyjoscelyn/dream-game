@@ -11,6 +11,7 @@
 #import <CHCSVParser/CHCSVParser.h> //do I need this imported here?
 
 @class Choice;
+@class Playthrough;
 
 NS_ASSUME_NONNULL_BEGIN
 
