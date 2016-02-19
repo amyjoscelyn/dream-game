@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSArray *sortedChoices;
 
 @property (nonatomic) CGFloat textHue;
+@property (nonatomic) NSUInteger colorInteger;
 
 @end
 
@@ -34,12 +35,22 @@
     NSLog(@"First question we see: %@", self.currentQuestion.storyID);
     
     NSUInteger forestSeaGreen = 130;
-    self.textHue = forestSeaGreen/359.0;
+    self.colorInteger = forestSeaGreen;
+    [self changeBackgroundColor:forestSeaGreen];
+    
+    //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
+}
+
+- (void)changeBackgroundColor:(NSUInteger)color
+{
+    if (color > 359.0)
+    {
+        color -= 359.0;
+    }
+    self.textHue = color/359.0;
     
     self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
     self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
-    
-    //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -181,6 +192,9 @@
         [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
         // go to next chapter or restart
     }
+    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
+    [self changeBackgroundColor:self.colorInteger];
+    
     [self.tableView reloadData];
 }
 
@@ -203,7 +217,6 @@
             {
                 self.dataStore.playthrough.campedOut = YES;
             }
-            
         }
     }
     else if ([actionObject isEqualToString:@"character"])
@@ -215,6 +228,7 @@
             if ([stringValue isEqualToString:@"YES"])
             {
                 self.dataStore.playerCharacter.noMores = YES;
+//                [self changeBackgroundColor:50];
             }
         }
     }
