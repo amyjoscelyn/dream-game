@@ -32,7 +32,7 @@
     [self.dataStore fetchData];
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
-    NSLog(@"First question we see: %@", self.currentQuestion.storyID);
+//    NSLog(@"First question we see: %@", self.currentQuestion.storyID);
     
     NSUInteger forestSeaGreen = 130;
     self.colorInteger = forestSeaGreen;
@@ -59,7 +59,7 @@
     _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     
     _dataStore.playthrough.currentQuestion = currentQuestion;
-    NSLog(@"current question: %@", self.currentQuestion.storyID);
+//    NSLog(@"current question: %@", self.currentQuestion.storyID);
     
     [_dataStore saveContext];
 }
@@ -167,6 +167,14 @@
     
     NSUInteger row = indexPath.row;
     
+    if (self.currentQuestion.effects.count > 0)
+    { //this takes care of effects the currentQuestion might incur
+        for (Effect *effect in self.currentQuestion.effects)
+        {
+            [self doTheThing:effect];
+        }
+    }
+    
     if (self.currentQuestion.questionAfter)
     {
         [self setCurrentQuestionOfStory:self.currentQuestion.questionAfter];
@@ -183,7 +191,7 @@
                 [self doTheThing:effect];
             }
             
-//            NSLog(@"effects: %@", selectedChoice.effects);
+            NSLog(@"effects: %@", selectedChoice.effects);
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
     }
@@ -192,8 +200,8 @@
         [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
         // go to next chapter or restart
     }
-    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
-    [self changeBackgroundColor:self.colorInteger];
+//    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
+//    [self changeBackgroundColor:self.colorInteger];
     
     [self.tableView reloadData];
 }
@@ -211,11 +219,13 @@
     if ([actionObject isEqualToString:@"story"])
     {
         // do the thing on self.dataStore.playthrough;
-        if ([actionProperty isEqualToString:@"campedOut"])
+        if ([actionProperty isEqualToString:@"fontChange"])
         {
             if ([stringValue isEqualToString:@"YES"])
             {
-                self.dataStore.playthrough.campedOut = YES;
+                self.dataStore.playthrough.fontChange = YES;
+                [self changeBackgroundColor:250];
+
             }
         }
     }
@@ -228,7 +238,7 @@
             if ([stringValue isEqualToString:@"YES"])
             {
                 self.dataStore.playerCharacter.noMores = YES;
-//                [self changeBackgroundColor:50];
+                [self changeBackgroundColor:50];
             }
         }
     }

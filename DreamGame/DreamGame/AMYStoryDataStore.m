@@ -103,7 +103,6 @@
     else if (playthroughRequestResult.count > 0)
     {
         self.playthrough = [self.managedObjectContext executeFetchRequest:playthroughRequest error:nil][0];
-        NSLog(@"we have a standing playthrough :)");
     }
     else
     {
@@ -122,7 +121,6 @@
     else if (characterRequestResult.count > 0)
     {
         self.playerCharacter = [self.managedObjectContext executeFetchRequest:characterRequest error:nil][0];
-        NSLog(@"we have the player's character now :)");
     }
     else
     {
@@ -219,7 +217,7 @@
 {
     //this parses through the given csv--Question
     
-    NSArray *questionRows = [self parsedCSVContentsWithFileName:@"Question-Questions"];
+    NSArray *questionRows = [self parsedCSVContentsWithFileName:@"Question-Table 1"];
     
     NSMutableArray *allQuestions = [NSMutableArray new];
     for (NSArray *csvRow in questionRows)
@@ -271,7 +269,7 @@
         NSArray *questionRow = questionRows[i];
         Question *thisQuestion = allQuestions[i];
         
-        NSString *questionAfterStoryID = questionRow[3];
+        NSString *questionAfterStoryID = questionRow[5];
         for (Question *question in allQuestions)
         {
             if ([question.storyID isEqualToString:questionAfterStoryID])
