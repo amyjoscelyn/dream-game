@@ -190,8 +190,6 @@
             {
                 [self doTheThing:effect];
             }
-            
-            NSLog(@"effects: %@", selectedChoice.effects);
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
     }
@@ -208,7 +206,7 @@
 
 - (void)doTheThing:(Effect *)effect
 {
-    //this handles all effects from selected choice
+    //this handles all effects from selected choice or currentQuestion
     
     NSLog(@"effect: %@", effect);
     NSString *actionObject = effect.actionObject;

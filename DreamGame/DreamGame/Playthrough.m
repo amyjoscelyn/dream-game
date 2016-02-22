@@ -15,7 +15,7 @@
 {
     Playthrough *playthrough = [NSEntityDescription insertNewObjectForEntityForName:@"Playthrough" inManagedObjectContext:managedObjectContext];
     
-    NSLog(@"we're creating a new playthrough!");
+//    NSLog(@"we're creating a new playthrough!");
     
     return playthrough;
 }

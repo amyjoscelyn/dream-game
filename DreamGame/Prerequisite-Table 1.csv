@@ -1,2 +1,9 @@
 storyId,comment,choices,questions,effects,checkObject,checkProperty,comparator,stringValue
 Font,should font change?,,,,,,,
+Creativity,creativity has been chosen,,,,,,,
+Intelligence,intelligence has been chosen,,,,,,,
+Obedience,obedience has been chosen,,,,,,,
+Empathy,empathy has been chosen,,,,,,,
+Instinct,instinct has been chosen,,,,,,,
+Perseverance,perseverance has been chosen,,,,,,,
+Kindness,kindness has been chosen,,,,,,,

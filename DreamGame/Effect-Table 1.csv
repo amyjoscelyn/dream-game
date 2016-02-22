@@ -1,2 +1,9 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
 Font,change font,,,,,,,
+Creativity,creativity chosen,,,,,,,
+Intelligence,intelligence chosen,,,,,,,
+Obedience,obedience chosen,,,,,,,
+Empathy,empathy chosen,,,,,,,
+Instinct,instinct chosen,,,,,,,
+Perseverance,perseverance chosen,,,,,,,
+Kindness,kindness chosen,,,,,,,

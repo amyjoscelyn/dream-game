@@ -1,8 +1,36 @@
 storyID,comment,questionIns,prerequisites,effects,questionOut,content
-c020.0,,q020,,,,Charm
-c020.1,,q020,,,,History
-c020.2,,q020,,,,Potions
-c020.3,,q020,,,,Healing
-c020.4,,q020,,,,Divining
-c020.5,,q020,,,,Practical
-c020.6,,q020,,,,Animalia
+c020.0,,q020,,,q030,Charm
+c020.1,,q020,,,q030,History
+c020.2,,q020,,,q030,Potions
+c020.3,,q020,,,q030,Healing
+c020.4,,q020,,,q030,Divining
+c020.5,,q020,,,q030,Practical
+c020.6,,q020,,,q030,Animalia
+c030.0,,q030,,,q040,"Outdoors (Animalia, Practical)"
+c030.1,,q030,,,q040,"Indoors (Charm, Divining)"
+c030.2,,q030,,,q040,Wherever you’re needed most (Healing)
+c030.3,,q030,,,q040,"Alone (History, Potions)"
+c040.0,,q040,Creativity,Creativity,q050,Creativity
+c040.1,,q040,Intelligence,Intelligence,q050,Intelligence
+c040.2,,q040,Obedience,Obedience,q050,Obedience
+c040.3,,q040,Empathy,Empathy,q050,Empathy
+c040.4,,q040,Instinct,Instinct,q050,Instinct
+c040.5,,q040,Perseverance,Perseverance,q050,Perseverance
+c040.6,,q040,Kindness,Kindness,q050,Kindness/Understanding
+c050.0,,q050,,,q060,"Yes (History, Healing)"
+c050.1,,q050,,,q060,"No (Divining, Practical)"
+c050.2,,q050,,,q060,"Only when it’s something I’m excited about (Charm, Animalia, Potions)"
+c060.0,,q060,,,q070,"Yes (Charm, Practical)"
+c060.1,,q060,,,q070,"No, but when I have them I do what I can to keep them (Healing, Divining)"
+c060.2,,q060,,,q070,"I prefer solitude (History, Potions)"
+c060.3,,q060,,,q070,I’d rather surround myself with animals (Animalia)
+c070.0,,q070,,,q080,"Listening to experts (Charm, Healing)"
+c070.1,,q070,,,q080,"Reading books (Potions, History)"
+c070.2,,q070,,,q080,"Hands-on experience (Practical, Animalia, Divining)"
+c080.0,,q080,,,,"Strength (Practical, Healing)"
+c080.1,,q080,,,,"Grace (Practical, Divining)"
+c080.2,,q080,,,,"Intellect (History, Potions)"
+c080.3,,q080,,,,"Imagination (Charm, Potions)"
+c080.4,,q080,,,,"Caring (Healing, Animalia)"
+c080.5,,q080,,,,"Wonderment (Animalia, Divining)"
+c080.6,,q080,,,,"Curiosity (History, Charm)"

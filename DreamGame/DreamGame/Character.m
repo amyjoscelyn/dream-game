@@ -18,7 +18,7 @@
     character.campedOut = NO;
     character.noMores = NO;
     
-    NSLog(@"we've created a new character!");
+//    NSLog(@"we've created a new character!");
     
     return character;
 }
