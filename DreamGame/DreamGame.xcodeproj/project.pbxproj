@@ -23,10 +23,6 @@
 		3D82B6571C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */; };
 		3D95E9461C776DA70029971D /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */; };
 		3D95E9471C776DA70029971D /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9451C776DA70029971D /* Character.m */; };
-		3D95E94C1C77789B0029971D /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D95E9481C77789B0029971D /* Choice-Table 1.csv */; };
-		3D95E94D1C77789B0029971D /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D95E9491C77789B0029971D /* Effect-Table 1.csv */; };
-		3D95E94E1C77789B0029971D /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D95E94A1C77789B0029971D /* Prerequisite-Table 1.csv */; };
-		3D95E94F1C77789B0029971D /* Question-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D95E94B1C77789B0029971D /* Question-Questions.csv */; };
 		3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */; };
 		3DA309D01C64140300AC8594 /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309CF1C64140300AC8594 /* Effect+CoreDataProperties.m */; };
 		3DA309D31C64141E00AC8594 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309D21C64141E00AC8594 /* Question+CoreDataProperties.m */; };
@@ -76,10 +72,6 @@
 		3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3D95E9441C776DA70029971D /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		3D95E9451C776DA70029971D /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
-		3D95E9481C77789B0029971D /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
-		3D95E9491C77789B0029971D /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
-		3D95E94A1C77789B0029971D /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
-		3D95E94B1C77789B0029971D /* Question-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Questions.csv"; sourceTree = "<group>"; };
 		3DA309C81C6413DD00AC8594 /* Choice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Choice+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Choice+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DA309CE1C64140300AC8594 /* Effect+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Effect+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -223,10 +215,6 @@
 		3DA309C71C63F5DE00AC8594 /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				3D95E9481C77789B0029971D /* Choice-Table 1.csv */,
-				3D95E9491C77789B0029971D /* Effect-Table 1.csv */,
-				3D95E94A1C77789B0029971D /* Prerequisite-Table 1.csv */,
-				3D95E94B1C77789B0029971D /* Question-Questions.csv */,
 			);
 			name = CSVs;
 			path = ..;
@@ -325,12 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
-				3D95E94C1C77789B0029971D /* Choice-Table 1.csv in Resources */,
-				3D95E94E1C77789B0029971D /* Prerequisite-Table 1.csv in Resources */,
-				3D95E94F1C77789B0029971D /* Question-Questions.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
-				3D95E94D1C77789B0029971D /* Effect-Table 1.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
