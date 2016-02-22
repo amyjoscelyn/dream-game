@@ -18,11 +18,12 @@
     effect.storyID = csvRow[0];
     effect.comment = csvRow[1];
     // 2 is choices
-    // 3 is prerequisites
-    effect.actionObject = csvRow[4];
-    effect.actionProperty = csvRow[5];
-    effect.operator = csvRow[6];
-    effect.stringValue = csvRow[7];
+    // 3 is questions
+    // 4 is prerequisites
+    effect.actionObject = csvRow[5];
+    effect.actionProperty = csvRow[6];
+    effect.operator = csvRow[7];
+    effect.stringValue = csvRow[8];
     
 //    NSLog(@"Effect: %@", effect);
     return effect;

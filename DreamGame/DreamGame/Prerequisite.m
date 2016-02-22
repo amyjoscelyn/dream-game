@@ -20,11 +20,12 @@
     prerequsite.storyID = csvRow[0];
     prerequsite.comment = csvRow[1];
     // 2 is choices
-    // 3 is effects
-    prerequsite.checkObject = csvRow[4];
-    prerequsite.checkProperty = csvRow[5];
-    prerequsite.comparator = csvRow[6];
-    prerequsite.stringValue = csvRow[7];
+    // 3 is questions
+    // 4 is effects
+    prerequsite.checkObject = csvRow[5];
+    prerequsite.checkProperty = csvRow[6];
+    prerequsite.comparator = csvRow[7];
+    prerequsite.stringValue = csvRow[8];
 
 //    NSLog(@"Prerequisite: %@", prerequsite);
     return prerequsite;
