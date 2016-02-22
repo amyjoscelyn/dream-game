@@ -34,9 +34,9 @@
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
 //    NSLog(@"First question we see: %@", self.currentQuestion.storyID);
     
-    NSUInteger forestSeaGreen = 130;
-    self.colorInteger = forestSeaGreen;
-    [self changeBackgroundColor:forestSeaGreen];
+    NSUInteger deeperBlue = 220;
+    self.colorInteger = deeperBlue;
+    [self changeBackgroundColor:deeperBlue];
     
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }

@@ -12,4 +12,11 @@ q042,Q3b,,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c040.0, c
 q050,Q4,,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c050.0, c050.1, c050.2",Q4: Do you like to study?
 q060,Q5,,,,,"c050.0, c050.1, c050.2","c060.0, c060.1, c060.2, c060.3",Q5: Do you make friends easily?
 q070,Q6,,,,,"c060.0, c060.1, c060.2, c060.3","c070.0, c070.1, c070.2",Q6: You learn best:
-q080,Q7,,,,,"c070.0, c070.1, c070.2","c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6",Q7: What do you consider your most defining feature?
+q080,Q7,,,,,"c070.0, c070.1, c070.2","c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6",Q7: What do you consider your most defining feature? (subsequent ques not being asked)
+q081,Q7a,,,,,"c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6","c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6",Q7a: Your second most defining feature?
+q090,Q8,,,,,,c090,Q8: What would friends and family say you lack???
+q100,Q9,,,,,c090,"c100.0, c100.1, c100.2, c100.3, c100.4, c100.5, c100.6",Q9: You can see yourself working in the future at the kind of job which:
+q110,Q10,,,,,"c100.0, c100.1, c100.2, c100.3, c100.4, c100.5, c100.6","c110.0, c110.1",Q10: What are you most interested in bettering?
+q111,Q10a,,,,,c110.0,"c111.0, c111.1, c111.2",Q10a: What in particular about yourself would you like to better?
+q112,Q10b,,,,,c110.1,"c112.0, c112.1, c112.2, c112.3",Q10b: What in particular about the world would you like to better?
+q120,Q11,,,,,"c111.0, c111.1, c111.2, c112.0, c112.1, c112.2, c112.3","c120.0, c120.1, c120.2, c120.3, c120.4, c120.5, c120.6",Q11: What do you wish you had more of?
