@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.h
 //  DreamGame
 //
-//  Created by Amy Joscelyn on 2/18/16.
+//  Created by Amy Joscelyn on 2/22/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -20,9 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *storyID;
 @property (nullable, nonatomic, retain) NSSet<Choice *> *choiceIns;
 @property (nullable, nonatomic, retain) NSSet<Choice *> *choiceOuts;
+@property (nullable, nonatomic, retain) NSSet<Effect *> *effects;
+@property (nullable, nonatomic, retain) Playthrough *playthrough;
 @property (nullable, nonatomic, retain) Question *questionAfter;
 @property (nullable, nonatomic, retain) NSSet<Question *> *questionBefores;
-@property (nullable, nonatomic, retain) Playthrough *playthrough;
+@property (nullable, nonatomic, retain) NSSet<Prerequisite *> *prerequisites;
 
 @end
 
@@ -38,10 +40,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addChoiceOuts:(NSSet<Choice *> *)values;
 - (void)removeChoiceOuts:(NSSet<Choice *> *)values;
 
+- (void)addEffectsObject:(Effect *)value;
+- (void)removeEffectsObject:(Effect *)value;
+- (void)addEffects:(NSSet<Effect *> *)values;
+- (void)removeEffects:(NSSet<Effect *> *)values;
+
 - (void)addQuestionBeforesObject:(Question *)value;
 - (void)removeQuestionBeforesObject:(Question *)value;
 - (void)addQuestionBefores:(NSSet<Question *> *)values;
 - (void)removeQuestionBefores:(NSSet<Question *> *)values;
+
+- (void)addPrerequisitesObject:(Prerequisite *)value;
+- (void)removePrerequisitesObject:(Prerequisite *)value;
+- (void)addPrerequisites:(NSSet<Prerequisite *> *)values;
+- (void)removePrerequisites:(NSSet<Prerequisite *> *)values;
 
 @end
 

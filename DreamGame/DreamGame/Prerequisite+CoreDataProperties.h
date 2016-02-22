@@ -2,7 +2,7 @@
 //  Prerequisite+CoreDataProperties.h
 //  DreamGame
 //
-//  Created by Amy Joscelyn on 2/7/16.
+//  Created by Amy Joscelyn on 2/22/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *stringValue;
 @property (nullable, nonatomic, retain) NSSet<Choice *> *choices;
 @property (nullable, nonatomic, retain) NSSet<Effect *> *effects;
+@property (nullable, nonatomic, retain) NSSet<Question *> *questions;
 
 @end
 
@@ -40,6 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeEffectsObject:(Effect *)value;
 - (void)addEffects:(NSSet<Effect *> *)values;
 - (void)removeEffects:(NSSet<Effect *> *)values;
+
+- (void)addQuestionsObject:(Question *)value;
+- (void)removeQuestionsObject:(Question *)value;
+- (void)addQuestions:(NSSet<Question *> *)values;
+- (void)removeQuestions:(NSSet<Question *> *)values;
 
 @end
 
