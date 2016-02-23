@@ -1,5 +1,5 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
-Font,change font,,,,,,,
+Font,change font,,,,story,fontChange,,YES
 Creativity,creativity chosen,,,,,,,
 Intelligence,intelligence chosen,,,,,,,
 Obedience,obedience chosen,,,,,,,

@@ -1,5 +1,5 @@
 storyId,comment,choices,questions,effects,checkObject,checkProperty,comparator,stringValue
-Font,should font change?,,,,,,,
+Font,should font change?,,,,story,fontChange,,YES
 Creativity,creativity has been chosen,,,,,,,
 Intelligence,intelligence has been chosen,,,,,,,
 Obedience,obedience has been chosen,,,,,,,

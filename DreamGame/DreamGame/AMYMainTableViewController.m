@@ -105,6 +105,11 @@
     
     cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
     
+    if (self.dataStore.playthrough.fontChange)
+    {
+        [cell.textLabel setFont:[UIFont fontWithName:@"Palatino" size:22.5]];
+    }
+    
     if (section == 0)
     {
         cell.textLabel.text = self.currentQuestion.content;
@@ -223,10 +228,9 @@
             {
                 self.dataStore.playthrough.fontChange = YES;
                 [self changeBackgroundColor:250];
-
             }
         }
-    }
+    } /*
     else if ([actionObject isEqualToString:@"character"])
     {
         // do the thing on self.dataStore.playerCharacter;
@@ -239,7 +243,7 @@
                 [self changeBackgroundColor:50];
             }
         }
-    }
+    } */
 }
 
 /*
