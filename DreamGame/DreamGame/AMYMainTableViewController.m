@@ -109,6 +109,10 @@
     {
         [cell.textLabel setFont:[UIFont fontWithName:@"Palatino" size:22.5]];
     }
+    else
+    {
+        [cell.textLabel setFont:[UIFont systemFontOfSize:23.5]];
+    }
     
     if (section == 0)
     {
@@ -201,6 +205,10 @@
     else
     {
         [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
+        
+        // below resets the properties
+        self.dataStore.playthrough.fontChange = NO;
+        
         // go to next chapter or restart
     }
 //    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
@@ -227,9 +235,12 @@
             if ([stringValue isEqualToString:@"YES"])
             {
                 self.dataStore.playthrough.fontChange = YES;
-                [self changeBackgroundColor:250];
             }
         }
+//        else if ([actionProperty isEqualToString:<#(nonnull NSString *)#>])
+//        {
+//            
+//        }
     } /*
     else if ([actionObject isEqualToString:@"character"])
     {

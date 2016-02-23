@@ -21,10 +21,10 @@
 		3D6D5EEB1C4EB79E004FFA5F /* AMYMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EEA1C4EB79E004FFA5F /* AMYMainTableViewController.m */; };
 		3D6D5EF11C4ED653004FFA5F /* AMYStoryDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5EF01C4ED653004FFA5F /* AMYStoryDataStore.m */; };
 		3D82B6571C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */; };
-		3D93B76D1C7CD60B005206F7 /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B7691C7CD60B005206F7 /* Choice-Table 1.csv */; };
-		3D93B76E1C7CD60B005206F7 /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B76A1C7CD60B005206F7 /* Effect-Table 1.csv */; };
-		3D93B76F1C7CD60B005206F7 /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B76B1C7CD60B005206F7 /* Prerequisite-Table 1.csv */; };
-		3D93B7701C7CD60B005206F7 /* Question-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B76C1C7CD60B005206F7 /* Question-Table 1.csv */; };
+		3D93B7751C7D0470005206F7 /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B7711C7D0470005206F7 /* Choice-Table 1.csv */; };
+		3D93B7761C7D0470005206F7 /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B7721C7D0470005206F7 /* Effect-Table 1.csv */; };
+		3D93B7771C7D0470005206F7 /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B7731C7D0470005206F7 /* Prerequisite-Table 1.csv */; };
+		3D93B7781C7D0470005206F7 /* Question-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D93B7741C7D0470005206F7 /* Question-Table 1.csv */; };
 		3D95E9461C776DA70029971D /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */; };
 		3D95E9471C776DA70029971D /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95E9451C776DA70029971D /* Character.m */; };
 		3DA309CA1C6413DD00AC8594 /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA309C91C6413DD00AC8594 /* Choice+CoreDataProperties.m */; };
@@ -72,10 +72,10 @@
 		3D6D5EF01C4ED653004FFA5F /* AMYStoryDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYStoryDataStore.m; sourceTree = "<group>"; };
 		3D82B6551C66BCA0003C2095 /* Prerequisite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prerequisite+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D82B6561C66BCA0003C2095 /* Prerequisite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Prerequisite+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3D93B7691C7CD60B005206F7 /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
-		3D93B76A1C7CD60B005206F7 /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
-		3D93B76B1C7CD60B005206F7 /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
-		3D93B76C1C7CD60B005206F7 /* Question-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Table 1.csv"; sourceTree = "<group>"; };
+		3D93B7711C7D0470005206F7 /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
+		3D93B7721C7D0470005206F7 /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
+		3D93B7731C7D0470005206F7 /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
+		3D93B7741C7D0470005206F7 /* Question-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Table 1.csv"; sourceTree = "<group>"; };
 		3D95E9421C776DA70029971D /* Character+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D95E9431C776DA70029971D /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3D95E9441C776DA70029971D /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -223,10 +223,10 @@
 		3DA309C71C63F5DE00AC8594 /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				3D93B7691C7CD60B005206F7 /* Choice-Table 1.csv */,
-				3D93B76A1C7CD60B005206F7 /* Effect-Table 1.csv */,
-				3D93B76B1C7CD60B005206F7 /* Prerequisite-Table 1.csv */,
-				3D93B76C1C7CD60B005206F7 /* Question-Table 1.csv */,
+				3D93B7711C7D0470005206F7 /* Choice-Table 1.csv */,
+				3D93B7721C7D0470005206F7 /* Effect-Table 1.csv */,
+				3D93B7731C7D0470005206F7 /* Prerequisite-Table 1.csv */,
+				3D93B7741C7D0470005206F7 /* Question-Table 1.csv */,
 			);
 			name = CSVs;
 			path = ..;
@@ -325,12 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4044DD1BC5B75E00A49C70 /* Main.storyboard in Resources */,
-				3D93B76D1C7CD60B005206F7 /* Choice-Table 1.csv in Resources */,
-				3D93B76F1C7CD60B005206F7 /* Prerequisite-Table 1.csv in Resources */,
-				3D93B7701C7CD60B005206F7 /* Question-Table 1.csv in Resources */,
+				3D93B7751C7D0470005206F7 /* Choice-Table 1.csv in Resources */,
+				3D93B7771C7D0470005206F7 /* Prerequisite-Table 1.csv in Resources */,
+				3D93B7781C7D0470005206F7 /* Question-Table 1.csv in Resources */,
 				3D4044E21BC5B75E00A49C70 /* LaunchScreen.xib in Resources */,
 				3D4044DF1BC5B75E00A49C70 /* Images.xcassets in Resources */,
-				3D93B76E1C7CD60B005206F7 /* Effect-Table 1.csv in Resources */,
+				3D93B7761C7D0470005206F7 /* Effect-Table 1.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
