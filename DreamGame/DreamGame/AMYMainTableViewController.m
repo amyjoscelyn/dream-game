@@ -8,6 +8,7 @@
 
 #import "AMYMainTableViewController.h"
 #import "AMYStoryDataStore.h"
+#import "ZhuLi.h"
 
 @interface AMYMainTableViewController ()
 
@@ -32,7 +33,6 @@
     [self.dataStore fetchData];
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
-//    NSLog(@"First question we see: %@", self.currentQuestion.storyID);
     
     NSUInteger deeperBlue = 220;
     self.colorInteger = deeperBlue;
@@ -55,11 +55,20 @@
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
 {
+    if (currentQuestion.prerequisites.count > 0)
+    { //this takes care of prerequisites the currentQuestion might need before it's displayed on the table
+        /*
+         if there is a prerequisite for a question, the prerequisite needs to be checked
+         if the check is true, the question becomes the currentQuestion
+         if the check is false, the question cannot be displayed and another question becomes the currentQuestion
+         */
+        NSLog(@"PREREQ: %@", currentQuestion.prerequisites);
+    }
+    
     _currentQuestion = currentQuestion;
     _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     
     _dataStore.playthrough.currentQuestion = currentQuestion;
-//    NSLog(@"current question: %@", self.currentQuestion.storyID);
     
     [_dataStore saveContext];
 }
@@ -129,13 +138,26 @@
     }
     else if (section == 1)
     {
-//        NSLog(@"there are %lu choices for this question", self.currentQuestion.choiceOuts.count);
-//        NSLog(@"~~~~~~~~~sorted choices: %@", self.sortedChoices);
-        
         if (self.sortedChoices.count > 0)
         {
+            /*
+             If there is a prerequisite on a choice, it needs to checkPrerequisite to make sure it's good to be displayed
+             if the check returns true, the choice remains.  otherwise the choice is skipped over in the loop
+             */
             Choice *choice = self.sortedChoices[row];
-//            NSLog(@"choice: %@", choice);
+            
+            if (choice.prerequisites.count > 0)
+            {
+                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
+                for (Prerequisite *prereq in choice.prerequisites)
+                {
+                    if ([prereq.checkObject isEqualToString:@"story"])
+                    {
+                        //go to a method that deals solely with "story" properties, aka Playthrough
+                    }
+                }
+            }
+            
             cell.textLabel.text = choice.content;
         }
         else if (self.currentQuestion.questionAfter)
@@ -180,7 +202,7 @@
     { //this takes care of effects the currentQuestion might incur
         for (Effect *effect in self.currentQuestion.effects)
         {
-            [self doTheThing:effect];
+            [ZhuLi doTheThing:effect];
         }
     }
     
@@ -197,7 +219,7 @@
         {
             for (Effect *effect in selectedChoice.effects)
             {
-                [self doTheThing:effect];
+                [ZhuLi doTheThing:effect];
             }
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
@@ -215,46 +237,6 @@
 //    [self changeBackgroundColor:self.colorInteger];
     
     [self.tableView reloadData];
-}
-
-- (void)doTheThing:(Effect *)effect
-{
-    //this handles all effects from selected choice or currentQuestion
-    
-    NSLog(@"effect: %@", effect);
-    NSString *actionObject = effect.actionObject;
-    NSString *actionProperty = effect.actionProperty;
-//    NSString *operator = effect.operator;
-    NSString *stringValue = effect.stringValue;
-    
-    if ([actionObject isEqualToString:@"story"])
-    {
-        // do the thing on self.dataStore.playthrough;
-        if ([actionProperty isEqualToString:@"fontChange"])
-        {
-            if ([stringValue isEqualToString:@"YES"])
-            {
-                self.dataStore.playthrough.fontChange = YES;
-            }
-        }
-//        else if ([actionProperty isEqualToString:<#(nonnull NSString *)#>])
-//        {
-//            
-//        }
-    } /*
-    else if ([actionObject isEqualToString:@"character"])
-    {
-        // do the thing on self.dataStore.playerCharacter;
-        if ([actionProperty isEqualToString:@"noMores"])
-        {
-            //do the thing on playerChar.noMores
-            if ([stringValue isEqualToString:@"YES"])
-            {
-                self.dataStore.playerCharacter.noMores = YES;
-                [self changeBackgroundColor:50];
-            }
-        }
-    } */
 }
 
 /*
