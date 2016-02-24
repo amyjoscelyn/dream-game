@@ -11,8 +11,8 @@
 
 @interface ZhuLi : NSObject
 
-+ (void)doTheThing:(Effect *)effect; //become doThe:thing
+- (void)doTheThing:(Effect *)effect; //become doThe:thing
 
-+ (BOOL)checkPrerequisite:(Prerequisite *)prerequisite;
+- (BOOL)checkPrerequisite:(Prerequisite *)prerequisite;
 
 @end

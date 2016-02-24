@@ -62,7 +62,7 @@
          if the check is true, the question becomes the currentQuestion
          if the check is false, the question cannot be displayed and another question becomes the currentQuestion
          */
-        NSLog(@"PREREQ: %@", currentQuestion.prerequisites);
+//        NSLog(@"PREREQ: %@", currentQuestion.prerequisites);
     }
     
     _currentQuestion = currentQuestion;
@@ -148,7 +148,7 @@
             
             if (choice.prerequisites.count > 0)
             {
-                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
+//                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
                 for (Prerequisite *prereq in choice.prerequisites)
                 {
                     if ([prereq.checkObject isEqualToString:@"story"])
@@ -197,12 +197,13 @@
     if (indexPath.section == 0) { return; }
     
     NSUInteger row = indexPath.row;
+    ZhuLi *zhuLi = [ZhuLi new];
     
     if (self.currentQuestion.effects.count > 0)
     { //this takes care of effects the currentQuestion might incur
         for (Effect *effect in self.currentQuestion.effects)
         {
-            [ZhuLi doTheThing:effect];
+            [zhuLi doTheThing:effect];
         }
     }
     
@@ -219,7 +220,7 @@
         {
             for (Effect *effect in selectedChoice.effects)
             {
-                [ZhuLi doTheThing:effect];
+                [zhuLi doTheThing:effect];
             }
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
