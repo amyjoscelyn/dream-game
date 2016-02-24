@@ -129,9 +129,10 @@
     BOOL passesCheck;
     
     NSLog(@"checkObject = %@", checkObject);
+    
     if ([checkObject isEqualToString:@"story"])
     {
-//        passesCheck = [self checkPrerequisite:prerequisite];
+        passesCheck = [self checkPlaythroughPrerequisite:prerequisite];
     }
     
     return passesCheck;
@@ -141,12 +142,14 @@
 {
     NSString *checkProperty = prerequisite.checkProperty;
     NSString *stringValue = prerequisite.stringValue;
+    NSLog(@"CHECKING PREREQUISITE: %@ - %@", checkProperty, stringValue);
+    
     BOOL passesCheck;
     
-    if ([stringValue isEqualToString:@"anything"])
-    {
-        //this means as long as it's not equal to @"" it'll be okay
-    }
+//    if ([stringValue isEqualToString:@"anything"])
+//    {
+//        //this means as long as it's not equal to @"" it'll be okay
+//    }
     
     if ([checkProperty isEqualToString:@"answerQ3"])
     {

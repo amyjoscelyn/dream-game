@@ -73,6 +73,8 @@
             {
                 //we must give a new currentQuestion.
                 //this needs to be a do-while, including the checking prerequisites.  While !passesCheck, we need to keep providing new questions to check until one passes.  That one moves forward.
+                NSString *storyID = currentQuestion.storyID;
+                //next storyID in order should become the new currentQuestion?
             }
         }
     }
