@@ -1,15 +1,15 @@
 storyID,comment,questionIns,prerequisites,effects,questionOut,content
-c020.0,,q020,,,q030,Charm
-c020.1,,q020,,,q030,History
-c020.2,,q020,,,q030,Potions
-c020.3,,q020,,,q030,Healing
-c020.4,,q020,,,q030,Divining
-c020.5,,q020,,,q030,Practical
-c020.6,,q020,,,q030,Animalia
-c030.0,,q030,,,q040,"Outdoors (Animalia, Practical)"
-c030.1,,q030,,,q040,"Indoors (Charm, Divining)"
-c030.2,,q030,,,q040,Wherever you’re needed most (Healing)
-c030.3,,q030,,,q040,"Alone (History, Potions)"
+c020.0,,q020,,Q1 Answered,q030,Charm
+c020.1,,q020,,Q1 Answered,q030,History
+c020.2,,q020,,Q1 Answered,q030,Potions
+c020.3,,q020,,Q1 Answered,q030,Healing
+c020.4,,q020,,Q1 Answered,q030,Divining
+c020.5,,q020,,Q1 Answered,q030,Practical
+c020.6,,q020,,Q1 Answered,q030,Animalia
+c030.0,,q030,,Q2 Answered,q040,"Outdoors (Animalia, Practical)"
+c030.1,,q030,,Q2 Answered,q040,"Indoors (Charm, Divining)"
+c030.2,,q030,,Q2 Answered,q040,Wherever you’re needed most (Healing)
+c030.3,,q030,,Q2 Answered,q040,"Alone (History, Potions)"
 c040.0,,"q040, q041, q042",Creativity,Creativity,q050,Creativity (Charm)
 c040.1,,"q040, q041, q042",Intelligence,Intelligence,q050,Intelligence (History)
 c040.2,,"q040, q041, q042",Obedience,Obedience,q050,Obedience (Potions)

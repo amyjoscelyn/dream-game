@@ -197,6 +197,7 @@
     if (indexPath.section == 0) { return; }
     
     NSUInteger row = indexPath.row;
+    
     ZhuLi *zhuLi = [ZhuLi new];
     
     if (self.currentQuestion.effects.count > 0)
@@ -220,6 +221,11 @@
         {
             for (Effect *effect in selectedChoice.effects)
             {
+                if ([effect.stringValue isEqualToString:@""])
+                {
+                    Choice *selectedChoice = self.sortedChoices[row];
+                    effect.stringValue = selectedChoice.content;
+                }
                 [zhuLi doTheThing:effect];
             }
         }

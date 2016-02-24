@@ -44,6 +44,14 @@
 {
     NSString *actionProperty = effect.actionProperty;
     NSString *stringValue = effect.stringValue;
+    NSLog(@"stringValue of effect: %@", stringValue);
+    
+    if ([stringValue isEqualToString:@""])
+    {
+        //I need to figure out a way to collect the text from the chosen cell
+        //if I can check if there is an effect, and the effect.stringValue containsString "answer" then the method called must also include cell.textLabel.text/choice.content
+        //it should MAKE the stringValue the cell text/content, and then put it through the method!!  that way I'm not stretching my methods too thin.  Although I probably am anyway.
+    }
     
     if ([actionProperty isEqualToString:@"fontChange"])
     {
