@@ -63,6 +63,18 @@
          if the check is false, the question cannot be displayed and another question becomes the currentQuestion
          */
 //        NSLog(@"PREREQ: %@", currentQuestion.prerequisites);
+        ZhuLi *zhuLi = [ZhuLi new];
+        
+        for (Prerequisite *prerequisite in currentQuestion.prerequisites)
+        {
+            BOOL passesCheck = [zhuLi checkPrerequisite:prerequisite];
+            
+            if (!passesCheck) //if this does not pass the check
+            {
+                //we must give a new currentQuestion.
+                //this needs to be a do-while, including the checking prerequisites.  While !passesCheck, we need to keep providing new questions to check until one passes.  That one moves forward.
+            }
+        }
     }
     
     _currentQuestion = currentQuestion;
@@ -202,16 +214,15 @@
     
     if (self.currentQuestion.effects.count > 0)
     { //this takes care of effects the currentQuestion might incur
-        for (Effect *effect in self.currentQuestion.effects)
+        for (Effect *thing in self.currentQuestion.effects)
         {
-            [zhuLi doTheThing:effect];
+            [zhuLi doThe:thing];
         }
     }
     
     if (self.currentQuestion.questionAfter)
     {
         [self setCurrentQuestionOfStory:self.currentQuestion.questionAfter];
-        //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     }
     else if (self.dataStore.playthrough.currentQuestion.choiceOuts.count > 0)
     {
@@ -219,14 +230,14 @@
         
         if (selectedChoice.effects.count)
         {
-            for (Effect *effect in selectedChoice.effects)
+            for (Effect *thing in selectedChoice.effects)
             {
-                if ([effect.stringValue isEqualToString:@""])
+                if ([thing.stringValue isEqualToString:@""])
                 {
                     Choice *selectedChoice = self.sortedChoices[row];
-                    effect.stringValue = selectedChoice.content;
+                    thing.stringValue = selectedChoice.content;
                 }
-                [zhuLi doTheThing:effect];
+                [zhuLi doThe:thing];
             }
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
@@ -237,6 +248,21 @@
         
         // below resets the properties
         self.dataStore.playthrough.fontChange = NO;
+        
+        self.dataStore.playthrough.answerQ1 = @"";
+        self.dataStore.playthrough.answerQ2 = @"";
+        self.dataStore.playthrough.answerQ3 = @"";
+        self.dataStore.playthrough.answerQ3A = @"";
+        self.dataStore.playthrough.answerQ3B = @"";
+        self.dataStore.playthrough.answerQ4 = @"";
+        self.dataStore.playthrough.answerQ5 = @"";
+        self.dataStore.playthrough.answerQ6 = @"";
+        self.dataStore.playthrough.answerQ7 = @"";
+        self.dataStore.playthrough.answerQ7A = @"";
+        self.dataStore.playthrough.answerQ8 = @"";
+        self.dataStore.playthrough.answerQ9 = @"";
+        self.dataStore.playthrough.answerQ10 = @"";
+        self.dataStore.playthrough.answerQ11 = @"";
         
         // go to next chapter or restart
     }

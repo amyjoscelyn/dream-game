@@ -16,7 +16,7 @@
 
 @implementation ZhuLi
 
-- (void)doTheThing:(Effect *)effect
+- (void)doThe:(Effect *)thing
 {
     //maybe someday this can become a general flow manager: if (id *)thing isType/Class Effect, go to an Effects manager.  If it's Prerequisite, go to a Prereqs manager.
     //Once I know whether it's Effect or Prerequisite, I need to determine whether it's on Playthrough or Character.  Each of those go to their own method managers.
@@ -26,32 +26,21 @@
     
     //this handles all effects from selected choice or currentQuestion
     
-    NSString *actionObject = effect.actionObject;
+    NSString *actionObject = thing.actionObject;
     
     if ([actionObject isEqualToString:@"story"])
     {
-        [self managePlaythrough:effect];
+        [self managePlaythrough:thing];
     }
 }
 
-- (BOOL)checkPrerequisite:(Prerequisite *)prerequisite
-{
-    
-    return YES;
-}
+#pragma Handling Effects
 
 - (void)managePlaythrough:(Effect *)effect
 {
     NSString *actionProperty = effect.actionProperty;
     NSString *stringValue = effect.stringValue;
-    NSLog(@"stringValue of effect: %@", stringValue);
-    
-    if ([stringValue isEqualToString:@""])
-    {
-        //I need to figure out a way to collect the text from the chosen cell
-        //if I can check if there is an effect, and the effect.stringValue containsString "answer" then the method called must also include cell.textLabel.text/choice.content
-        //it should MAKE the stringValue the cell text/content, and then put it through the method!!  that way I'm not stretching my methods too thin.  Although I probably am anyway.
-    }
+    NSLog(@"stringValue of effect: %@ - %@", actionProperty, stringValue);
     
     if ([actionProperty isEqualToString:@"fontChange"])
     {
@@ -125,16 +114,62 @@
     {
         self.dataStore.playthrough.answerQ7 = stringValue;
     }
-//    else if ([actionProperty isEqualToString:@""])
-//    {
-//        
-//    }
-
+    //    else if ([actionProperty isEqualToString:@""])
+    //    {
+    //
+    //    }
+    
 }
 
-//- (void)changeProperty:(NSString *)property
-//{
-//    
-//}
+#pragma Checking Prerequisites
+
+- (BOOL)checkPrerequisite:(Prerequisite *)prerequisite
+{
+    NSString *checkObject = prerequisite.checkObject;
+    BOOL passesCheck;
+    
+    NSLog(@"checkObject = %@", checkObject);
+    if ([checkObject isEqualToString:@"story"])
+    {
+//        passesCheck = [self checkPrerequisite:prerequisite];
+    }
+    
+    return passesCheck;
+}
+
+- (BOOL)checkPlaythroughPrerequisite:(Prerequisite *)prerequisite
+{
+    NSString *checkProperty = prerequisite.checkProperty;
+    NSString *stringValue = prerequisite.stringValue;
+    BOOL passesCheck;
+    
+    if ([stringValue isEqualToString:@"anything"])
+    {
+        //this means as long as it's not equal to @"" it'll be okay
+    }
+    
+    if ([checkProperty isEqualToString:@"answerQ3"])
+    {
+        if (self.dataStore.playthrough.answerQ3.length)
+        {
+            passesCheck = YES;
+        }
+    }
+    else if ([checkProperty isEqualToString:@"answerQ3A"])
+    {
+        if (self.dataStore.playthrough.answerQ3A.length)
+        {
+            passesCheck = YES;
+        }
+    }
+    else if ([checkProperty isEqualToString:@"answerQ7"])
+    {
+        if (self.dataStore.playthrough.answerQ7.length)
+        {
+            passesCheck = YES;
+        }
+    }
+    return passesCheck;
+}
 
 @end
