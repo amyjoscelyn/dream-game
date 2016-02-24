@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Playthrough (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSString *answerQ1;
+@property (nullable, nonatomic, retain) NSString *answerQ2;
 @property (nullable, nonatomic, retain) NSString *answerQ3;
 @property (nullable, nonatomic, retain) NSString *answerQ3A;
 @property (nullable, nonatomic, retain) NSString *answerQ3B;
@@ -35,8 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL perseveranceChosen;
 @property (nonatomic) BOOL strengthChosen;
 @property (nonatomic) BOOL wondermentChosen;
-@property (nullable, nonatomic, retain) NSString *answerQ1;
-@property (nullable, nonatomic, retain) NSString *answerQ2;
+@property (nullable, nonatomic, retain) NSString *answerQ4;
+@property (nullable, nonatomic, retain) NSString *answerQ5;
+@property (nullable, nonatomic, retain) NSString *answerQ6;
+@property (nullable, nonatomic, retain) NSString *answerQ8;
+@property (nullable, nonatomic, retain) NSString *answerQ9;
+@property (nullable, nonatomic, retain) NSString *answerQ10;
+@property (nullable, nonatomic, retain) NSString *answerQ11;
 @property (nullable, nonatomic, retain) Question *currentQuestion;
 @property (nullable, nonatomic, retain) Character *playerCharacter;
 

@@ -10,51 +10,51 @@ c030.0,,q030,,Q2 Answered,q040,"Outdoors (Animalia, Practical)"
 c030.1,,q030,,Q2 Answered,q040,"Indoors (Charm, Divining)"
 c030.2,,q030,,Q2 Answered,q040,Wherever you’re needed most (Healing)
 c030.3,,q030,,Q2 Answered,q040,"Alone (History, Potions)"
-c040.0,,"q040, q041, q042",Creativity,Creativity,q050,Creativity (Charm)
-c040.1,,"q040, q041, q042",Intelligence,Intelligence,q050,Intelligence (History)
-c040.2,,"q040, q041, q042",Obedience,Obedience,q050,Obedience (Potions)
-c040.3,,"q040, q041, q042",Empathy,Empathy,q050,Empathy (Healing)
-c040.4,,"q040, q041, q042",Instinct,Instinct,q050,Instinct (Divining)
-c040.5,,"q040, q041, q042",Perseverance,Perseverance,q050,Perseverance (Practical)
-c040.6,,"q040, q041, q042",Kindness,Kindness,q050,Kindness/Understanding (Animalia)
-c050.0,,q050,,,q060,"Yes (History, Healing)"
-c050.1,,q050,,,q060,"No (Divining, Practical)"
-c050.2,,q050,,,q060,"Only when it’s something I’m excited about (Charm, Animalia, Potions)"
-c060.0,,q060,,,q070,"Yes (Charm, Practical)"
-c060.1,,q060,,,q070,"No, but when I have them I do what I can to keep them (Healing, Divining)"
-c060.2,,q060,,,q070,"I prefer solitude (History, Potions)"
-c060.3,,q060,,,q070,I’d rather surround myself with animals (Animalia)
-c070.0,,q070,,,q080,"Listening to experts (Charm, Healing)"
-c070.1,,q070,,,q080,"Reading books (Potions, History)"
-c070.2,,q070,,,q080,"Hands-on experience (Practical, Animalia, Divining)"
-c080.0,,"q080, q081",Strength,Strength,q090,"Strength (Practical, Healing)"
-c080.1,,"q080, q081",Grace,Grace,q090,"Grace (Practical, Divining)"
-c080.2,,"q080, q081",Intellect,Intellect,q090,"Intellect (History, Potions)"
-c080.3,,"q080, q081",Imagination,Imagination,q090,"Imagination (Charm, Potions)"
-c080.4,,"q080, q081",Caring,Caring,q090,"Caring (Healing, Animalia)"
-c080.5,,"q080, q081",Wonderment,Wonderment,q090,"Wonderment (Animalia, Divining)"
-c080.6,,"q080, q081",Curiosity,Curiosity,q090,"Curiosity (History, Charm)"
-c090,,q090,,,q100,No choices yet
-c100.0,,q100,,,q110,brings honor to your family. (Practical)
-c100.1,,q100,,,q110,brings you great success. (Potions)
-c100.2,,q100,,,q110,you find most fulfilling (Animalia)
-c100.3,,q100,,,q110,your friends work at too (Charm)
-c100.4,,q100,,,q110,the world needs you to do (Divining)
-c100c5,,q100,,,q110,few others pursue (History)
-c100.6,,q100,,,q110,serves others’ needs (Healing)
+c040.0,,"q040, q041, q042",Creativity,"Creativity, Q3 Answered",q050,Creativity (Charm)
+c040.1,,"q040, q041, q042",Intelligence,"Intelligence, Q3 Answered",q050,Intelligence (History)
+c040.2,,"q040, q041, q042",Obedience,"Obedience, Q3 Answered",q050,Obedience (Potions)
+c040.3,,"q040, q041, q042",Empathy,"Empathy, Q3 Answered",q050,Empathy (Healing)
+c040.4,,"q040, q041, q042",Instinct,"Instinct, Q3 Answered",q050,Instinct (Divining)
+c040.5,,"q040, q041, q042",Perseverance,"Perseverance, Q3 Answered",q050,Perseverance (Practical)
+c040.6,,"q040, q041, q042",Kindness,"Kindness, Q3 Answered",q050,Kindness/Understanding (Animalia)
+c050.0,,q050,,Q4 Answered,q060,"Yes (History, Healing)"
+c050.1,,q050,,Q4 Answered,q060,"No (Divining, Practical)"
+c050.2,,q050,,Q4 Answered,q060,"Only when it’s something I’m excited about (Charm, Animalia, Potions)"
+c060.0,,q060,,Q5 Answered,q070,"Yes (Charm, Practical)"
+c060.1,,q060,,Q5 Answered,q070,"No, but when I have them I do what I can to keep them (Healing, Divining)"
+c060.2,,q060,,Q5 Answered,q070,"I prefer solitude (History, Potions)"
+c060.3,,q060,,Q5 Answered,q070,I’d rather surround myself with animals (Animalia)
+c070.0,,q070,,Q6 Answered,q080,"Listening to experts (Charm, Healing)"
+c070.1,,q070,,Q6 Answered,q080,"Reading books (Potions, History)"
+c070.2,,q070,,Q6 Answered,q080,"Hands-on experience (Practical, Animalia, Divining)"
+c080.0,,"q080, q081",Strength,"Strength, Q7 Answered",q090,"Strength (Practical, Healing)"
+c080.1,,"q080, q081",Grace,"Grace, Q7 Answered",q090,"Grace (Practical, Divining)"
+c080.2,,"q080, q081",Intellect,"Intellect, Q7 Answered",q090,"Intellect (History, Potions)"
+c080.3,,"q080, q081",Imagination,"Imagination, Q7 Answered",q090,"Imagination (Charm, Potions)"
+c080.4,,"q080, q081",Caring,"Caring, Q7 Answered",q090,"Caring (Healing, Animalia)"
+c080.5,,"q080, q081",Wonderment,"Wonderment, Q7 Answered",q090,"Wonderment (Animalia, Divining)"
+c080.6,,"q080, q081",Curiosity,"Curiosity, Q7 Answered",q090,"Curiosity (History, Charm)"
+c090,,q090,,Q8 Answered,q100,No choices yet
+c100.0,,q100,,Q9 Answered,q110,brings honor to your family. (Practical)
+c100.1,,q100,,Q9 Answered,q110,brings you great success. (Potions)
+c100.2,,q100,,Q9 Answered,q110,you find most fulfilling (Animalia)
+c100.3,,q100,,Q9 Answered,q110,your friends work at too (Charm)
+c100.4,,q100,,Q9 Answered,q110,the world needs you to do (Divining)
+c100c5,,q100,,Q9 Answered,q110,few others pursue (History)
+c100.6,,q100,,Q9 Answered,q110,serves others’ needs (Healing)
 c110.0,,q110,,,q111,Myself
 c110.1,,q110,,,q112,The world
-c111.0,,q111,,,q120,My body (Practical)
-c111.1,,q111,,,q120,My mind (Potions)
-c111.2,,q111,,,q120,My abilities (Charm)
-c112.0,,q112,,,q120,Its people (Healing)
-c112.1,,q112,,,q120,Its environment and nature (Animalia)
-c112.2,,q112,,,q120,How others understand it (History)
-c112.3,,q112,,,q120,Its fate (Divining)
-c120.0,,q120,,,,Happiness (Charm)
-c120.1,,q120,,,,Self-respect (Potions)
-c120.2,,q120,,,,Power (Practical)
-c120.3,,q120,,,,Knowledge (History)
-c120.4,,q120,,,,Friends (Animalia)
-c120.5,,q120,,,,Possibilities (Healing)
-c120.6,,q120,,,,Direction (Divining)
+c111.0,,q111,,Q10 Answered,q120,My body (Practical)
+c111.1,,q111,,Q10 Answered,q120,My mind (Potions)
+c111.2,,q111,,Q10 Answered,q120,My abilities (Charm)
+c112.0,,q112,,Q10 Answered,q120,Its people (Healing)
+c112.1,,q112,,Q10 Answered,q120,Its environment and nature (Animalia)
+c112.2,,q112,,Q10 Answered,q120,How others understand it (History)
+c112.3,,q112,,Q10 Answered,q120,Its fate (Divining)
+c120.0,,q120,,Q11 Answered,,Happiness (Charm)
+c120.1,,q120,,Q11 Answered,,Self-respect (Potions)
+c120.2,,q120,,Q11 Answered,,Power (Practical)
+c120.3,,q120,,Q11 Answered,,Knowledge (History)
+c120.4,,q120,,Q11 Answered,,Friends (Animalia)
+c120.5,,q120,,Q11 Answered,,Possibilities (Healing)
+c120.6,,q120,,Q11 Answered,,Direction (Divining)

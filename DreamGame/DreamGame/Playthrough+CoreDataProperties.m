@@ -13,6 +13,8 @@
 
 @implementation Playthrough (CoreDataProperties)
 
+@dynamic answerQ1;
+@dynamic answerQ2;
 @dynamic answerQ3;
 @dynamic answerQ3A;
 @dynamic answerQ3B;
@@ -33,8 +35,13 @@
 @dynamic perseveranceChosen;
 @dynamic strengthChosen;
 @dynamic wondermentChosen;
-@dynamic answerQ1;
-@dynamic answerQ2;
+@dynamic answerQ4;
+@dynamic answerQ5;
+@dynamic answerQ6;
+@dynamic answerQ8;
+@dynamic answerQ9;
+@dynamic answerQ10;
+@dynamic answerQ11;
 @dynamic currentQuestion;
 @dynamic playerCharacter;
 
