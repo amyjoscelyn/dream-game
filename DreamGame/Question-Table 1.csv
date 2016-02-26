@@ -7,15 +7,15 @@ q010,,Font,,q003,q020,,,"Thank you for applying to the prestigious School of Aei
 q020,Q1,,,q010,,,"c020.0, c020.1, c020.2, c020.3, c020.4, c020.5, c020.6",Q1: Which subject interests you most?
 q030,Q2,,,,,"c020.0, c020.1, c020.2, c020.3, c020.4, c020.5, c020.6","c030.0, c030.1, c030.2, c030.3",Q2: You prefer to spend the day:
 q040,Q3,,,,,"c030.0, c030.1, c030.2, c030.3","c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6",Q3: What do you strive for most? (subsequent questions not programmed in yet)
-q041,Q3a,Q3 Answered,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6",Q3a: What else do you strive to achieve? (the one you chose is no longer available to select)
-q042,Q3b,Q3a Answered,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","Q3b: (Most of the remaining, or least?)"
-q050,Q4,,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c050.0, c050.1, c050.2",Q4: Do you like to study?
+q041,Q3a,Q3 Answered,,,,"c040.0, c040.1, c040.2, c040.3, c040.4, c040.5, c040.6","c041.0, c041.1, c041.2, c041.3, c041.4, c041.5, c041.6",Q3a: What else do you strive to achieve? (the one you chose is no longer available to select)
+q042,Q3b,Q3a Answered,,,,"c041.0, c041.1, c041.2, c041.3, c041.4, c041.5, c041.6","c042.0, c042.1, c042.2, c042.3, c042.4, c042.5, c042.6","Q3b: (Most of the remaining, or least?)"
+q050,Q4,,,,,"c042.0, c042.1, c042.2, c042.3, c042.4, c042.5, c042.6","c050.0, c050.1, c050.2",Q4: Do you like to study?
 q060,Q5,,,,,"c050.0, c050.1, c050.2","c060.0, c060.1, c060.2, c060.3",Q5: Do you make friends easily?
 q070,Q6,,,,,"c060.0, c060.1, c060.2, c060.3","c070.0, c070.1, c070.2",Q6: You learn best:
 q080,Q7,,,,,"c070.0, c070.1, c070.2","c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6",Q7: What do you consider your most defining feature? (subsequent ques not being asked)
-q081,Q7a,Q7 Answered,,,,"c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6","c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6",Q7a: Your second most defining feature?
-q090,Q8,,,,,,c090,Q8: What would friends and family say you lack???
-q100,Q9,,,,,c090,"c100.0, c100.1, c100.2, c100.3, c100.4, c100.5, c100.6",Q9: You can see yourself working in the future at the kind of job which:
+q081,Q7a,Q7 Answered,,,,"c080.0, c080.1, c080.2, c080.3, c080.4, c080.5, c080.6","c081.0, c081.1, c081.2, c081.3, c081.4, c081.5, c081.6",Q7a: Your second most defining feature?
+q090,Q8,,,,,"c081.0, c081.1, c081.2, c081.3, c081.4, c081.5, c081.6","c090.0, c090.1, c090.2, c090.3, c090.4, c090.5, c090.6",Q8: What would friends and family say you lack???
+q100,Q9,,,,,"c090.0, c090.1, c090.2, c090.3, c090.4, c090.5, c090.6","c100.0, c100.1, c100.2, c100.3, c100.4, c100.5, c100.6",Q9: You can see yourself working in the future at the kind of job which:
 q110,Q10,,,,,"c100.0, c100.1, c100.2, c100.3, c100.4, c100.5, c100.6","c110.0, c110.1",Q10: What are you most interested in bettering?
 q111,Q10a,,,,,c110.0,"c111.0, c111.1, c111.2",Q10a: What in particular about yourself would you like to better?
 q112,Q10b,,,,,c110.1,"c112.0, c112.1, c112.2, c112.3",Q10b: What in particular about the world would you like to better?
