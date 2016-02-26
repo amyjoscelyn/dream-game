@@ -38,50 +38,44 @@
     {
         [self managePlaythrough:thing];
     }
+    else if ([actionObject isEqualToString:@"character"])
+    {
+        [self manageCharacter:thing];
+    }
+    else
+    {
+        NSLog(@"***Action %@ does not have object attributed to it.", thing.storyID);
+    }
 }
 
-#pragma Handling Effects
+#pragma Playthrough Handling Effects
 
 - (void)managePlaythrough:(Effect *)effect
 {
     if ([effect.operator isEqualToString:@"BOOL"])
     {
-        [self boolEffectHandler:effect];
+        [self boolEffectPlaythroughHandler:effect];
     }
     else if ([effect.operator isEqualToString:@"string"])
     {
-        [self stringEffectHandler:effect];
+        [self stringEffectPlaythroughHandler:effect];
     }
     else
     {
-        [self integerEffectHandler:effect];
+        [self integerEffectPlaythroughHandler:effect];
     }
 }
 
-- (void)boolEffectHandler:(Effect *)effect
+- (void)boolEffectPlaythroughHandler:(Effect *)effect
 {
     //If .operator == "BOOL" then the method goes to a boolEffectHandler, turns the .stringValue into either BOOL yes or no, and then set the property as equal to that
     
     NSString *actionProperty = effect.actionProperty;
-    NSString *stringValue = effect.stringValue;
-    BOOL boolValue;
-    
-    if ([stringValue isEqualToString:@"YES"])
-    {
-        boolValue = YES;
-    }
-    else
-    {
-        boolValue = NO;
-    }
-    
-    NSLog(@"stringValue of effect: %@ - %d", actionProperty, boolValue);
-    
+    BOOL boolValue = effect.stringValue.boolValue;
+        
     if ([actionProperty isEqualToString:@"fontChange"])
     {
-        NSLog(@"bool value: %d", boolValue);
         self.dataStore.playthrough.fontChange = boolValue;
-        NSLog(@"playthrough: fontChange = %d", self.dataStore.playthrough.fontChange);
     }
     else if ([actionProperty isEqualToString:@"creativityChosen"])
     {
@@ -141,95 +135,85 @@
     }
 }
 
-- (void)stringEffectHandler:(Effect *)effect
+- (void)stringEffectPlaythroughHandler:(Effect *)effect
 {
-    //If .operator == "string" then the method goes to the above, where it sets the plain stringValue as the property
     NSString *actionProperty = effect.actionProperty;
     NSString *stringValue = effect.stringValue;
-    NSLog(@"stringValue of effect: %@ - %@", actionProperty, stringValue);
-    
-//    if ([actionProperty isEqualToString:@"fontChange"])
-//    {
-//        self.dataStore.playthrough.fontChange = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"creativityChosen"])
-//    {
-//        self.dataStore.playthrough.creativityChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"intelligenceChosen"])
-//    {
-//        self.dataStore.playthrough.intelligenceChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"obedienceChosen"])
-//    {
-//        self.dataStore.playthrough.obedienceChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"empathyChosen"])
-//    {
-//        self.dataStore.playthrough.empathyChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"instinctChosen"])
-//    {
-//        self.dataStore.playthrough.instinctChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"perseveranceChosen"])
-//    {
-//        self.dataStore.playthrough.perseveranceChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"kindnessChosen"])
-//    {
-//        self.dataStore.playthrough.kindnessChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"strengthChosen"])
-//    {
-//        self.dataStore.playthrough.strengthChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"graceChosen"])
-//    {
-//        self.dataStore.playthrough.graceChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"intellectChosen"])
-//    {
-//        self.dataStore.playthrough.intellectChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"imaginationChosen"])
-//    {
-//        self.dataStore.playthrough.imaginationChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"caringChosen"])
-//    {
-//        self.dataStore.playthrough.caringChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"wondermentChosen"])
-//    {
-//        self.dataStore.playthrough.wondermentChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"curiosityChosen"])
-//    {
-//        self.dataStore.playthrough.curiosityChosen = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"answerQ3"])
-//    {
-//        self.dataStore.playthrough.answerQ3 = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"answerQ3A"])
-//    {
-//        self.dataStore.playthrough.answerQ3A = stringValue;
-//    }
-//    else if ([actionProperty isEqualToString:@"answerQ7"])
-//    {
-//        self.dataStore.playthrough.answerQ7 = stringValue;
-//    }
-    //    else if ([actionProperty isEqualToString:@""])
-    //    {
-    //
-    //    }
-
 }
 
-- (void)integerEffectHandler:(Effect *)effect
+- (void)integerEffectPlaythroughHandler:(Effect *)effect
+{    
+    NSString *actionProperty = effect.actionProperty;
+    NSInteger integerValue = effect.stringValue.integerValue;
+}
+
+#pragma Character Handling Manager
+
+- (void)manageCharacter:(Effect *)effect
 {
-    //If .operator == "integer" or "math" or something, then the method it gets sent to should be able to handle doing math on the integers, and resetting that property as the result
+    if ([effect.operator isEqualToString:@"BOOL"])
+    {
+        [self boolEffectCharacterHandler:effect];
+    }
+    else if ([effect.operator isEqualToString:@"string"])
+    {
+        [self stringEffectCharacterHandler:effect];
+    }
+    else
+    {
+        [self integerEffectCharacterHandler:effect];
+    }
+}
+
+- (void)boolEffectCharacterHandler:(Effect *)effect
+{
+    NSString *actionProperty = effect.actionProperty;
+    BOOL boolValue = effect.stringValue.boolValue;
+}
+
+- (void)stringEffectCharacterHandler:(Effect *)effect
+{
+    NSString *actionProperty = effect.actionProperty;
+    NSString *stringValue = effect.stringValue;
+}
+
+- (void)integerEffectCharacterHandler:(Effect *)effect
+{
+    NSString *actionProperty = effect.actionProperty;
+    NSInteger integerValue = effect.stringValue.integerValue;
+    
+    if ([actionProperty isEqualToString:@"charm"])
+    {
+        self.dataStore.playerCharacter.charm += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"practical"])
+    {
+        self.dataStore.playerCharacter.practical += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"history"])
+    {
+        self.dataStore.playerCharacter.history += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"potions"])
+    {
+        self.dataStore.playerCharacter.potions += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"healing"])
+    {
+        self.dataStore.playerCharacter.healing += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"divining"])
+    {
+        self.dataStore.playerCharacter.divining += integerValue;
+    }
+    else if ([actionProperty isEqualToString:@"animalia"])
+    {
+        self.dataStore.playerCharacter.animalia += integerValue;
+    }
+    else
+    {
+        NSLog(@"***ERROR: ACTION PROPERTY %@ DOES NOT MATCH ATTRIBUTE", actionProperty);
+    }
 }
 
 #pragma Checking Prerequisites

@@ -17,7 +17,8 @@
 @property (strong, nonatomic) NSArray *sortedChoices;
 
 @property (nonatomic) CGFloat textHue;
-@property (nonatomic) NSUInteger colorInteger;
+@property (nonatomic) CGFloat saturation;
+//@property (nonatomic) NSUInteger colorInteger;
 
 @end
 
@@ -33,6 +34,8 @@
     [self.dataStore fetchData];
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
+    
+    [self changeBackgroundColor];
     
 //    NSUInteger deeperBlue = 220;
 //    self.colorInteger = deeperBlue;
@@ -56,6 +59,103 @@
 - (void)changeBackgroundColor
 {
     //i need to set up 7 more properties--these can be in Character, and are the 7 majors.  Every choice has an effect that affects its coordinated major.  I read them here, and the one that is the greatest is attributed to a color, which the background is set as.
+    NSNumber *charm = @(self.dataStore.playerCharacter.charm);
+    NSNumber *practical = @(self.dataStore.playerCharacter.practical);
+    NSNumber *history = @(self.dataStore.playerCharacter.history);
+    NSNumber *potions = @(self.dataStore.playerCharacter.potions);
+    NSNumber *healing = @(self.dataStore.playerCharacter.healing);
+    NSNumber *divining = @(self.dataStore.playerCharacter.divining);
+    NSNumber *animalia = @(self.dataStore.playerCharacter.animalia);
+    
+    NSArray *arrayOfMajors = @[ @{ @"major" : @"charm"      ,
+                                   @"value" : charm },
+                                @{ @"major" : @"practical"  ,
+                                   @"value" : practical },
+                                @{ @"major" : @"history"    ,
+                                   @"value" : history },
+                                @{ @"major" : @"potions"    ,
+                                   @"value" : potions },
+                                @{ @"major" : @"healing"    ,
+                                   @"value" : healing },
+                                @{ @"major" : @"divining"   ,
+                                   @"value" : divining },
+                                @{ @"major" : @"animalia"   ,
+                                   @"value" : animalia },
+                                @{ @"major" : @"new game"   ,
+                                   @"value" : @1 }
+                                ];
+    
+    NSSortDescriptor *sortByHighestValue = [NSSortDescriptor sortDescriptorWithKey:@"value" ascending:NO];
+    NSArray *sortedArrayOfMajors = [arrayOfMajors sortedArrayUsingDescriptors:@[sortByHighestValue]];
+    
+    NSDictionary *highestValueMajor = sortedArrayOfMajors.firstObject;
+    NSLog(@"major: %@", highestValueMajor);
+    
+    NSString *major = highestValueMajor[@"major"];
+    
+    if ([major isEqualToString:@"charm"])
+    {
+        self.textHue = 0/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"practical"])
+    {
+        self.textHue = 25/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"history"])
+    {
+        self.textHue = 225/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"potions"])
+    {
+        self.textHue = 275/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"healing"])
+    {
+        self.textHue = 135/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"divining"])
+    {
+        self.saturation = 0.0;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else if ([major isEqualToString:@"animalia"])
+    {
+        self.textHue = 48/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
+    else
+    {
+        self.textHue = 30/359.0;
+        self.saturation = 0.1;
+        
+        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
+        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+    }
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -107,9 +207,8 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
+    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
     
-    NSLog(@"fontChange? %d", self.dataStore.playthrough.fontChange);
     if (self.dataStore.playthrough.fontChange)
     {
         [cell.textLabel setFont:[UIFont fontWithName:@"Palatino" size:22.5]];
@@ -123,7 +222,7 @@
     {
         cell.textLabel.text = self.currentQuestion.content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
-        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
+        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
         
         cell.detailTextLabel.hidden = YES;
@@ -169,7 +268,7 @@
             cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.5 alpha:1.0];
-        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
+        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.hidden = YES;
     }
@@ -248,10 +347,25 @@
         self.dataStore.playthrough.answerQ10 = @"";
         self.dataStore.playthrough.answerQ11 = @"";
         
+        self.dataStore.playerCharacter.charm = 0;
+        self.dataStore.playerCharacter.practical = 0;
+        self.dataStore.playerCharacter.history = 0;
+        self.dataStore.playerCharacter.potions = 0;
+        self.dataStore.playerCharacter.healing = 0;
+        self.dataStore.playerCharacter.divining = 0;
+        self.dataStore.playerCharacter.animalia = 0;
+        
+        self.textHue = 0;
+        self.saturation = 0.8;
+        
+        [_dataStore saveContext];
+        
         // go to next chapter or restart
     }
 //    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
 //    [self changeBackgroundColor:self.colorInteger];
+    
+    [self changeBackgroundColor];
     
     [self.tableView reloadData];
 }
