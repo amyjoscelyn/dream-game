@@ -15,9 +15,6 @@
 {
     Character *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:managedObjectContext];
     
-    character.campedOut = NO;
-    character.noMores = NO;
-    
 //    NSLog(@"we've created a new character!");
     
     return character;

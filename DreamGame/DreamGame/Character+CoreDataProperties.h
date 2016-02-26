@@ -2,7 +2,7 @@
 //  Character+CoreDataProperties.h
 //  DreamGame
 //
-//  Created by Amy Joscelyn on 2/19/16.
+//  Created by Amy Joscelyn on 2/26/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,8 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Character (CoreDataProperties)
 
-@property (nonatomic) BOOL noMores;
-@property (nonatomic) BOOL campedOut;
+@property (nonatomic) int64_t charm;
+@property (nonatomic) int64_t history;
+@property (nonatomic) int64_t potions;
+@property (nonatomic) int64_t practical;
+@property (nonatomic) int64_t divining;
+@property (nonatomic) int64_t healing;
+@property (nonatomic) int64_t animalia;
 @property (nullable, nonatomic, retain) Playthrough *playthrough;
 
 @end

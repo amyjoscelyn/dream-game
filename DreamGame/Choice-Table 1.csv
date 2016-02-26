@@ -1,87 +1,101 @@
 storyID,comment,questionIns,prerequisites,effects,questionOut,content
-c020.0,,q020,,Q1 Answered,q030,Charm
-c020.1,,q020,,Q1 Answered,q030,History
-c020.2,,q020,,Q1 Answered,q030,Potions
-c020.3,,q020,,Q1 Answered,q030,Healing
-c020.4,,q020,,Q1 Answered,q030,Divining
-c020.5,,q020,,Q1 Answered,q030,Practical
-c020.6,,q020,,Q1 Answered,q030,Animalia
-c030.0,,q030,,Q2 Answered,q040,"Outdoors (Animalia, Practical)"
-c030.1,,q030,,Q2 Answered,q040,"Indoors (Charm, Divining)"
-c030.2,,q030,,Q2 Answered,q040,Wherever you’re needed most (Healing)
-c030.3,,q030,,Q2 Answered,q040,"Alone (History, Potions)"
-c040.0,,q040,Creativity,"Creativity, Q3 Answered",q041,Creativity (Charm)
-c040.1,,q040,Intelligence,"Intelligence, Q3 Answered",q041,Intelligence (History)
-c040.2,,q040,Obedience,"Obedience, Q3 Answered",q041,Obedience (Potions)
-c040.3,,q040,Empathy,"Empathy, Q3 Answered",q041,Empathy (Healing)
-c040.4,,q040,Instinct,"Instinct, Q3 Answered",q041,Instinct (Divining)
-c040.5,,q040,Perseverance,"Perseverance, Q3 Answered",q041,Perseverance (Practical)
-c040.6,,q040,Kindness,"Kindness, Q3 Answered",q041,Kindness/Understanding (Animalia)
-c041.0,,q041,Creativity,"Creativity, Q3A Answered",q042,Creativity (Charm)
-c041.1,,q041,Intelligence,"Intelligence, Q3A Answered",q042,Intelligence (History)
-c041.2,,q041,Obedience,"Obedience, Q3A Answered",q042,Obedience (Potions)
-c041.3,,q041,Empathy,"Empathy, Q3A Answered",q042,Empathy (Healing)
-c041.4,,q041,Instinct,"Instinct, Q3A Answered",q042,Instinct (Divining)
-c041.5,,q041,Perseverance,"Perseverance, Q3A Answered",q042,Perseverance (Practical)
-c041.6,,q041,Kindness,"Kindness, Q3A Answered",q042,Kindness/Understanding (Animalia)
-c042.0,,q042,Creativity,"Creativity, Q3B Answered",q050,Creativity (Charm)
-c042.1,,q042,Intelligence,"Intelligence, Q3B Answered",q050,Intelligence (History)
-c042.2,,q042,Obedience,"Obedience, Q3B Answered",q050,Obedience (Potions)
-c042.3,,q042,Empathy,"Empathy, Q3B Answered",q050,Empathy (Healing)
-c042.4,,q042,Instinct,"Instinct, Q3B Answered",q050,Instinct (Divining)
-c042.5,,q042,Perseverance,"Perseverance, Q3B Answered",q050,Perseverance (Practical)
-c042.6,,q042,Kindness,"Kindness, Q3B Answered",q050,Kindness/Understanding (Animalia)
-c050.0,,q050,,Q4 Answered,q060,"Yes (History, Healing)"
-c050.1,,q050,,Q4 Answered,q060,"No (Divining, Practical)"
-c050.2,,q050,,Q4 Answered,q060,"Only when it’s something I’m excited about (Charm, Animalia, Potions)"
-c060.0,,q060,,Q5 Answered,q070,"Yes (Charm, Practical)"
-c060.1,,q060,,Q5 Answered,q070,"No, but when I have them I do what I can to keep them (Healing, Divining)"
-c060.2,,q060,,Q5 Answered,q070,"I prefer solitude (History, Potions)"
-c060.3,,q060,,Q5 Answered,q070,I’d rather surround myself with animals (Animalia)
-c070.0,,q070,,Q6 Answered,q080,"Listening to experts (Charm, Healing)"
-c070.1,,q070,,Q6 Answered,q080,"Reading books (Potions, History)"
-c070.2,,q070,,Q6 Answered,q080,"Hands-on experience (Practical, Animalia, Divining)"
-c080.0,,q080,Strength,"Strength, Q7 Answered",q081,"Strength (Practical, Healing)"
-c080.1,,q080,Grace,"Grace, Q7 Answered",q081,"Grace (Practical, Divining)"
-c080.2,,q080,Intellect,"Intellect, Q7 Answered",q081,"Intellect (History, Potions)"
-c080.3,,q080,Imagination,"Imagination, Q7 Answered",q081,"Imagination (Charm, Potions)"
-c080.4,,q080,Caring,"Caring, Q7 Answered",q081,"Caring (Healing, Animalia)"
-c080.5,,q080,Wonderment,"Wonderment, Q7 Answered",q081,"Wonderment (Animalia, Divining)"
-c080.6,,q080,Curiosity,"Curiosity, Q7 Answered",q081,"Curiosity (History, Charm)"
-c081.0,,q081,Strength,"Strength, Q7A Answered",q090,"Strength (Practical, Healing)"
-c081.1,,q081,Grace,"Grace, Q7A Answered",q090,"Grace (Practical, Divining)"
-c081.2,,q081,Intellect,"Intellect, Q7A Answered",q090,"Intellect (History, Potions)"
-c081.3,,q081,Imagination,"Imagination, Q7A Answered",q090,"Imagination (Charm, Potions)"
-c081.4,,q081,Caring,"Caring, Q7A Answered",q090,"Caring (Healing, Animalia)"
-c081.5,,q081,Wonderment,"Wonderment, Q7A Answered",q090,"Wonderment (Animalia, Divining)"
-c081.6,,q081,Curiosity,"Curiosity, Q7A Answered",q090,"Curiosity (History, Charm)"
-c090.0,,q090,,Q8 Answered,q100,Patience (-Potions)
-c090.1,,q090,,Q8 Answered,q100,Creativity (-Charm)
-c090.2,,q090,,Q8 Answered,q100,Foresight (-Divining)
-c090.3,,q090,,Q8 Answered,q100,Courage (-Practice)
-c090.4,,q090,,Q8 Answered,q100,Focus (-History)
-c090.5,,q090,,Q8 Answered,q100,Sympathy (-Healing)
-c090.6,,q090,,Q8 Answered,q100,Care (-Animalia)
-c100.0,,q100,,Q9 Answered,q110,brings honor to your family. (Practical)
-c100.1,,q100,,Q9 Answered,q110,brings you great success. (Potions)
-c100.2,,q100,,Q9 Answered,q110,you find most fulfilling (Animalia)
-c100.3,,q100,,Q9 Answered,q110,your friends work at too (Charm)
-c100.4,,q100,,Q9 Answered,q110,the world needs you to do (Divining)
-c100c5,,q100,,Q9 Answered,q110,few others pursue (History)
-c100.6,,q100,,Q9 Answered,q110,serves others’ needs (Healing)
+c020.0,,q020,,"Q1 Answered, Charm + 3",q030,Charm
+c020.1,,q020,,"Q1 Answered, History + 3",q030,History
+c020.2,,q020,,"Q1 Answered, Potions + 3",q030,Potions
+c020.3,,q020,,"Q1 Answered, Healing + 3",q030,Healing
+c020.4,,q020,,"Q1 Answered, Divining + 3",q030,Divining
+c020.5,,q020,,"Q1 Answered, Practical + 3",q030,Practical
+c020.6,,q020,,"Q1 Answered, Animalia + 3",q030,Animalia
+c030.0,,q030,,"Q2 Answered, Practical + 2, Animalia + 2",q040,"Outdoors (Animalia, Practical)"
+c030.1,,q030,,"Q2 Answered, Charm + 2, Divining + 2",q040,"Indoors (Charm, Divining)"
+c030.2,,q030,,"Q2 Answered, Healing + 3",q040,Wherever you’re needed most (Healing)
+c030.3,,q030,,"Q2 Answered, History + 2, Potions + 2",q040,"Alone (History, Potions)"
+c040.0,,q040,Creativity,"Creativity, Q3 Answered, Charm + 3",q041,Creativity (Charm)
+c040.1,,q040,Intelligence,"Intelligence, Q3 Answered, History + 3",q041,Intelligence (History)
+c040.2,,q040,Obedience,"Obedience, Q3 Answered, Potions + 3",q041,Obedience (Potions)
+c040.3,,q040,Empathy,"Empathy, Q3 Answered, Healing + 3",q041,Empathy (Healing)
+c040.4,,q040,Instinct,"Instinct, Q3 Answered, Divining + 3",q041,Instinct (Divining)
+c040.5,,q040,Perseverance,"Perseverance, Q3 Answered, Practical + 3",q041,Perseverance (Practical)
+c040.6,,q040,Kindness,"Kindness, Q3 Answered, Animalia + 3",q041,Kindness/Understanding (Animalia)
+c041.0,,q041,Creativity,"Creativity, Q3A Answered, Charm + 2",q042,Creativity (Charm)
+c041.1,,q041,Intelligence,"Intelligence, Q3A Answered, History + 2",q042,Intelligence (History)
+c041.2,,q041,Obedience,"Obedience, Q3A Answered, Potions + 2",q042,Obedience (Potions)
+c041.3,,q041,Empathy,"Empathy, Q3A Answered, Healing + 2",q042,Empathy (Healing)
+c041.4,,q041,Instinct,"Instinct, Q3A Answered, Divining + 2",q042,Instinct (Divining)
+c041.5,,q041,Perseverance,"Perseverance, Q3A Answered, Practical + 2",q042,Perseverance (Practical)
+c041.6,,q041,Kindness,"Kindness, Q3A Answered, Animalia + 2",q042,Kindness/Understanding (Animalia)
+c042.0,,q042,Creativity,"Creativity, Q3B Answered, Charm + 1",q050,Creativity (Charm)
+c042.1,,q042,Intelligence,"Intelligence, Q3B Answered, History + 1",q050,Intelligence (History)
+c042.2,,q042,Obedience,"Obedience, Q3B Answered, Potions + 1",q050,Obedience (Potions)
+c042.3,,q042,Empathy,"Empathy, Q3B Answered, Healing + 1",q050,Empathy (Healing)
+c042.4,,q042,Instinct,"Instinct, Q3B Answered, Divining + 1",q050,Instinct (Divining)
+c042.5,,q042,Perseverance,"Perseverance, Q3B Answered, Practical + 1",q050,Perseverance (Practical)
+c042.6,,q042,Kindness,"Kindness, Q3B Answered, Animalia + 1",q050,Kindness/Understanding (Animalia)
+c050.0,,q050,,"Q4 Answered, History + 1, Healing + 1",q060,"Yes (History, Healing)"
+c050.1,,q050,,"Q4 Answered, Practical + 1, Divining + 1",q060,"No (Divining, Practical)"
+c050.2,,q050,,"Q4 Answered, Charm + 1, Potions + 1, Animalia + 1",q060,"Only when it’s something I’m excited about (Charm, Animalia, Potions)"
+c060.0,,q060,,"Q5 Answered, Charm + 1, Practical + 1",q070,"Yes (Charm, Practical)"
+c060.1,,q060,,"Q5 Answered, Healing + 1, Divining + 1",q070,"No, but when I have them I do what I can to keep them (Healing, Divining)"
+c060.2,,q060,,"Q5 Answered, History + 1, Potions + 1",q070,"I prefer solitude (History, Potions)"
+c060.3,,q060,,"Q5 Answered, Animalia + 2",q070,I’d rather surround myself with animals (Animalia)
+c070.0,,q070,,"Q6 Answered, Charm + 1, Healing + 1",q080,"Listening to experts (Charm, Healing)"
+c070.1,,q070,,"Q6 Answered, History + 1, Potions + 1",q080,"Reading books (Potions, History)"
+c070.2,,q070,,"Q6 Answered, Practical + 1, Divining + 1, Animalia + 1",q080,"Hands-on experience (Practical, Animalia, Divining)"
+c080.0,,q080,Strength,"Strength, Q7 Answered, Practical + 4, Healing + 4",q081,"Strength (Practical, Healing)"
+c080.1,,q080,Grace,"Grace, Q7 Answered, Practical + 4, Divining + 4",q081,"Grace (Practical, Divining)"
+c080.2,,q080,Intellect,"Intellect, Q7 Answered, History + 4, Potions + 4",q081,"Intellect (History, Potions)"
+c080.3,,q080,Imagination,"Imagination, Q7 Answered, Charm + 4, Potions + 4",q081,"Imagination (Charm, Potions)"
+c080.4,,q080,Caring,"Caring, Q7 Answered, Healing + 4, Animalia + 4",q081,"Caring (Healing, Animalia)"
+c080.5,,q080,Wonderment,"Wonderment, Q7 Answered, Divining + 4, Animalia + 4",q081,"Wonderment (Animalia, Divining)"
+c080.6,,q080,Curiosity,"Curiosity, Q7 Answered, Charm + 4, History + 4",q081,"Curiosity (History, Charm)"
+c081.0,,q081,Strength,"Strength, Q7A Answered, Practical + 2, Healing + 2",q090,"Strength (Practical, Healing)"
+c081.1,,q081,Grace,"Grace, Q7A Answered, Practical + 2, Divining + 2",q090,"Grace (Practical, Divining)"
+c081.2,,q081,Intellect,"Intellect, Q7A Answered, History + 2, Potions + 2",q090,"Intellect (History, Potions)"
+c081.3,,q081,Imagination,"Imagination, Q7A Answered, Charm + 2, Potions + 2",q090,"Imagination (Charm, Potions)"
+c081.4,,q081,Caring,"Caring, Q7A Answered, Healing + 2, Animalia + 2",q090,"Caring (Healing, Animalia)"
+c081.5,,q081,Wonderment,"Wonderment, Q7A Answered, Divining + 2, Animalia + 2",q090,"Wonderment (Animalia, Divining)"
+c081.6,,q081,Curiosity,"Curiosity, Q7A Answered, Charm + 2, History + 2",q090,"Curiosity (History, Charm)"
+c090.0,,q090,,"Q8 Answered, Potions - 4",q100,Patience (-Potions)
+c090.1,,q090,,"Q8 Answered, Charm - 4",q100,Creativity (-Charm)
+c090.2,,q090,,"Q8 Answered, Divining - 4",q100,Foresight (-Divining)
+c090.3,,q090,,"Q8 Answered, Practical - 4",q100,Courage (-Practical)
+c090.4,,q090,,"Q8 Answered, History - 4",q100,Focus (-History)
+c090.5,,q090,,"Q8 Answered, Healing - 4",q100,Sympathy (-Healing)
+c090.6,,q090,,"Q8 Answered, Animalia - 4",q100,Care (-Animalia)
+c100.0,,q100,,"Q9 Answered, Practical + 2",q110,brings honor to your family. (Practical)
+c100.1,,q100,,"Q9 Answered, Potions + 2",q110,brings you great success. (Potions)
+c100.2,,q100,,"Q9 Answered, Animalia + 2",q110,you find most fulfilling (Animalia)
+c100.3,,q100,,"Q9 Answered, Charm + 2",q110,your friends work at too (Charm)
+c100.4,,q100,,"Q9 Answered, Divining + 2",q110,the world needs you to do (Divining)
+c100c5,,q100,,"Q9 Answered, History + 2",q110,few others pursue (History)
+c100.6,,q100,,"Q9 Answered, Healing + 2",q110,serves others’ needs (Healing)
 c110.0,,q110,,,q111,Myself
 c110.1,,q110,,,q112,The world
-c111.0,,q111,,Q10 Answered,q120,My body (Practical)
-c111.1,,q111,,Q10 Answered,q120,My mind (Potions)
-c111.2,,q111,,Q10 Answered,q120,My abilities (Charm)
-c112.0,,q112,,Q10 Answered,q120,Its people (Healing)
-c112.1,,q112,,Q10 Answered,q120,Its environment and nature (Animalia)
-c112.2,,q112,,Q10 Answered,q120,How others understand it (History)
-c112.3,,q112,,Q10 Answered,q120,Its fate (Divining)
-c120.0,,q120,,Q11 Answered,,Happiness (Charm)
-c120.1,,q120,,Q11 Answered,,Self-respect (Potions)
-c120.2,,q120,,Q11 Answered,,Power (Practical)
-c120.3,,q120,,Q11 Answered,,Knowledge (History)
-c120.4,,q120,,Q11 Answered,,Friends (Animalia)
-c120.5,,q120,,Q11 Answered,,Possibilities (Healing)
-c120.6,,q120,,Q11 Answered,,Direction (Divining)
+c111.0,,q111,,"Q10 Answered, Practical + 4",q120,My body (Practical)
+c111.1,,q111,,"Q10 Answered, Potions + 4",q120,My mind (Potions)
+c111.2,,q111,,"Q10 Answered, Charm + 4",q120,My abilities (Charm)
+c112.0,,q112,,"Q10 Answered, Healing + 4",q120,Its people (Healing)
+c112.1,,q112,,"Q10 Answered, Animalia + 4",q120,Its environment and nature (Animalia)
+c112.2,,q112,,"Q10 Answered, History + 4",q120,How others understand it (History)
+c112.3,,q112,,"Q10 Answered, Divining + 4",q120,Its fate (Divining)
+c120.0,,q120,,"Q11 Answered, Charm + 3",q130,Happiness (Charm)
+c120.1,,q120,,"Q11 Answered, Potions + 3",q130,Self-respect (Potions)
+c120.2,,q120,,"Q11 Answered, Practical + 3",q130,Power (Practical)
+c120.3,,q120,,"Q11 Answered, History + 3",q130,Knowledge (History)
+c120.4,,q120,,"Q11 Answered, Animalia + 3",q130,Friends (Animalia)
+c120.5,,q120,,"Q11 Answered, Healing + 3",q130,Possibilities (Healing)
+c120.6,,q120,,"Q11 Answered, Divining + 3",q130,Direction (Divining)
+c130.0,,q130,,"Q12 Answered, Charm - 2",q140,Charm
+c130.1,,q130,,"Q12 Answered, History - 2",q140,History
+c130.2,,q130,,"Q12 Answered, Potions - 2",q140,Potions
+c130.3,,q130,,"Q12 Answered, Healing - 2",q140,Healing
+c130.4,,q130,,"Q12 Answered, Divining - 2",q140,Divining
+c130.5,,q130,,"Q12 Answered, Practical - 2",q140,Practical
+c130.6,,q130,,"Q12 Answered, Animalia - 2",q140,Animalia
+c140.0,,q140,,"Q13 Answered, Charm + 1",q150,Magic (Charm)
+c140.1,,q140,,"Q13 Answered, History + 1",q150,Classes (History)
+c140.2,,q140,,"Q13 Answered, Animalia + 1",q150,Making friends (Animalia)
+c140.3,,q140,,"Q13 Answered, Healing + 1",q150,Getting away from home (Healing)
+c140.4,,q140,,"Q13 Answered, Potions + 1",q150,Food! (Potions)
+c140.5,,q140,,"Q13 Answered, Practical + 1",q150,Flying (Practical)
+c140.6,,q140,,"Q13 Answered, Divining + 1",q150,All the possibilities (Divining)

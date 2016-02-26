@@ -1,5 +1,6 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
-Font,change font,,,,story,fontChange,BOOL,YES
+Font of Letter,fancy font,,,,story,fontChange,BOOL,YES
+Normal Font,normal font,,,,story,fontChange,BOOL,NO
 Creativity,creativity chosen,,,,story,creativityChosen,BOOL,YES
 Intelligence,intelligence chosen,,,,story,intelligenceChosen,BOOL,YES
 Obedience,obedience chosen,,,,story,obedienceChosen,BOOL,YES
@@ -17,14 +18,58 @@ Curiosity,curiosity chosen,,,,story,curiosityChosen,BOOL,YES
 Q1 Answered,answer for Q1,,,,story,answerQ1,string,
 Q2 Answered,answer for Q2,,,,story,answerQ2,string,
 Q3 Answered,answer for Q3,,,,story,answerQ3,string,
-Q3A Answered,,,,,story,answerQ3A,string,
-Q3B Answered,,,,,story,answerQ3B,string,
+Q3A Answered,answer for Q3A,,,,story,answerQ3A,string,
+Q3B Answered,answer for Q3B,,,,story,answerQ3B,string,
 Q4 Answered,answer for Q4,,,,story,answerQ4,string,
 Q5 Answered,answer for Q5,,,,story,answerQ5,string,
 Q6 Answered,answer for Q6,,,,story,answerQ6,string,
 Q7 Answered,answer for Q7,,,,story,answerQ7,string,
-Q7A Answered,,,,,story,answerQ7A,string,
+Q7A Answered,answer for Q7A,,,,story,answerQ7A,string,
 Q8 Answered,answer for Q8,,,,story,answerQ8,string,
 Q9 Answered,answer for Q9,,,,story,answerQ9,string,
 Q10 Answered,answer for Q10,,,,story,answerQ10,string,
 Q11 Answered,answer for Q11,,,,story,answerQ11,string,
+Q12 Answered,answer for Q12,,,,story,answerQ12,string,
+Q13 Answered,answer for Q13,,,,story,answerQ13,string,
+Charm + 4,major+4,,,,character,charm,integer,4
+Practical + 4,major+4,,,,character,practical,integer,4
+History + 4,major+4,,,,character,history,integer,4
+Potions + 4,major+4,,,,character,potions,integer,4
+Healing + 4,major+4,,,,character,healing,integer,4
+Divining + 4,major+4,,,,character,divining,integer,4
+Animalia + 4,major+4,,,,character,animalia,integer,4
+Charm + 3,major+3,,,,character,charm,integer,3
+Practical + 3,major+3,,,,character,practical,integer,3
+History + 3,major+3,,,,character,history,integer,3
+Potions + 3,major+3,,,,character,potions,integer,3
+Healing + 3,major+3,,,,character,healing,integer,3
+Divining + 3,major+3,,,,character,divining,integer,3
+Animalia + 3,major+3,,,,character,animalia,integer,3
+Charm + 2,major+2,,,,character,charm,integer,2
+Practical + 2,major+2,,,,character,practical,integer,2
+History + 2,major+2,,,,character,history,integer,2
+Potions + 2,major+2,,,,character,potions,integer,2
+Healing + 2,major+2,,,,character,healing,integer,2
+Divining + 2,major+2,,,,character,divining,integer,2
+Animalia + 2,major+2,,,,character,animalia,integer,2
+Charm + 1,major+1,,,,character,charm,integer,1
+Practical + 1,major+1,,,,character,practical,integer,1
+History + 1,major+1,,,,character,history,integer,1
+Potions + 1,major+1,,,,character,potions,integer,1
+Healing + 1,major+1,,,,character,healing,integer,1
+Divining + 1,major+1,,,,character,divining,integer,1
+Animalia + 1,major+1,,,,character,animalia,integer,1
+Charm - 4,major-4,,,,character,charm,integer,-4
+Practical - 4,major-4,,,,character,practical,integer,-4
+History - 4,major-4,,,,character,history,integer,-4
+Potions - 4,major-4,,,,character,potions,integer,-4
+Healing - 4,major-4,,,,character,healing,integer,-4
+Divining - 4,major-4,,,,character,divining,integer,-4
+Animalia - 4,major-4,,,,character,animalia,integer,-4
+Charm - 2,major-2,,,,character,charm,integer,-2
+Practical - 2,major-2,,,,character,practical,integer,-2
+History - 2,major-2,,,,character,history,integer,-2
+Potions - 2,major-2,,,,character,potions,integer,-2
+Healing - 2,major-2,,,,character,healing,integer,-2
+Divining - 2,major-2,,,,character,divining,integer,-2
+Animalia - 2,major-2,,,,character,animalia,integer,-2

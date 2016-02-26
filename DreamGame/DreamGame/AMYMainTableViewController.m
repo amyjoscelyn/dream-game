@@ -34,23 +34,28 @@
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
     
-    NSUInteger deeperBlue = 220;
-    self.colorInteger = deeperBlue;
-    [self changeBackgroundColor:deeperBlue];
+//    NSUInteger deeperBlue = 220;
+//    self.colorInteger = deeperBlue;
+//    [self changeBackgroundColor:deeperBlue];
     
     //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
 
-- (void)changeBackgroundColor:(NSUInteger)color
+//- (void)changeBackgroundColor:(NSUInteger)color
+//{
+//    if (color > 359.0)
+//    {
+//        color -= 359.0;
+//    }
+//    self.textHue = color/359.0;
+//    
+//    self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
+//    self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
+//}
+
+- (void)changeBackgroundColor
 {
-    if (color > 359.0)
-    {
-        color -= 359.0;
-    }
-    self.textHue = color/359.0;
-    
-    self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
-    self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
+    //i need to set up 7 more properties--these can be in Character, and are the 7 majors.  Every choice has an effect that affects its coordinated major.  I read them here, and the one that is the greatest is attributed to a color, which the background is set as.
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -104,7 +109,7 @@
     
     cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
     
-//    NSLog(@"fontChange? %d", self.dataStore.playthrough.fontChange);
+    NSLog(@"fontChange? %d", self.dataStore.playthrough.fontChange);
     if (self.dataStore.playthrough.fontChange)
     {
         [cell.textLabel setFont:[UIFont fontWithName:@"Palatino" size:22.5]];
