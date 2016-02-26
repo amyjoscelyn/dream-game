@@ -1,5 +1,4 @@
 storyId,comment,choices,questions,effects,checkObject,checkProperty,comparator,stringValue
-Font,should font change?,,,,story,fontChange,,YES
 Creativity,creativity has been chosen,,,,story,creativityChosen,,YES
 Intelligence,intelligence has been chosen,,,,story,intelligenceChosen,,YES
 Obedience,obedience has been chosen,,,,story,obedienceChosen,,YES
@@ -14,6 +13,3 @@ Imagination,imagination has been chosen,,,,story,imaginationChosen,,YES
 Caring,caring has been chosen,,,,story,caringChosen,,YES
 Wonderment,wonderment has been chosen,,,,story,wondermentChosen,,YES
 Curiosity,curiosity has been chosen,,,,story,curiosityChosen,,YES
-Q3 Answered,Q3 has an answer,,,,story,answerQ3,,anything
-Q3a Answered,Q3a has an answer,,,,story,answerQ3A,,anything
-Q7 Answered,Q7 has an answer,,,,story,answerQ7,,anything

@@ -1,27 +1,30 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
-Font,change font,,,,story,fontChange,,YES
-Creativity,creativity chosen,,,,story,creativityChosen,,YES
-Intelligence,intelligence chosen,,,,story,intelligenceChosen,,YES
-Obedience,obedience chosen,,,,story,obedienceChosen,,YES
-Empathy,empathy chosen,,,,story,empathyChosen,,YES
-Instinct,instinct chosen,,,,story,instinctChosen,,YES
-Perseverance,perseverance chosen,,,,story,perseveranceChosen,,YES
-Kindness,kindness chosen,,,,story,kindnessChosen,,YES
-Strength,strength chosen,,,,story,strengthChosen,,YES
-Grace,grace chosen,,,,story,graceChosen,,YES
-Intellect,intellect chosen,,,,story,intellectChosen,,YES
-Imagination,imagination chosen,,,,story,imaginationChosen,,YES
-Caring,caring chosen,,,,story,caringChosen,,YES
-Wonderment,wonderment chosen,,,,story,wondermentChosen,,YES
-Curiosity,curiosity chosen,,,,story,curiosityChosen,,YES
-Q1 Answered,answer for Q1,,,,story,answerQ1,,
-Q2 Answered,answer for Q2,,,,story,answerQ2,,
-Q3 Answered,answer for Q3,,,,story,answerQ3,,
-Q4 Answered,answer for Q4,,,,story,answerQ4,,
-Q5 Answered,answer for Q5,,,,story,answerQ5,,
-Q6 Answered,answer for Q6,,,,story,answerQ6,,
-Q7 Answered,answer for Q7,,,,story,answerQ7,,
-Q8 Answered,answer for Q8,,,,story,answerQ8,,
-Q9 Answered,answer for Q9,,,,story,answerQ9,,
-Q10 Answered,answer for Q10,,,,story,answerQ10,,
-Q11 Answered,answer for Q11,,,,story,answerQ11,,
+Font,change font,,,,story,fontChange,BOOL,YES
+Creativity,creativity chosen,,,,story,creativityChosen,BOOL,YES
+Intelligence,intelligence chosen,,,,story,intelligenceChosen,BOOL,YES
+Obedience,obedience chosen,,,,story,obedienceChosen,BOOL,YES
+Empathy,empathy chosen,,,,story,empathyChosen,BOOL,YES
+Instinct,instinct chosen,,,,story,instinctChosen,BOOL,YES
+Perseverance,perseverance chosen,,,,story,perseveranceChosen,BOOL,YES
+Kindness,kindness chosen,,,,story,kindnessChosen,BOOL,YES
+Strength,strength chosen,,,,story,strengthChosen,BOOL,YES
+Grace,grace chosen,,,,story,graceChosen,BOOL,YES
+Intellect,intellect chosen,,,,story,intellectChosen,BOOL,YES
+Imagination,imagination chosen,,,,story,imaginationChosen,BOOL,YES
+Caring,caring chosen,,,,story,caringChosen,BOOL,YES
+Wonderment,wonderment chosen,,,,story,wondermentChosen,BOOL,YES
+Curiosity,curiosity chosen,,,,story,curiosityChosen,BOOL,YES
+Q1 Answered,answer for Q1,,,,story,answerQ1,string,
+Q2 Answered,answer for Q2,,,,story,answerQ2,string,
+Q3 Answered,answer for Q3,,,,story,answerQ3,string,
+Q3A Answered,,,,,story,answerQ3A,string,
+Q3B Answered,,,,,story,answerQ3B,string,
+Q4 Answered,answer for Q4,,,,story,answerQ4,string,
+Q5 Answered,answer for Q5,,,,story,answerQ5,string,
+Q6 Answered,answer for Q6,,,,story,answerQ6,string,
+Q7 Answered,answer for Q7,,,,story,answerQ7,string,
+Q7A Answered,,,,,story,answerQ7A,string,
+Q8 Answered,answer for Q8,,,,story,answerQ8,string,
+Q9 Answered,answer for Q9,,,,story,answerQ9,string,
+Q10 Answered,answer for Q10,,,,story,answerQ10,string,
+Q11 Answered,answer for Q11,,,,story,answerQ11,string,

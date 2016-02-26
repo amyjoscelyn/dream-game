@@ -55,30 +55,6 @@
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
 {
-    if (currentQuestion.prerequisites.count > 0)
-    { //this takes care of prerequisites the currentQuestion might need before it's displayed on the table
-        /*
-         if there is a prerequisite for a question, the prerequisite needs to be checked
-         if the check is true, the question becomes the currentQuestion
-         if the check is false, the question cannot be displayed and another question becomes the currentQuestion
-         */
-//        NSLog(@"PREREQ: %@", currentQuestion.prerequisites);
-        ZhuLi *zhuLi = [ZhuLi new];
-        
-        for (Prerequisite *prerequisite in currentQuestion.prerequisites)
-        {
-            BOOL passesCheck = [zhuLi checkPrerequisite:prerequisite];
-            
-            if (!passesCheck) //if this does not pass the check
-            {
-                //we must give a new currentQuestion.
-                //this needs to be a do-while, including the checking prerequisites.  While !passesCheck, we need to keep providing new questions to check until one passes.  That one moves forward.
-                NSString *storyID = currentQuestion.storyID;
-                //next storyID in order should become the new currentQuestion?
-            }
-        }
-    }
-    
     _currentQuestion = currentQuestion;
     _sortedChoices = [currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
     
@@ -128,6 +104,7 @@
     
     cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.85 alpha:1.0];
     
+//    NSLog(@"fontChange? %d", self.dataStore.playthrough.fontChange);
     if (self.dataStore.playthrough.fontChange)
     {
         [cell.textLabel setFont:[UIFont fontWithName:@"Palatino" size:22.5]];
