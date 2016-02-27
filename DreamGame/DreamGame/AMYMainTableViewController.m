@@ -243,13 +243,12 @@
             
             if (choice.prerequisites.count > 0)
             {
+                ZhuLi *zhuLi = [ZhuLi new];
+                
 //                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
                 for (Prerequisite *prereq in choice.prerequisites)
                 {
-                    if ([prereq.checkObject isEqualToString:@"story"])
-                    {
-                        //go to a method that deals solely with "story" properties, aka Playthrough
-                    }
+                    [zhuLi checkPrerequisite:prereq];
                 }
             }
             

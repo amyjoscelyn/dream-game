@@ -159,9 +159,13 @@
     {
         [self stringEffectCharacterHandler:effect];
     }
-    else
+    else if ([effect.operator isEqualToString:@"integer"])
     {
         [self integerEffectCharacterHandler:effect];
+    }
+    else
+    {
+        NSLog(@"***ERROR: THERE IS NO OPERATOR TO CHANGE EFFECT %@ WITH.", effect.storyID);
     }
 }
 
@@ -223,7 +227,7 @@
     NSString *checkObject = prerequisite.checkObject;
     BOOL passesCheck;
     
-    NSLog(@"checkObject = %@", checkObject);
+//    NSLog(@"checkObject = %@", checkObject);
     
     if ([checkObject isEqualToString:@"story"])
     {
@@ -235,39 +239,54 @@
 
 - (BOOL)checkPlaythroughPrerequisite:(Prerequisite *)prerequisite
 {
-    NSString *checkProperty = prerequisite.checkProperty;
-    NSString *stringValue = prerequisite.stringValue;
-    NSLog(@"CHECKING PREREQUISITE: %@ - %@", checkProperty, stringValue);
+    NSString *comparator = prerequisite.comparator;
+//    NSLog(@"CHECKING PREREQUISITE: %@ - %@", checkProperty, stringValue);
     
     BOOL passesCheck;
     
-//    if ([stringValue isEqualToString:@"anything"])
-//    {
-//        //this means as long as it's not equal to @"" it'll be okay
-//    }
+    if ([comparator isEqualToString:@"BOOL"])
+    {
+        [self checkPlaythroughBOOLPrerequisite:prerequisite];
+    }
+    else if ([comparator isEqualToString:@"string"])
+    {
+        [self checkPlaythroughStringPrerequisite:prerequisite];
+    }
+    else if ([comparator isEqualToString:@"integer"])
+    {
+        [self checkPlaythroughIntegerPrerequisite:prerequisite];
+    }
+    else
+    {
+        NSLog(@"***ERROR: THERE IS NO COMPARATOR TO CHECK PREREQUISITE %@ WITH.", prerequisite.storyID);
+    }
     
-    if ([checkProperty isEqualToString:@"answerQ3"])
-    {
-        if (self.dataStore.playthrough.answerQ3.length)
-        {
-            passesCheck = YES;
-        }
-    }
-    else if ([checkProperty isEqualToString:@"answerQ3A"])
-    {
-        if (self.dataStore.playthrough.answerQ3A.length)
-        {
-            passesCheck = YES;
-        }
-    }
-    else if ([checkProperty isEqualToString:@"answerQ7"])
-    {
-        if (self.dataStore.playthrough.answerQ7.length)
-        {
-            passesCheck = YES;
-        }
-    }
+    
     return passesCheck;
+}
+
+- (BOOL)checkPlaythroughBOOLPrerequisite:(Prerequisite *)prerequisite
+{
+    NSString *checkProperty = prerequisite.checkProperty;
+    BOOL boolValue = prerequisite.stringValue.boolValue;
+    
+    return NO;
+}
+
+- (BOOL)checkPlaythroughStringPrerequisite:(Prerequisite *)prerequisite
+{
+    NSString *checkProperty = prerequisite.checkProperty;
+    NSString *stringValue = prerequisite.stringValue;
+    
+    return NO;
+}
+
+- (BOOL)checkPlaythroughIntegerPrerequisite:(Prerequisite *)prerequisite
+{
+    NSString *checkProperty = prerequisite.checkProperty;
+    NSInteger integerValue = prerequisite.stringValue.integerValue;
+    
+    return NO;
 }
 
 @end
