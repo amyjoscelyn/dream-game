@@ -32,6 +32,10 @@
     
     //this handles all effects from selected choice or currentQuestion
     
+    if ([thing.entity.name isEqualToString:@"Choice"]) {
+        NSLog(@"IT IS A CHOICE!");
+    }
+    
     NSString *actionObject = thing.actionObject;
     
     if ([actionObject isEqualToString:@"story"])
