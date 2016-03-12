@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Character" representedClassName="Character" syncable="YES">
+        <attribute name="animalia" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="charm" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="divining" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="healing" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="potions" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="practical" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="playthrough" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Playthrough" inverseName="playerCharacter" inverseEntity="Playthrough" syncable="YES"/>
+    </entity>
+    <entity name="Choice" representedClassName="Choice" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="effects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Effect" inverseName="choices" inverseEntity="Effect" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prerequisite" inverseName="choices" inverseEntity="Prerequisite" syncable="YES"/>
+        <relationship name="questionIns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="choiceOuts" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questionOut" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="choiceIns" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Effect" representedClassName="Effect" syncable="YES">
+        <attribute name="actionObject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actionProperty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boolValue" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="floatValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integerValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="operator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stringValue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="effects" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prerequisite" inverseName="effects" inverseEntity="Prerequisite" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="effects" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Playthrough" representedClassName="Playthrough" syncable="YES">
+        <attribute name="answerQ1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ3A" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ3B" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ7A" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ9" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ10" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answerQ11" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caringChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="creativityChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="curiosityChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="empathyChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fontChange" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="graceChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="imaginationChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="instinctChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="intellectChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="intelligenceChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="kindnessChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="obedienceChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="perseveranceChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="strengthChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wondermentChosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="currentQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="playthrough" inverseEntity="Question" syncable="YES"/>
+        <relationship name="playerCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="playthrough" inverseEntity="Character" syncable="YES"/>
+    </entity>
+    <entity name="Prerequisite" representedClassName="Prerequisite" syncable="YES">
+        <attribute name="boolString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="checkObject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="checkProperty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comparator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="floatValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integerValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stringValue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="prerequisites" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="effects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Effect" inverseName="prerequisites" inverseEntity="Effect" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="prerequisites" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choiceIns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="questionOut" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="choiceOuts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="questionIns" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="effects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Effect" inverseName="questions" inverseEntity="Effect" syncable="YES"/>
+        <relationship name="playthrough" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Playthrough" inverseName="currentQuestion" inverseEntity="Playthrough" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prerequisite" inverseName="questions" inverseEntity="Prerequisite" syncable="YES"/>
+        <relationship name="questionAfter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="questionBefores" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questionBefores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="questionAfter" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Character" positionX="-261" positionY="-75" width="128" height="165"/>
+        <element name="Choice" positionX="277" positionY="-25" width="128" height="148"/>
+        <element name="Effect" positionX="97" positionY="162" width="128" height="238"/>
+        <element name="Playthrough" positionX="-315" positionY="72" width="128" height="510"/>
+        <element name="Prerequisite" positionX="36" positionY="-142" width="128" height="223"/>
+        <element name="Question" positionX="-144" positionY="101" width="128" height="193"/>
+    </elements>
+</model>
