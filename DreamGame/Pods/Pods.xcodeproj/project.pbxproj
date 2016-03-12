@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05FBC19E4A36FA0C6F14D9EC6ACC2969 /* CHCSVParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9957D397F3BE54801D48FCC46BE45 /* CHCSVParser-dummy.m */; };
+		6C7C82D8844AFBCD26FE300579C5F9E9 /* Pods-DreamGame-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1770E277B363D767699358F0F1CE40 /* Pods-DreamGame-dummy.m */; };
+		A3344A97613335DFF9CA1CC9CF7B61E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		B0E779F4F9C8CCA3D0A1E640C96C2984 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C103DE5E82EBE1B6424E5D7C46558E2 /* CHCSVParser.m */; };
+		B3134CF9B29F806AA70A19BDFF6D69EF /* CHCSVParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 33BC14812D9B6FEBE8F8BB2B597FA688 /* CHCSVParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC6B4C77CAE197B8BB7D51CD79172AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F5E5631569D1E93ABF9F5523B1106D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 124DDA19DF7E580D2E249D90FDA64B51;
+			remoteInfo = CHCSVParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C8E9A9C15D6DD0FDF706C037CC18275 /* CHCSVParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CHCSVParser-prefix.pch"; sourceTree = "<group>"; };
+		2C103DE5E82EBE1B6424E5D7C46558E2 /* CHCSVParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = CHCSVParser/CHCSVParser/CHCSVParser.m; sourceTree = "<group>"; };
+		33BC14812D9B6FEBE8F8BB2B597FA688 /* CHCSVParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CHCSVParser.h; path = CHCSVParser/CHCSVParser/CHCSVParser.h; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66D7ED6F1670BA71C8371E958375248A /* CHCSVParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CHCSVParser.xcconfig; sourceTree = "<group>"; };
+		6DB64775B4AE64EA8FFE1A8256EEC2D1 /* Pods-DreamGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DreamGame.release.xcconfig"; sourceTree = "<group>"; };
+		722624D75B7336D9BE50FC0F1AEA0209 /* Pods-DreamGame-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DreamGame-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBD9957D397F3BE54801D48FCC46BE45 /* CHCSVParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CHCSVParser-dummy.m"; sourceTree = "<group>"; };
+		C8623FA539A6E5FF06A4CEFCF42EC094 /* libPods-DreamGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DreamGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF42E785FA7BD13A8CBB3A2A439A73C /* Pods-DreamGame-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DreamGame-frameworks.sh"; sourceTree = "<group>"; };
+		DF402C4BC81132AB1DB405B464D504D2 /* Pods-DreamGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DreamGame.debug.xcconfig"; sourceTree = "<group>"; };
+		EA1770E277B363D767699358F0F1CE40 /* Pods-DreamGame-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DreamGame-dummy.m"; sourceTree = "<group>"; };
+		EDBFFEB6EC5202E27DAFCD04552705F8 /* Pods-DreamGame-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DreamGame-acknowledgements.plist"; sourceTree = "<group>"; };
+		F436B3F62BB77123CDE5396BF9F9AA8C /* libCHCSVParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCHCSVParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4819ACC4DC5F104EDF95912C22C5315 /* Pods-DreamGame-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DreamGame-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B690A9AF1DE0835CCD80166A10F6287E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC6B4C77CAE197B8BB7D51CD79172AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D253C888EADB3C54618765F04BCF0A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3344A97613335DFF9CA1CC9CF7B61E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3423D63DD97844C6BCFB0F1D757FCA5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50350E56BEBE663F2F990FC0BE4D5E3D /* CHCSVParser */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		36298C7B97BA6F5F21C16FD297701F4A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				66D7ED6F1670BA71C8371E958375248A /* CHCSVParser.xcconfig */,
+				BBD9957D397F3BE54801D48FCC46BE45 /* CHCSVParser-dummy.m */,
+				1C8E9A9C15D6DD0FDF706C037CC18275 /* CHCSVParser-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CHCSVParser";
+			sourceTree = "<group>";
+		};
+		50350E56BEBE663F2F990FC0BE4D5E3D /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				33BC14812D9B6FEBE8F8BB2B597FA688 /* CHCSVParser.h */,
+				2C103DE5E82EBE1B6424E5D7C46558E2 /* CHCSVParser.m */,
+				36298C7B97BA6F5F21C16FD297701F4A /* Support Files */,
+			);
+			path = CHCSVParser;
+			sourceTree = "<group>";
+		};
+		61271DD5AF61F0E322CF5CB4E171286A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F436B3F62BB77123CDE5396BF9F9AA8C /* libCHCSVParser.a */,
+				C8623FA539A6E5FF06A4CEFCF42EC094 /* libPods-DreamGame.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67DE57E73EF8AEFB90875D7047EE3DE7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				85DF46984149FD592C8760D255401851 /* Pods-DreamGame */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				3423D63DD97844C6BCFB0F1D757FCA5C /* Pods */,
+				61271DD5AF61F0E322CF5CB4E171286A /* Products */,
+				67DE57E73EF8AEFB90875D7047EE3DE7 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		85DF46984149FD592C8760D255401851 /* Pods-DreamGame */ = {
+			isa = PBXGroup;
+			children = (
+				722624D75B7336D9BE50FC0F1AEA0209 /* Pods-DreamGame-acknowledgements.markdown */,
+				EDBFFEB6EC5202E27DAFCD04552705F8 /* Pods-DreamGame-acknowledgements.plist */,
+				EA1770E277B363D767699358F0F1CE40 /* Pods-DreamGame-dummy.m */,
+				CAF42E785FA7BD13A8CBB3A2A439A73C /* Pods-DreamGame-frameworks.sh */,
+				F4819ACC4DC5F104EDF95912C22C5315 /* Pods-DreamGame-resources.sh */,
+				DF402C4BC81132AB1DB405B464D504D2 /* Pods-DreamGame.debug.xcconfig */,
+				6DB64775B4AE64EA8FFE1A8256EEC2D1 /* Pods-DreamGame.release.xcconfig */,
+			);
+			name = "Pods-DreamGame";
+			path = "Target Support Files/Pods-DreamGame";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		769BD8BA648BB85D93A144D407337819 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3134CF9B29F806AA70A19BDFF6D69EF /* CHCSVParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		124DDA19DF7E580D2E249D90FDA64B51 /* CHCSVParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D3C8B0098ECEC2EFA18101CDBC42052 /* Build configuration list for PBXNativeTarget "CHCSVParser" */;
+			buildPhases = (
+				5D9350A1143623B0D91C65E11D141B98 /* Sources */,
+				B690A9AF1DE0835CCD80166A10F6287E /* Frameworks */,
+				769BD8BA648BB85D93A144D407337819 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CHCSVParser;
+			productName = CHCSVParser;
+			productReference = F436B3F62BB77123CDE5396BF9F9AA8C /* libCHCSVParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5B04E3A9B81D6E9100F57FEA03232B5C /* Pods-DreamGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B99797F7089598FD87FC82B87B69BAE /* Build configuration list for PBXNativeTarget "Pods-DreamGame" */;
+			buildPhases = (
+				A69A962C30FCFC721D2BE754789E9A10 /* Sources */,
+				D253C888EADB3C54618765F04BCF0A9C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3457E89A064E50DACE920B89E5A2AF72 /* PBXTargetDependency */,
+			);
+			name = "Pods-DreamGame";
+			productName = "Pods-DreamGame";
+			productReference = C8623FA539A6E5FF06A4CEFCF42EC094 /* libPods-DreamGame.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 61271DD5AF61F0E322CF5CB4E171286A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				124DDA19DF7E580D2E249D90FDA64B51 /* CHCSVParser */,
+				5B04E3A9B81D6E9100F57FEA03232B5C /* Pods-DreamGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D9350A1143623B0D91C65E11D141B98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FBC19E4A36FA0C6F14D9EC6ACC2969 /* CHCSVParser-dummy.m in Sources */,
+				B0E779F4F9C8CCA3D0A1E640C96C2984 /* CHCSVParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A69A962C30FCFC721D2BE754789E9A10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C7C82D8844AFBCD26FE300579C5F9E9 /* Pods-DreamGame-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3457E89A064E50DACE920B89E5A2AF72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CHCSVParser;
+			target = 124DDA19DF7E580D2E249D90FDA64B51 /* CHCSVParser */;
+			targetProxy = 7F5E5631569D1E93ABF9F5523B1106D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A049FE871A7AE9C17EC0BA79B95C5449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66D7ED6F1670BA71C8371E958375248A /* CHCSVParser.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CHCSVParser/CHCSVParser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A7ECBBB4C41921FFE5DAB88C0EFAD4DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF402C4BC81132AB1DB405B464D504D2 /* Pods-DreamGame.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B4818F1CCD74148165F34699EA54FDD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DB64775B4AE64EA8FFE1A8256EEC2D1 /* Pods-DreamGame.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FA2125A9E640437B7079A940F894B987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66D7ED6F1670BA71C8371E958375248A /* CHCSVParser.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CHCSVParser/CHCSVParser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B99797F7089598FD87FC82B87B69BAE /* Build configuration list for PBXNativeTarget "Pods-DreamGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7ECBBB4C41921FFE5DAB88C0EFAD4DB /* Debug */,
+				B4818F1CCD74148165F34699EA54FDD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D3C8B0098ECEC2EFA18101CDBC42052 /* Build configuration list for PBXNativeTarget "CHCSVParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA2125A9E640437B7079A940F894B987 /* Debug */,
+				A049FE871A7AE9C17EC0BA79B95C5449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */,
+				511103F7F15A7E8F83B268EA03462CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

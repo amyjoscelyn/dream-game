@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Choice" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="effects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Effect" inverseName="choices" inverseEntity="Effect" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prerequisite" inverseName="choices" inverseEntity="Prerequisite" syncable="YES"/>
+        <relationship name="questionIns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="choiceOuts" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questionOut" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="choiceIns" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Effect" syncable="YES">
+        <attribute name="actionCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actionTarget" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boolValue" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="floatValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integerValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="effects" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prerequisite" inverseName="effects" inverseEntity="Prerequisite" syncable="YES"/>
+    </entity>
+    <entity name="Prerequisite" syncable="YES">
+        <attribute name="boolValue" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="checkCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="checkTarget" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="floatValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integerValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="prerequisites" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="effects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Effect" inverseName="prerequisites" inverseEntity="Effect" syncable="YES"/>
+    </entity>
+    <entity name="Question" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="choiceIns" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Choice" inverseName="questionOut" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="choiceOuts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Choice" inverseName="questionIns" inverseEntity="Choice" syncable="YES"/>
+        <relationship name="questionAfter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="questionBefores" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questionBefores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="questionAfter" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Question" positionX="-54" positionY="-0" width="128" height="133"/>
+        <element name="Choice" positionX="277" positionY="-25" width="128" height="133"/>
+        <element name="Effect" positionX="97" positionY="162" width="128" height="178"/>
+        <element name="Prerequisite" positionX="54" positionY="-232" width="128" height="178"/>
+    </elements>
+</model>
