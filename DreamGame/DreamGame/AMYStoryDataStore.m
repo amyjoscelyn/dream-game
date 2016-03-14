@@ -50,15 +50,15 @@
 
 - (void)fetchData
 {
-        NSFetchRequest *prerequisiteRequest = [NSFetchRequest fetchRequestWithEntityName:@"Prerequisite"];
-        prerequisiteRequest.sortDescriptors = @[self.sortByStoryIDAsc];
+    NSFetchRequest *prerequisiteRequest = [NSFetchRequest fetchRequestWithEntityName:@"Prerequisite"];
+    prerequisiteRequest.sortDescriptors = @[self.sortByStoryIDAsc];
     
-        self.prerequisites = [self.managedObjectContext executeFetchRequest:prerequisiteRequest error:nil];
+    self.prerequisites = [self.managedObjectContext executeFetchRequest:prerequisiteRequest error:nil];
     
-        if (self.prerequisites.count == 0)
-        {
-            [self generatePrerequisites];
-        }
+    if (self.prerequisites.count == 0)
+    {
+        [self generatePrerequisites];
+    }
     
     NSFetchRequest *effectRequest = [NSFetchRequest fetchRequestWithEntityName:@"Effect"];
     effectRequest.sortDescriptors = @[self.sortByStoryIDAsc];
