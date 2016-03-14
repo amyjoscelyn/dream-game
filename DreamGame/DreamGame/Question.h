@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import <CHCSVParser/CHCSVParser.h> //do I need this imported here?
 
-@class Choice, Playthrough, Prerequisite, Effect;
+@class Choice;
 
 NS_ASSUME_NONNULL_BEGIN
 

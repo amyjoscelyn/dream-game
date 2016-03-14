@@ -12,15 +12,13 @@
 
 @implementation Prerequisite
 
-// Insert code here to add functionality to your managed object subclass
-
 + (Prerequisite *)createPrerequisiteFromCSVRow:(NSArray *)csvRow managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     Prerequisite *prerequsite = [NSEntityDescription insertNewObjectForEntityForName:@"Prerequisite" inManagedObjectContext:managedObjectContext];
     prerequsite.storyID = csvRow[0];
     prerequsite.comment = csvRow[1];
     // 2 is choices
-    // 3 is questions
+    // 3 is questions  //are there 8 csvRows?
     // 4 is effects
     prerequsite.checkObject = csvRow[5];
     prerequsite.checkProperty = csvRow[6];

@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Question;
-@class Character;
+@class Question, Character;
 
 NS_ASSUME_NONNULL_BEGIN
 

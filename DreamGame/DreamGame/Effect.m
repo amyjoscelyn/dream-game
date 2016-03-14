@@ -18,7 +18,7 @@
     effect.storyID = csvRow[0];
     effect.comment = csvRow[1];
     // 2 is choices
-    // 3 is questions
+    // 3 is questions       //is this a row in the csv?
     // 4 is prerequisites
     effect.actionObject = csvRow[5];
     effect.actionProperty = csvRow[6];
