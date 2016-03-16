@@ -58,7 +58,6 @@
 
 - (void)changeBackgroundColor
 {
-    //i need to set up 7 more properties--these can be in Character, and are the 7 majors.  Every choice has an effect that affects its coordinated major.  I read them here, and the one that is the greatest is attributed to a color, which the background is set as.
     NSNumber *charm = @(self.dataStore.playerCharacter.charm);
     NSNumber *practical = @(self.dataStore.playerCharacter.practical);
     NSNumber *history = @(self.dataStore.playerCharacter.history);
@@ -150,7 +149,7 @@
     }
     else
     {
-        self.textHue = 30/359.0;
+        self.textHue = 35/359.0;
         self.saturation = 0.1;
         
         self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
@@ -222,7 +221,7 @@
     {
         cell.textLabel.text = self.currentQuestion.content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
-        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //make backgroundColor clear!!!
+//        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //make backgroundColor clear!!!
         cell.textLabel.numberOfLines = 0;
         
         cell.detailTextLabel.hidden = YES;
@@ -267,7 +266,7 @@
             cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.5 alpha:1.0];
-        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //MAKE CLEAR
+//        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //MAKE CLEAR
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.hidden = YES;
     }
