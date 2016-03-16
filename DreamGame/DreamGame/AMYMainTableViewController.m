@@ -16,6 +16,11 @@
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
 
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
+@property (nonatomic, strong) NSMutableArray *colorsArray;
+@property (nonatomic, strong) UIColor *topColor;
+@property (nonatomic, strong) UIColor *bottomColor;
+
 @property (nonatomic) CGFloat textHue;
 @property (nonatomic) CGFloat saturation;
 //@property (nonatomic) NSUInteger colorInteger;
@@ -34,6 +39,16 @@
     [self.dataStore fetchData];
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
+    
+    self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer.frame = self.view.frame;
+    [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
+    
+    self.colorsArray = [[NSMutableArray alloc] init];
+    
+    self.topColor = [UIColor colorWithRed:255/255.0 green:233/255.0 blue:200/255.0 alpha:1.0];
+    [self.colorsArray addObject:(id)self.topColor.CGColor];
+    [self.colorsArray addObject:(id)self.topColor.CGColor];
     
     [self changeBackgroundColor];
     
@@ -94,67 +109,39 @@
     
     if ([major isEqualToString:@"charm"])
     {
-        self.textHue = 0/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
     }
     else if ([major isEqualToString:@"practical"])
     {
-        self.textHue = 25/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
     }
     else if ([major isEqualToString:@"history"])
     {
-        self.textHue = 225/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
     }
     else if ([major isEqualToString:@"potions"])
     {
-        self.textHue = 275/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
     }
     else if ([major isEqualToString:@"healing"])
     {
-        self.textHue = 135/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
     }
     else if ([major isEqualToString:@"divining"])
     {
-        self.saturation = 0.0;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
     }
     else if ([major isEqualToString:@"animalia"])
     {
-        self.textHue = 48/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
     }
     else
     {
-        self.textHue = 35/359.0;
-        self.saturation = 0.1;
-        
-        self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.88 alpha:1.0];
-        self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.9 alpha:1.0];
+        self.bottomColor = [UIColor colorWithRed:255/255.0 green:233/255.0 blue:200/255.0 alpha:1.0];
     }
+    [self.colorsArray replaceObjectAtIndex:1 withObject:(id)self.bottomColor.CGColor];
+    
+    self.gradientLayer.colors = self.colorsArray;
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -206,7 +193,7 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
+//    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
     
     if (self.dataStore.playthrough.fontChange)
     {
